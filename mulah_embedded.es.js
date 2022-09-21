@@ -15527,7 +15527,7 @@ function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
               createVNode("p", {
                 class: "expiry",
                 style: $setup.primaryTheme
-              }, " Expiry " + toDisplayString($setup.formatDate(offer.expiryMmddyy)), 5)
+              }, " Expiry " + toDisplayString($setup.formatDate(offer.expiryDate)), 5)
             ]),
             createVNode("div", _hoisted_9$3, [
               createVNode("p", _hoisted_10$3, [
@@ -15559,7 +15559,7 @@ function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
             ]),
             createVNode("div", _hoisted_17$2, [
               createVNode(_component_Calendar, { color: "#aaaaaa" }),
-              createVNode("p", _hoisted_18$2, " Expiry " + toDisplayString($setup.formatDate(offer.expiryMmddyy)), 1)
+              createVNode("p", _hoisted_18$2, " Expiry " + toDisplayString($setup.formatDate(offer.expiryDate)), 1)
             ]),
             createVNode("div", _hoisted_19$1, [
               offer.status == "Expired" ? (openBlock(), createBlock("p", _hoisted_20$1, toDisplayString(offer.status), 1)) : (openBlock(), createBlock("p", _hoisted_21$1, "Used on " + toDisplayString($setup.formatDate(offer.usedAt)), 1))
