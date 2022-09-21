@@ -10797,7 +10797,7 @@ function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
       createVNode("div", _hoisted_4$g, [
         createVNode("div", _hoisted_5$g, [
           createVNode("select", {
-            style: { ...$setup.mainBackground, ...$setup.textColor, ...$setup.placeholderColor },
+            style: [{ "height": "46px !important" }, { ...$setup.mainBackground, ...$setup.textColor, ...$setup.placeholderColor }],
             onChange: _cache[1] || (_cache[1] = (...args) => $setup.testing && $setup.testing(...args)),
             name: "countryCode",
             id: "mulah-home__input__countryCode",
