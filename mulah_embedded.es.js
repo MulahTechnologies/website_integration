@@ -12190,7 +12190,7 @@ function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
                 }, toDisplayString(promotion.cost), 5)
               ]),
               createVNode("p", {
-                style: [{ "padding-left": "5px", "font-style": "italic !important" }, `color: ${$props.styling.points_color} !important`]
+                style: [{ "padding-left": "5px", "font-style": "italic !important", "width": "100% !important" }, `color: ${$props.styling.points_color} !important`]
               }, "points", 4)
             ])
           ])
