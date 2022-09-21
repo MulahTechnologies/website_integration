@@ -15416,7 +15416,7 @@ const _sfc_main$9 = {
     const cssVars = { "--color": `${props.styling.selected_color}`, "--unselect": `${props.styling.unselect_color}` };
     const buttonText = { color: `${props.styling.button_text_color} !important` };
     const formatDate = (string) => {
-      const target = string.match(/(\d*)-(\d*)-(\d*).*/);
+      const target = string.match(/(\d*)\/*-*(\d*)\/*-*(\d*).*/);
       return `${target[3]}/${target[2]}/${target[1]}`;
     };
     return {
