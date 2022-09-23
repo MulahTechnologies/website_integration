@@ -8381,7 +8381,7 @@ const _hoisted_6$g = {
   class: "mulah-modal__content-image",
   src: "https://mulahpictures.s3-ap-southeast-1.amazonaws.com/modal_error.png"
 };
-const _hoisted_7$e = {
+const _hoisted_7$f = {
   key: 2,
   class: "mulah-modal__content-text"
 };
@@ -8410,7 +8410,7 @@ function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
               size: 60,
               fill: $setup.svgFill
             }, null, 8, ["fill"])) : (openBlock(), createBlock("img", _hoisted_6$g)),
-            $props.specification == "home" ? (openBlock(), createBlock("div", _hoisted_7$e, [
+            $props.specification == "home" ? (openBlock(), createBlock("div", _hoisted_7$f, [
               _hoisted_8$d,
               _hoisted_9$c
             ])) : $props.specification == "verification" ? (openBlock(), createBlock("div", _hoisted_10$c, [
@@ -10769,7 +10769,7 @@ const _hoisted_3$k = /* @__PURE__ */ createVNode("div", { class: "mulah-home__im
 const _hoisted_4$g = { class: "mulah-home__input-container" };
 const _hoisted_5$g = { class: "mulah-home__input" };
 const _hoisted_6$f = /* @__PURE__ */ createVNode("option", { value: "MY" }, "MY", -1);
-const _hoisted_7$d = /* @__PURE__ */ createVNode("option", { value: "ID" }, "ID", -1);
+const _hoisted_7$e = /* @__PURE__ */ createVNode("option", { value: "ID" }, "ID", -1);
 const _hoisted_8$c = { class: "mulah-home__input mulah-home__input--button" };
 const _hoisted_9$b = { class: "mulah-home__footer" };
 const _hoisted_10$b = /* @__PURE__ */ createTextVNode("- Powered by ");
@@ -10804,7 +10804,7 @@ function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
             class: "mulah-home__select"
           }, [
             _hoisted_6$f,
-            _hoisted_7$d
+            _hoisted_7$e
           ], 36),
           createVNode("span", {
             class: $setup.spanClass,
@@ -10879,7 +10879,7 @@ const _hoisted_6$e = /* @__PURE__ */ createVNode("img", {
   class: "mulah-modal__content-image",
   src: "https://mulahpictures.s3-ap-southeast-1.amazonaws.com/modal_success.png"
 }, null, -1);
-const _hoisted_7$c = {
+const _hoisted_7$d = {
   key: 0,
   class: "mulah-modal__content-text"
 };
@@ -10897,7 +10897,7 @@ function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
         createVNode("div", _hoisted_4$f, [
           createVNode("div", _hoisted_5$f, [
             _hoisted_6$e,
-            $props.specification == "registration" ? (openBlock(), createBlock("div", _hoisted_7$c, [
+            $props.specification == "registration" ? (openBlock(), createBlock("div", _hoisted_7$d, [
               _hoisted_8$b
             ])) : $props.specification == "verification" ? (openBlock(), createBlock("div", _hoisted_9$a, [
               _hoisted_10$a
@@ -11097,7 +11097,7 @@ const _hoisted_3$i = { class: "mulah-phone__welcome" };
 const _hoisted_4$e = /* @__PURE__ */ createTextVNode("Enter the OTP Code sent to ");
 const _hoisted_5$e = /* @__PURE__ */ createVNode("div", { style: { "height": "30px" } }, null, -1);
 const _hoisted_6$d = { class: "mulah-phone__input" };
-const _hoisted_7$b = { class: "mulah-phone__alert" };
+const _hoisted_7$c = { class: "mulah-phone__alert" };
 const _hoisted_8$a = /* @__PURE__ */ createTextVNode(" OTP code should be received in ");
 const _hoisted_9$9 = { class: "mulah-phone__alert-span-first" };
 const _hoisted_10$9 = /* @__PURE__ */ createTextVNode(" Didn't receive the OTP Code? ");
@@ -11136,7 +11136,7 @@ function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
           [vModelText, $setup.code]
         ])
       ]),
-      createVNode("div", _hoisted_7$b, [
+      createVNode("div", _hoisted_7$c, [
         $setup.timer != 0 ? (openBlock(), createBlock("p", {
           key: 0,
           style: $setup.textColor
@@ -11522,7 +11522,7 @@ const _hoisted_6$c = {
   key: 0,
   class: "mulah-registration__validation"
 };
-const _hoisted_7$a = /* @__PURE__ */ createVNode("p", null, "*Please insert a name", -1);
+const _hoisted_7$b = /* @__PURE__ */ createVNode("p", null, "*Please insert a name", -1);
 const _hoisted_8$9 = { class: "mulah-registration__input__container" };
 const _hoisted_9$8 = { class: "mulah-registration__input__bday" };
 const _hoisted_10$8 = {
@@ -11537,7 +11537,7 @@ const _hoisted_14$4 = {
   class: "mulah-registration__validation"
 };
 const _hoisted_15$4 = /* @__PURE__ */ createVNode("p", null, "*Please insert a valid email address", -1);
-const _hoisted_16$3 = { class: "mulah-pure-material-checkbox" };
+const _hoisted_16$4 = { class: "mulah-pure-material-checkbox" };
 const _hoisted_17$3 = /* @__PURE__ */ createVNode("span", null, "No email address", -1);
 const _hoisted_18$3 = { class: "mulah-registration__button" };
 const _hoisted_19$2 = { class: "mulah-registration__footer" };
@@ -11565,7 +11565,7 @@ function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
             [vModelText, $setup.name]
           ]),
           $setup.showWarningName() ? (openBlock(), createBlock("div", _hoisted_6$c, [
-            _hoisted_7$a
+            _hoisted_7$b
           ])) : createCommentVNode("", true)
         ]),
         createVNode("div", _hoisted_8$9, [
@@ -11656,7 +11656,7 @@ function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
           $setup.showWarning() ? (openBlock(), createBlock("div", _hoisted_14$4, [
             _hoisted_15$4
           ])) : createCommentVNode("", true),
-          createVNode("label", _hoisted_16$3, [
+          createVNode("label", _hoisted_16$4, [
             withDirectives(createVNode("input", {
               type: "checkbox",
               "onUpdate:modelValue": _cache[7] || (_cache[7] = ($event) => $setup.skipEmail = $event)
@@ -11828,7 +11828,7 @@ const _hoisted_6$a = /* @__PURE__ */ createVNode("path", {
   d: "M595.57,444.89c-.21,5.73-1.52,11.28-3.87,14.21a16.38,16.38,0,0,0,12.36-14.21Z",
   transform: "translate(-571.52 -427.33)"
 }, null, -1);
-const _hoisted_7$9 = /* @__PURE__ */ createVNode("path", {
+const _hoisted_7$a = /* @__PURE__ */ createVNode("path", {
   d: "M580,444.89h-8.49a16.38,16.38,0,0,0,12.36,14.21C581.53,456.17,580.22,450.62,580,444.89Z",
   transform: "translate(-571.52 -427.33)"
 }, null, -1);
@@ -11848,7 +11848,7 @@ function _sfc_render$p(_ctx, _cache, $props, $setup, $data, $options) {
     _hoisted_4$b,
     _hoisted_5$b,
     _hoisted_6$a,
-    _hoisted_7$9
+    _hoisted_7$a
   ], 12, ["width", "height"]);
 }
 var Website = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$p]]);
@@ -11973,32 +11973,33 @@ const _sfc_main$m = {
     ArrowRight
   }
 };
-const _withId$2 = /* @__PURE__ */ withScopeId("data-v-1f36c89c");
-pushScopeId("data-v-1f36c89c");
-const _hoisted_1$l = {
+const _withId$2 = /* @__PURE__ */ withScopeId("data-v-5c614ca6");
+pushScopeId("data-v-5c614ca6");
+const _hoisted_1$l = { style: { "padding": "0 15px !important" } };
+const _hoisted_2$j = {
   key: 1,
   href: "javascript:void(0)"
 };
-const _hoisted_2$j = { class: "arrow_positions" };
-const _hoisted_3$c = /* @__PURE__ */ createVNode("hr", null, null, -1);
-const _hoisted_4$9 = {
+const _hoisted_3$c = { class: "arrow_positions" };
+const _hoisted_4$9 = /* @__PURE__ */ createVNode("hr", null, null, -1);
+const _hoisted_5$9 = {
   key: 1,
   href: "javascript:void(0)"
 };
-const _hoisted_5$9 = { class: "arrow_positions" };
-const _hoisted_6$9 = /* @__PURE__ */ createVNode("hr", null, null, -1);
-const _hoisted_7$8 = /* @__PURE__ */ createVNode("p", null, "Membership Rewards", -1);
-const _hoisted_8$8 = { class: "arrow_positions" };
-const _hoisted_9$7 = /* @__PURE__ */ createVNode("hr", null, null, -1);
-const _hoisted_10$7 = {
+const _hoisted_6$9 = { class: "arrow_positions" };
+const _hoisted_7$9 = /* @__PURE__ */ createVNode("hr", null, null, -1);
+const _hoisted_8$8 = /* @__PURE__ */ createVNode("p", null, "Membership Rewards", -1);
+const _hoisted_9$7 = { class: "arrow_positions" };
+const _hoisted_10$7 = /* @__PURE__ */ createVNode("hr", null, null, -1);
+const _hoisted_11$7 = {
   key: 1,
   href: "javascript:void(0)"
 };
-const _hoisted_11$7 = { class: "arrow_positions" };
-const _hoisted_12$7 = /* @__PURE__ */ createVNode("hr", null, null, -1);
-const _hoisted_13$3 = /* @__PURE__ */ createVNode("p", null, "Terms and Conditions", -1);
-const _hoisted_14$3 = { class: "arrow_positions" };
-const _hoisted_15$3 = /* @__PURE__ */ createVNode("hr", null, null, -1);
+const _hoisted_12$7 = { class: "arrow_positions" };
+const _hoisted_13$3 = /* @__PURE__ */ createVNode("hr", null, null, -1);
+const _hoisted_14$3 = /* @__PURE__ */ createVNode("p", null, "Terms and Conditions", -1);
+const _hoisted_15$3 = { class: "arrow_positions" };
+const _hoisted_16$3 = /* @__PURE__ */ createVNode("hr", null, null, -1);
 popScopeId();
 const _sfc_render$m = /* @__PURE__ */ _withId$2((_ctx, _cache, $props, $setup, $data, $options) => {
   const _component_Website = resolveComponent("Website");
@@ -12007,7 +12008,7 @@ const _sfc_render$m = /* @__PURE__ */ _withId$2((_ctx, _cache, $props, $setup, $
   const _component_Gift = resolveComponent("Gift");
   const _component_Promotion = resolveComponent("Promotion");
   const _component_Tnc = resolveComponent("Tnc");
-  return openBlock(), createBlock("div", null, [
+  return openBlock(), createBlock("div", _hoisted_1$l, [
     createVNode("div", {
       class: "mulah-overview__content__navigation",
       style: $props.brand.websiteUrl ? {} : { opacity: ".2" }
@@ -12020,15 +12021,15 @@ const _sfc_render$m = /* @__PURE__ */ _withId$2((_ctx, _cache, $props, $setup, $
         key: 0,
         onClick: _cache[1] || (_cache[1] = () => $setup.clickLink("website")),
         href: "#"
-      }, "Website")) : (openBlock(), createBlock("a", _hoisted_1$l, "Website")),
-      createVNode("div", _hoisted_2$j, [
+      }, "Website")) : (openBlock(), createBlock("a", _hoisted_2$j, "Website")),
+      createVNode("div", _hoisted_3$c, [
         createVNode(_component_ArrowRight, {
           size: 15,
           color: $props.styling.icon_color
         }, null, 8, ["color"])
       ])
     ], 4),
-    _hoisted_3$c,
+    _hoisted_4$9,
     createVNode("div", {
       class: "mulah-overview__content__navigation",
       style: $props.brand.deliveryUrl ? {} : { opacity: ".2" }
@@ -12041,15 +12042,15 @@ const _sfc_render$m = /* @__PURE__ */ _withId$2((_ctx, _cache, $props, $setup, $
         key: 0,
         onClick: _cache[2] || (_cache[2] = () => $setup.clickLink("delivery")),
         href: "#"
-      }, "Delivery")) : (openBlock(), createBlock("a", _hoisted_4$9, "Delivery")),
-      createVNode("div", _hoisted_5$9, [
+      }, "Delivery")) : (openBlock(), createBlock("a", _hoisted_5$9, "Delivery")),
+      createVNode("div", _hoisted_6$9, [
         createVNode(_component_ArrowRight, {
           size: 15,
           color: $props.styling.icon_color
         }, null, 8, ["color"])
       ])
     ], 4),
-    _hoisted_6$9,
+    _hoisted_7$9,
     createVNode("div", {
       class: "mulah-overview__content__navigation",
       onClick: _cache[3] || (_cache[3] = ($event) => $props.changeTab("redeem"))
@@ -12058,15 +12059,15 @@ const _sfc_render$m = /* @__PURE__ */ _withId$2((_ctx, _cache, $props, $setup, $
         size: 30,
         color: $props.styling.icon_color
       }, null, 8, ["color"]),
-      _hoisted_7$8,
-      createVNode("div", _hoisted_8$8, [
+      _hoisted_8$8,
+      createVNode("div", _hoisted_9$7, [
         createVNode(_component_ArrowRight, {
           size: 15,
           color: $props.styling.icon_color
         }, null, 8, ["color"])
       ])
     ]),
-    _hoisted_9$7,
+    _hoisted_10$7,
     createVNode("div", {
       class: "mulah-overview__content__navigation",
       style: $props.brand.promotionUrl ? {} : { opacity: ".2" }
@@ -12079,15 +12080,15 @@ const _sfc_render$m = /* @__PURE__ */ _withId$2((_ctx, _cache, $props, $setup, $
         key: 0,
         onClick: _cache[4] || (_cache[4] = () => $setup.clickLink("promotion")),
         href: "#"
-      }, "Promotion")) : (openBlock(), createBlock("a", _hoisted_10$7, "Promotion")),
-      createVNode("div", _hoisted_11$7, [
+      }, "Promotion")) : (openBlock(), createBlock("a", _hoisted_11$7, "Promotion")),
+      createVNode("div", _hoisted_12$7, [
         createVNode(_component_ArrowRight, {
           size: 15,
           color: $props.styling.icon_color
         }, null, 8, ["color"])
       ])
     ], 4),
-    _hoisted_12$7,
+    _hoisted_13$3,
     createVNode("div", {
       class: "mulah-overview__content__navigation",
       onClick: _cache[5] || (_cache[5] = (...args) => $props.toTnc && $props.toTnc(...args))
@@ -12096,18 +12097,18 @@ const _sfc_render$m = /* @__PURE__ */ _withId$2((_ctx, _cache, $props, $setup, $
         size: 30,
         color: $props.styling.icon_color
       }, null, 8, ["color"]),
-      _hoisted_13$3,
-      createVNode("div", _hoisted_14$3, [
+      _hoisted_14$3,
+      createVNode("div", _hoisted_15$3, [
         createVNode(_component_ArrowRight, {
           size: 15,
           color: $props.styling.icon_color
         }, null, 8, ["color"])
       ])
     ]),
-    _hoisted_15$3
+    _hoisted_16$3
   ]);
 });
-var OverviewMain = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$m], ["__scopeId", "data-v-1f36c89c"]]);
+var OverviewMain = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$m], ["__scopeId", "data-v-5c614ca6"]]);
 const _sfc_main$l = {
   name: "StarSvg",
   props: {
@@ -12156,7 +12157,7 @@ const _hoisted_3$b = { class: "mulah-overview__card" };
 const _hoisted_4$8 = { class: "mulah-overview__card__body--small" };
 const _hoisted_5$8 = { class: "mulah-overview__card__promotion--title" };
 const _hoisted_6$8 = { style: { "width": "250px !important" } };
-const _hoisted_7$7 = { class: "mulah-overview__card__promotion--points" };
+const _hoisted_7$8 = { class: "mulah-overview__card__promotion--points" };
 const _hoisted_8$7 = { style: { "margin-top": "15px!important", "margin-bottom": "10px!important" } };
 const _hoisted_9$6 = /* @__PURE__ */ createVNode("em", null, "Tap Here for Terms and Conditions", -1);
 const _hoisted_10$6 = { class: "mulah-overview__button-container" };
@@ -12183,7 +12184,7 @@ function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
                 }, toDisplayString(promotion.title), 5)
               ])
             ]),
-            createVNode("div", _hoisted_7$7, [
+            createVNode("div", _hoisted_7$8, [
               createVNode(_component_Star, {
                 size: 15,
                 color: `${$props.styling.star_color} !important`
@@ -15020,7 +15021,7 @@ const _hoisted_3$7 = { class: "exit-modal-container" };
 const _hoisted_4$7 = { class: "qr-modal" };
 const _hoisted_5$7 = { class: "modal__container" };
 const _hoisted_6$7 = { class: "modal__dialog" };
-const _hoisted_7$6 = { class: "modal__content" };
+const _hoisted_7$7 = { class: "modal__content" };
 const _hoisted_8$6 = { class: "brand-name" };
 const _hoisted_9$5 = { class: "barcode-container" };
 const _hoisted_10$5 = { class: "qr-container" };
@@ -15048,7 +15049,7 @@ const _sfc_render$f = /* @__PURE__ */ _withId$1((_ctx, _cache, $props, $setup, $
     createVNode("div", _hoisted_4$7, [
       createVNode("div", _hoisted_5$7, [
         createVNode("div", _hoisted_6$7, [
-          createVNode("div", _hoisted_7$6, [
+          createVNode("div", _hoisted_7$7, [
             createVNode("div", null, [
               createVNode("p", _hoisted_8$6, toDisplayString($setup.brandName), 1)
             ]),
@@ -15246,7 +15247,7 @@ const _hoisted_3$6 = { class: "exit-modal-container" };
 const _hoisted_4$6 = { class: "qr-modal" };
 const _hoisted_5$6 = { class: "modal__container" };
 const _hoisted_6$6 = { class: "modal__dialog" };
-const _hoisted_7$5 = { class: "modal__content" };
+const _hoisted_7$6 = { class: "modal__content" };
 const _hoisted_8$5 = { class: "img-container" };
 const _hoisted_9$4 = { class: "msg-container" };
 const _hoisted_10$4 = /* @__PURE__ */ createTextVNode("You have ");
@@ -15273,7 +15274,7 @@ const _sfc_render$b = /* @__PURE__ */ _withId((_ctx, _cache, $props, $setup, $da
     createVNode("div", _hoisted_4$6, [
       createVNode("div", _hoisted_5$6, [
         createVNode("div", _hoisted_6$6, [
-          createVNode("div", _hoisted_7$5, [
+          createVNode("div", _hoisted_7$6, [
             createVNode("div", _hoisted_8$5, [
               createVNode(_component_SmsRemind, {
                 color: $setup.styling.icon_color
@@ -15465,7 +15466,7 @@ const _hoisted_3$5 = {
 const _hoisted_4$5 = { class: "promotion-container" };
 const _hoisted_5$5 = { class: "gift-container" };
 const _hoisted_6$5 = { class: "title-container" };
-const _hoisted_7$4 = { class: "offer-title" };
+const _hoisted_7$5 = { class: "offer-title" };
 const _hoisted_8$4 = { class: "calendar-container" };
 const _hoisted_9$3 = { class: "code-container" };
 const _hoisted_10$3 = { class: "code-title" };
@@ -15536,7 +15537,7 @@ function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
               }, null, 8, ["color"])
             ]),
             createVNode("div", _hoisted_6$5, [
-              createVNode("p", _hoisted_7$4, toDisplayString(offer.title), 1)
+              createVNode("p", _hoisted_7$5, toDisplayString(offer.title), 1)
             ]),
             createVNode("div", _hoisted_8$4, [
               createVNode(_component_Calendar, {
@@ -15713,17 +15714,18 @@ const _sfc_main$6 = {
     ArrowRight
   }
 };
-const _hoisted_1$5 = /* @__PURE__ */ createVNode("a", null, "Points Reward", -1);
-const _hoisted_2$5 = { class: "arrow_positions" };
-const _hoisted_3$4 = /* @__PURE__ */ createVNode("hr", null, null, -1);
-const _hoisted_4$4 = /* @__PURE__ */ createVNode("a", null, "SMS Rewards", -1);
-const _hoisted_5$4 = { class: "arrow_positions" };
-const _hoisted_6$4 = /* @__PURE__ */ createVNode("hr", null, null, -1);
+const _hoisted_1$5 = { style: { "padding": "0 15px !important" } };
+const _hoisted_2$5 = /* @__PURE__ */ createVNode("a", null, "Points Reward", -1);
+const _hoisted_3$4 = { class: "arrow_positions" };
+const _hoisted_4$4 = /* @__PURE__ */ createVNode("hr", null, null, -1);
+const _hoisted_5$4 = /* @__PURE__ */ createVNode("a", null, "SMS Rewards", -1);
+const _hoisted_6$4 = { class: "arrow_positions" };
+const _hoisted_7$4 = /* @__PURE__ */ createVNode("hr", null, null, -1);
 function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_PointRewards = resolveComponent("PointRewards");
   const _component_ArrowRight = resolveComponent("ArrowRight");
   const _component_SmsRewards = resolveComponent("SmsRewards");
-  return openBlock(), createBlock("div", null, [
+  return openBlock(), createBlock("div", _hoisted_1$5, [
     createVNode("div", {
       class: "mulah-overview__content__navigation",
       onClick: _cache[1] || (_cache[1] = ($event) => $props.changeTab("points"))
@@ -15731,15 +15733,15 @@ function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
       createVNode(_component_PointRewards, {
         color: $props.styling.icon_color
       }, null, 8, ["color"]),
-      _hoisted_1$5,
-      createVNode("div", _hoisted_2$5, [
+      _hoisted_2$5,
+      createVNode("div", _hoisted_3$4, [
         createVNode(_component_ArrowRight, {
           size: 15,
           color: $props.styling.icon_color
         }, null, 8, ["color"])
       ])
     ]),
-    _hoisted_3$4,
+    _hoisted_4$4,
     createVNode("div", {
       class: "mulah-overview__content__navigation",
       onClick: _cache[2] || (_cache[2] = ($event) => $props.changeTab("reward"))
@@ -15747,15 +15749,15 @@ function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
       createVNode(_component_SmsRewards, {
         color: $props.styling.icon_color
       }, null, 8, ["color"]),
-      _hoisted_4$4,
-      createVNode("div", _hoisted_5$4, [
+      _hoisted_5$4,
+      createVNode("div", _hoisted_6$4, [
         createVNode(_component_ArrowRight, {
           size: 15,
           color: $props.styling.icon_color
         }, null, 8, ["color"])
       ])
     ]),
-    _hoisted_6$4
+    _hoisted_7$4
   ]);
 }
 var OverviewRewards = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$6]]);
