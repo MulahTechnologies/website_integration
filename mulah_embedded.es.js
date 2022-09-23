@@ -11973,8 +11973,8 @@ const _sfc_main$m = {
     ArrowRight
   }
 };
-const _withId$2 = /* @__PURE__ */ withScopeId("data-v-6a130440");
-pushScopeId("data-v-6a130440");
+const _withId$2 = /* @__PURE__ */ withScopeId("data-v-1f36c89c");
+pushScopeId("data-v-1f36c89c");
 const _hoisted_1$l = {
   key: 1,
   href: "javascript:void(0)"
@@ -12107,7 +12107,7 @@ const _sfc_render$m = /* @__PURE__ */ _withId$2((_ctx, _cache, $props, $setup, $
     _hoisted_15$3
   ]);
 });
-var OverviewMain = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$m], ["__scopeId", "data-v-6a130440"]]);
+var OverviewMain = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$m], ["__scopeId", "data-v-1f36c89c"]]);
 const _sfc_main$l = {
   name: "StarSvg",
   props: {
@@ -12160,7 +12160,7 @@ const _hoisted_7$7 = { class: "mulah-overview__card__promotion--points" };
 const _hoisted_8$7 = { style: { "margin-top": "15px!important", "margin-bottom": "10px!important" } };
 const _hoisted_9$6 = /* @__PURE__ */ createVNode("em", null, "Tap Here for Terms and Conditions", -1);
 const _hoisted_10$6 = { class: "mulah-overview__button-container" };
-const _hoisted_11$6 = { style: { "width": "90% !important", "display": "flex !important", "align-items": "center !important", "justify-content": "center !important" } };
+const _hoisted_11$6 = { style: { "width": "100% !important", "display": "flex !important", "align-items": "center !important", "justify-content": "center !important" } };
 const _hoisted_12$6 = /* @__PURE__ */ createVNode("div", { class: "footerLine" }, null, -1);
 function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_Gift = resolveComponent("Gift");
@@ -16006,7 +16006,10 @@ const _hoisted_5$3 = {
   key: 2,
   class: "mulah-overview"
 };
-const _hoisted_6$3 = { key: 0 };
+const _hoisted_6$3 = {
+  key: 0,
+  style: { "padding-left": "15px!important", "padding-right": "15px!important" }
+};
 const _hoisted_7$3 = { class: "mulah-overview__content__container" };
 const _hoisted_8$3 = { class: "mulah-overview__content__container-inner" };
 const _hoisted_9$2 = { class: "mulah-overview__card__container--main" };
