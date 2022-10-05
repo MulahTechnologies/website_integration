@@ -8222,7 +8222,7 @@ const CUSTOMER_HISTORY_MORE = `
       id
       collectionsAndDeductions(brandId: $brandId) {
         amount
-        createdAt
+        createdAt :createdIso
         expiryDate(brandId: $brandId)
         expiryDays(brandId: $brandId)
         specification
