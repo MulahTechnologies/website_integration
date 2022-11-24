@@ -11368,6 +11368,7 @@ const _sfc_main$t = {
     const inputColor = ref(null);
     const inputBackground = ref(null);
     const buttonText = ref(null);
+    const buttonTheme = ref(null);
     watch(result2.fetching, (fetchStatus) => {
       if (!fetchStatus) {
         const style = JSON.parse(result2.data.value.brand.registrationStyle);
@@ -11383,6 +11384,7 @@ const _sfc_main$t = {
         };
         inputBackground.value = { background: `${style.input_background} !important` };
         buttonText.value = { color: `${style.button_font} !important` };
+        buttonTheme.value = { "--buttonFont": style.button_font };
         document.body.style.setProperty("background", style.main_background, "important");
       }
     });
@@ -11504,6 +11506,7 @@ const _sfc_main$t = {
       linkColor,
       inputColor,
       buttonText,
+      buttonTheme,
       showWarningName,
       showWarningBirthday,
       fetching: result2.fetching
@@ -11587,7 +11590,8 @@ function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
                 ...$setup.placeholderColor,
                 ...$setup.primaryTheme,
                 ...$setup.secondaryTheme,
-                ...$setup.inputColor
+                ...$setup.inputColor,
+                ...$setup.buttonTheme
               }
             }, [
               createVNode(_component_VueNextSelect, {
@@ -11605,7 +11609,8 @@ function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
                 ...$setup.placeholderColor,
                 ...$setup.primaryTheme,
                 ...$setup.secondaryTheme,
-                ...$setup.inputColor
+                ...$setup.inputColor,
+                ...$setup.buttonTheme
               }
             }, [
               createVNode(_component_VueNextSelect, {
@@ -11623,7 +11628,8 @@ function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
                 ...$setup.placeholderColor,
                 ...$setup.primaryTheme,
                 ...$setup.secondaryTheme,
-                ...$setup.inputColor
+                ...$setup.inputColor,
+                ...$setup.buttonTheme
               }
             }, [
               createVNode(_component_VueNextSelect, {
