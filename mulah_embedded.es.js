@@ -8393,7 +8393,7 @@ const _hoisted_10$c = {
   class: "mulah-modal__content-text"
 };
 const _hoisted_11$b = /* @__PURE__ */ createVNode("p", null, "Please re-enter the SMS code again", -1);
-const _hoisted_12$a = {
+const _hoisted_12$9 = {
   key: 4,
   class: "mulah-modal__content-text"
 };
@@ -8416,7 +8416,7 @@ function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
               _hoisted_9$c
             ])) : $props.specification == "verification" ? (openBlock(), createBlock("div", _hoisted_10$c, [
               _hoisted_11$b
-            ])) : $props.specification == "registration" ? (openBlock(), createBlock("div", _hoisted_12$a, [
+            ])) : $props.specification == "registration" ? (openBlock(), createBlock("div", _hoisted_12$9, [
               _hoisted_13$6
             ])) : createCommentVNode("", true),
             createVNode("button", {
@@ -11110,7 +11110,7 @@ const _hoisted_8$a = /* @__PURE__ */ createTextVNode(" OTP code should be receiv
 const _hoisted_9$9 = { class: "mulah-phone__alert-span-first" };
 const _hoisted_10$9 = /* @__PURE__ */ createTextVNode(" Didn't receive the OTP Code? ");
 const _hoisted_11$9 = { class: "mulah-phone__button" };
-const _hoisted_12$9 = { class: "mulah-home__footer" };
+const _hoisted_12$8 = { class: "mulah-home__footer" };
 const _hoisted_13$5 = /* @__PURE__ */ createTextVNode("- Powered by ");
 const _hoisted_14$5 = /* @__PURE__ */ createTextVNode(" -");
 function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
@@ -11174,7 +11174,7 @@ function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
         }, "Verify Now", 4)
       ])
     ]),
-    createVNode("div", _hoisted_12$9, [
+    createVNode("div", _hoisted_12$8, [
       createVNode("h6", { style: $setup.textColor }, [
         _hoisted_13$5,
         createVNode("a", {
@@ -11541,7 +11541,7 @@ const _hoisted_10$8 = {
   class: "mulah-registration__validation"
 };
 const _hoisted_11$8 = /* @__PURE__ */ createVNode("p", null, "*Please insert your birthday", -1);
-const _hoisted_12$8 = { class: "mulah-registration__input__container" };
+const _hoisted_12$7 = { class: "mulah-registration__input__container" };
 const _hoisted_13$4 = { key: 2 };
 const _hoisted_14$4 = {
   key: 3,
@@ -11644,7 +11644,7 @@ function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
             _hoisted_11$8
           ])) : createCommentVNode("", true)
         ]),
-        createVNode("div", _hoisted_12$8, [
+        createVNode("div", _hoisted_12$7, [
           createVNode("p", { style: $setup.headerColor }, "Email", 4),
           !$setup.skipEmail ? withDirectives((openBlock(), createBlock("input", {
             key: 0,
@@ -12009,7 +12009,7 @@ const _hoisted_10$7 = {
   href: "javascript:void(0)"
 };
 const _hoisted_11$7 = { class: "arrow_positions" };
-const _hoisted_12$7 = /* @__PURE__ */ createVNode("hr", null, null, -1);
+const _hoisted_12$6 = /* @__PURE__ */ createVNode("hr", null, null, -1);
 const _hoisted_13$3 = /* @__PURE__ */ createVNode("p", null, "Terms and Conditions", -1);
 const _hoisted_14$3 = { class: "arrow_positions" };
 const _hoisted_15$3 = /* @__PURE__ */ createVNode("hr", null, null, -1);
@@ -12101,7 +12101,7 @@ const _sfc_render$m = /* @__PURE__ */ _withId$2((_ctx, _cache, $props, $setup, $
         }, null, 8, ["color"])
       ])
     ], 4),
-    _hoisted_12$7,
+    _hoisted_12$6,
     createVNode("div", {
       class: "mulah-overview__content__navigation",
       onClick: _cache[5] || (_cache[5] = (...args) => $props.toTnc && $props.toTnc(...args))
@@ -12166,38 +12166,40 @@ const _sfc_main$k = {
 };
 const _hoisted_1$j = { style: { "margin-top": "15px !important" } };
 const _hoisted_2$i = { class: "mulah-overview__card__container" };
-const _hoisted_3$b = { class: "mulah-overview__card" };
-const _hoisted_4$8 = { class: "mulah-overview__card__body--small" };
-const _hoisted_5$8 = { class: "mulah-overview__card__promotion--title" };
-const _hoisted_6$8 = { style: { "width": "250px !important" } };
-const _hoisted_7$7 = { class: "mulah-overview__card__promotion--points" };
-const _hoisted_8$7 = { style: { "margin-top": "15px!important", "margin-bottom": "10px!important" } };
-const _hoisted_9$6 = /* @__PURE__ */ createVNode("em", null, "Tap Here for Terms and Conditions", -1);
-const _hoisted_10$6 = { class: "mulah-overview__button-container" };
-const _hoisted_11$6 = { style: { "width": "100% !important", "display": "flex !important", "align-items": "center !important", "justify-content": "center !important" } };
-const _hoisted_12$6 = /* @__PURE__ */ createVNode("div", { class: "footerLine" }, null, -1);
+const _hoisted_3$b = { class: "mulah-overview__card__body--small" };
+const _hoisted_4$8 = { class: "mulah-overview__card__promotion--title" };
+const _hoisted_5$8 = { style: { "width": "250px !important" } };
+const _hoisted_6$8 = { class: "mulah-overview__card__promotion--points" };
+const _hoisted_7$7 = { style: { "margin-top": "15px!important", "margin-bottom": "10px!important" } };
+const _hoisted_8$7 = /* @__PURE__ */ createVNode("em", null, "Tap Here for Terms and Conditions", -1);
+const _hoisted_9$6 = { class: "mulah-overview__button-container" };
+const _hoisted_10$6 = { style: { "width": "100% !important", "display": "flex !important", "align-items": "center !important", "justify-content": "center !important" } };
+const _hoisted_11$6 = /* @__PURE__ */ createVNode("div", { class: "footerLine" }, null, -1);
 function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_Gift = resolveComponent("Gift");
   const _component_Star = resolveComponent("Star");
   return openBlock(), createBlock("div", _hoisted_1$j, [
     (openBlock(true), createBlock(Fragment, null, renderList($props.brand.promotions, (promotion, index) => {
       return openBlock(), createBlock("div", _hoisted_2$i, [
-        createVNode("div", _hoisted_3$b, [
-          createVNode("div", _hoisted_4$8, [
-            createVNode("div", _hoisted_5$8, [
+        createVNode("div", {
+          class: "mulah-overview__card",
+          style: `background: ${$props.styling.card_background} !important`
+        }, [
+          createVNode("div", _hoisted_3$b, [
+            createVNode("div", _hoisted_4$8, [
               createVNode("div", null, [
                 createVNode(_component_Gift, {
                   size: 20,
                   color: `${$props.styling.icon_color} !important`
                 }, null, 8, ["color"])
               ]),
-              createVNode("div", _hoisted_6$8, [
+              createVNode("div", _hoisted_5$8, [
                 createVNode("p", {
                   style: `color: ${$props.styling.promotion_color} !important`
                 }, toDisplayString(promotion.title), 5)
               ])
             ]),
-            createVNode("div", _hoisted_7$7, [
+            createVNode("div", _hoisted_6$8, [
               createVNode(_component_Star, {
                 size: 15,
                 color: `${$props.styling.star_color} !important`
@@ -12212,19 +12214,19 @@ function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
               }, "points", 4)
             ])
           ])
-        ])
+        ], 4)
       ]);
     }), 256)),
-    createVNode("div", _hoisted_8$7, [
+    createVNode("div", _hoisted_7$7, [
       createVNode("p", {
         onClick: _cache[1] || (_cache[1] = ($event) => $props.changePath("tnc")),
         style: { "color": "grey !important", "font-size": ".9em!important" }
       }, [
-        _hoisted_9$6
+        _hoisted_8$7
       ])
     ]),
-    createVNode("div", _hoisted_10$6, [
-      createVNode("div", _hoisted_11$6, [
+    createVNode("div", _hoisted_9$6, [
+      createVNode("div", _hoisted_10$6, [
         createVNode("button", {
           class: "mulah-overview__button-container--orange",
           onClick: _cache[2] || (_cache[2] = ($event) => $props.changeTab("home")),
@@ -12237,7 +12239,7 @@ function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
         }, "Check History", 4)
       ])
     ]),
-    _hoisted_12$6
+    _hoisted_11$6
   ]);
 }
 var OverviewPoints = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$k]]);
@@ -15454,6 +15456,7 @@ const _sfc_main$9 = {
     const primaryTheme = { color: `${props.styling.icon_button_color} !important` };
     const cssVars = { "--color": `${props.styling.selected_color}`, "--unselect": `${props.styling.unselect_color}` };
     const buttonText = { color: `${props.styling.button_text_color} !important` };
+    const cardBackground = { background: `${props.styling.card_background} !important` };
     const formatDate = (string) => {
       const target = string.match(/(\d*)\/*-*(\d*)\/*-*(\d*).*/);
       return `${target[3]}/${target[2]}/${target[1]}`;
@@ -15469,7 +15472,8 @@ const _sfc_main$9 = {
       usedSelected,
       primaryTheme,
       changeTab: computed(() => props.changeTab),
-      buttonText
+      buttonText,
+      cardBackground
     };
   },
   components: {
@@ -15547,6 +15551,7 @@ function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
       (openBlock(true), createBlock(Fragment, null, renderList($setup.offers, (offer, index) => {
         return openBlock(), createBlock("div", {
           class: "mulah-sr__card",
+          style: $setup.cardBackground,
           key: `promotion-${index}`
         }, [
           createVNode("div", _hoisted_4$5, [
@@ -15578,13 +15583,14 @@ function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
               ])
             ])
           ])
-        ]);
+        ], 4);
       }), 128))
     ])) : (openBlock(), createBlock("div", _hoisted_12$3, [
       (openBlock(true), createBlock(Fragment, null, renderList($setup.used, (offer, index) => {
         return openBlock(), createBlock("div", {
           class: "mulah-sr__card",
-          key: `promotion-${index}`
+          key: `promotion-${index}`,
+          style: $setup.cardBackground
         }, [
           createVNode("div", _hoisted_13$2, [
             createVNode("div", _hoisted_14$2, [
@@ -15604,7 +15610,7 @@ function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
               offer.status == "Expired" ? (openBlock(), createBlock("p", _hoisted_20$1, toDisplayString(offer.status), 1)) : (openBlock(), createBlock("p", _hoisted_21$1, "Used on " + toDisplayString($setup.formatDate(offer.usedAt)), 1))
             ])
           ])
-        ]);
+        ], 4);
       }), 128))
     ])),
     createVNode("div", _hoisted_22$1, [
