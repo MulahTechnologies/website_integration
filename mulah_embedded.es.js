@@ -8115,6 +8115,7 @@ const CUSTOMER_OFFERS = `
       expiryDate
       used
       updatedAt
+      usedOn
       promotion {
         title
       }
@@ -21277,7 +21278,7 @@ const _sfc_main$5 = {
             code: item[0].voucher.code,
             expiryDate: item[0].expiryDate,
             status: item.length == 1 ? determineStatus(item[0]) : determineBundleStatus(item),
-            usedAt: item[0].updatedAt,
+            usedAt: item[0].usedOn,
             offers: item.map((record) => {
               return {
                 id: record.id,
