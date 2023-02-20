@@ -21310,7 +21310,7 @@ const _hoisted_20$2 = {
 };
 const _hoisted_21$2 = { style: { "margin-top": "15px !important", "margin-bottom": "10px !important" } };
 const _hoisted_22$2 = /* @__PURE__ */ createVNode("em", null, "Tap Here for Terms and Conditions", -1);
-const _hoisted_23$2 = { class: "mulah-vr__button__container" };
+const _hoisted_23$1 = { class: "mulah-vr__button__container" };
 function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_Coupon = resolveComponent("Coupon");
   const _component_Gift = resolveComponent("Gift");
@@ -21404,7 +21404,7 @@ function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
         _hoisted_22$2
       ])
     ]),
-    createVNode("div", _hoisted_23$2, [
+    createVNode("div", _hoisted_23$1, [
       createVNode("button", {
         style: {
           background: $setup.primaryTheme.color,
@@ -21955,11 +21955,11 @@ const _hoisted_22$1 = {
   key: 1,
   class: "mulah-history__expiry-status"
 };
-const _hoisted_23$1 = {
+const _hoisted_23 = {
   key: 2,
   class: "mulah-history__expiry-status"
 };
-const _hoisted_24$1 = /* @__PURE__ */ createVNode("div", null, [
+const _hoisted_24 = /* @__PURE__ */ createVNode("div", null, [
   /* @__PURE__ */ createVNode("h6", { class: "mulah-history__footer" }, [
     /* @__PURE__ */ createTextVNode(" Powered by "),
     /* @__PURE__ */ createVNode("a", { class: "mulah-link-blue" }, "MulahRewards.com")
@@ -22017,7 +22017,7 @@ function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
               createVNode("td", null, [
                 createVNode("div", null, [
                   createVNode("p", null, toDisplayString(x3.specification.charAt(0).toUpperCase() + x3.specification.slice(1)), 1),
-                  x3.expiryDays == 1 ? (openBlock(), createBlock("p", _hoisted_21$1, " Expires in " + toDisplayString(x3.expiryDays) + " Day ", 1)) : x3.expiryDays > 0 ? (openBlock(), createBlock("p", _hoisted_22$1, " Expires in " + toDisplayString(x3.expiryDays) + " Days ", 1)) : x3.expiryDays != null && x3.expiryDays <= 0 ? (openBlock(), createBlock("p", _hoisted_23$1, " Expired ")) : createCommentVNode("", true)
+                  x3.expiryDays == 1 ? (openBlock(), createBlock("p", _hoisted_21$1, " Expires in " + toDisplayString(x3.expiryDays) + " Day ", 1)) : x3.expiryDays > 0 ? (openBlock(), createBlock("p", _hoisted_22$1, " Expires in " + toDisplayString(x3.expiryDays) + " Days ", 1)) : x3.expiryDays != null && x3.expiryDays <= 0 ? (openBlock(), createBlock("p", _hoisted_23, " Expired ")) : createCommentVNode("", true)
                 ])
               ])
             ]);
@@ -22033,7 +22033,7 @@ function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
       class: "mulah-history-back-button",
       onClick: _cache[2] || (_cache[2] = ($event) => $props.changePath("history", true))
     }, " Back "),
-    _hoisted_24$1
+    _hoisted_24
   ]));
 }
 var BrandHistory = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$5]]);
@@ -22175,10 +22175,14 @@ const _sfc_main$3 = {
     const primaryTheme = { "--themeColor": `${styling.primary_theme}` };
     const secondaryTheme = { "--subTheme": `${styling.secondary_theme}` };
     const linkColor = { color: `${styling.link_color} !important` };
+    const inputColor = { color: `${styling.input_color} !important` };
+    const inputBackground = {
+      background: `${styling.input_background} !important`
+    };
     const buttonText = { color: `${styling.button_font} !important` };
     const buttonTheme = { "--buttonFont": styling.button_font };
-    const buttonStyle = ref(styling.button_font);
-    const subStyle = ref(styling.primary_theme);
+    const buttonStyle = styling.button_font;
+    const subStyle = styling.primary_theme;
     document.body.style.setProperty(
       "background",
       styling.main_background,
@@ -22244,9 +22248,13 @@ const _sfc_main$3 = {
       update,
       headerColor,
       inputStyle,
+      inputColor,
+      inputBackground,
       placeholderColor,
       primaryTheme,
       secondaryTheme,
+      subStyle,
+      buttonStyle,
       linkColor,
       buttonText,
       buttonTheme,
@@ -22261,36 +22269,34 @@ const _sfc_main$3 = {
     SuccessModal
   }
 };
-const _hoisted_1$2 = { class: "mulah-personal-info-container-limit" };
-const _hoisted_2$2 = { class: "mulah-personal-info-container" };
-const _hoisted_3$1 = { class: "mulah-personal-info__content" };
-const _hoisted_4$1 = { class: "mulah-personal-info__header" };
-const _hoisted_5$1 = { class: "mulah-personal-info__input" };
-const _hoisted_6$1 = { class: "mulah-personal-info__input__container" };
-const _hoisted_7$1 = {
+const _hoisted_1$2 = { class: "mulah-personal-info-content" };
+const _hoisted_2$2 = { class: "mulah-personal-info__header" };
+const _hoisted_3$1 = { class: "mulah-personal-info__input" };
+const _hoisted_4$1 = { class: "mulah-personal-info__input__container" };
+const _hoisted_5$1 = {
   key: 0,
   class: "mulah-personal-info__validation"
 };
-const _hoisted_8$1 = /* @__PURE__ */ createVNode("p", null, "*Please insert a name", -1);
-const _hoisted_9 = { class: "mulah-personal-info__input__container" };
-const _hoisted_10 = { class: "mulah-personal-info__input__container" };
-const _hoisted_11 = { class: "mulah-personal-info__input__bday" };
-const _hoisted_12 = { class: "mulah-personal-info-day-container" };
-const _hoisted_13 = { class: "mulah-personal-info-month-container" };
-const _hoisted_14 = { class: "mulah-personal-info-year-container" };
-const _hoisted_15 = { class: "mulah-personal-info__input__container" };
-const _hoisted_16 = {
+const _hoisted_6$1 = /* @__PURE__ */ createVNode("p", null, "*Please insert a name.", -1);
+const _hoisted_7$1 = { class: "mulah-personal-info__input__container" };
+const _hoisted_8$1 = { class: "mulah-personal-info__input__container" };
+const _hoisted_9 = { class: "mulah-personal-info__input__bday" };
+const _hoisted_10 = { class: "mulah-personal-info-day-container" };
+const _hoisted_11 = { class: "mulah-personal-info-month-container" };
+const _hoisted_12 = { class: "mulah-personal-info-year-container" };
+const _hoisted_13 = { class: "mulah-personal-info__input__container" };
+const _hoisted_14 = {
   key: 0,
   class: "mulah-personal-info__validation"
 };
-const _hoisted_17 = /* @__PURE__ */ createVNode("p", null, "*Please insert a valid email address", -1);
-const _hoisted_18 = { class: "mulah-personal-info__input__container" };
-const _hoisted_19 = { class: "mulah-personal-info__registered" };
-const _hoisted_20 = /* @__PURE__ */ createTextVNode(" * Registered on ");
-const _hoisted_21 = { class: "mulah-personal-info__button" };
-const _hoisted_22 = { class: "mulah-personal-info__footer" };
-const _hoisted_23 = /* @__PURE__ */ createTextVNode(" - Powered by ");
-const _hoisted_24 = /* @__PURE__ */ createTextVNode(" - ");
+const _hoisted_15 = /* @__PURE__ */ createVNode("p", null, "*Please insert a valid email address.", -1);
+const _hoisted_16 = { class: "mulah-personal-info__input__container" };
+const _hoisted_17 = { class: "mulah-personal-info__registered" };
+const _hoisted_18 = /* @__PURE__ */ createTextVNode(" * Registered on ");
+const _hoisted_19 = { class: "mulah-personal-info__button" };
+const _hoisted_20 = { class: "mulah-personal-info__footer" };
+const _hoisted_21 = /* @__PURE__ */ createVNode("hr", null, null, -1);
+const _hoisted_22 = /* @__PURE__ */ createTextVNode(" Powered by ");
 function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_ErrorModal = resolveComponent("ErrorModal");
   const _component_SuccessModal = resolveComponent("SuccessModal");
@@ -22300,130 +22306,148 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
   }, [
     createVNode("div", _hoisted_1$2, [
       createVNode("div", _hoisted_2$2, [
-        createVNode("div", _hoisted_3$1, [
-          createVNode("div", _hoisted_4$1, [
-            createVNode("p", { style: $setup.headerColor }, "Customer Info", 4)
+        createVNode("p", { style: $setup.headerColor }, "Customer Info", 4)
+      ]),
+      createVNode("div", _hoisted_3$1, [
+        createVNode("div", _hoisted_4$1, [
+          createVNode("p", { style: $setup.headerColor }, "Name", 4),
+          withDirectives(createVNode("input", {
+            "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => $setup.name = $event),
+            type: "text",
+            placeholder: "Enter Name",
+            style: {
+              ...$setup.inputColor,
+              ...$setup.inputBackground,
+              ...$setup.inputStyle,
+              ...$setup.placeholderColor
+            }
+          }, null, 4), [
+            [vModelText, $setup.name]
           ]),
-          createVNode("div", _hoisted_5$1, [
-            createVNode("div", _hoisted_6$1, [
-              createVNode("p", { style: $setup.headerColor }, "Name", 4),
-              withDirectives(createVNode("input", {
-                "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => $setup.name = $event),
-                type: "text",
-                placeholder: "Enter Name",
-                style: {
-                  ...$setup.mainBackground,
-                  ...$setup.inputStyle,
-                  ...$setup.placeholderColor
-                }
-              }, null, 4), [
-                [vModelText, $setup.name]
-              ]),
-              $setup.showWarningName() ? (openBlock(), createBlock("div", _hoisted_7$1, [
-                _hoisted_8$1
-              ])) : createCommentVNode("", true)
-            ]),
-            createVNode("div", _hoisted_9, [
-              createVNode("p", { style: $setup.headerColor }, "Phone Number", 4),
-              withDirectives(createVNode("input", {
-                "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => $setup.phoneNumber = $event),
-                type: "text",
-                disabled: ""
-              }, null, 512), [
-                [vModelText, $setup.phoneNumber]
-              ])
-            ]),
-            createVNode("div", _hoisted_10, [
-              createVNode("p", { style: $setup.headerColor }, "Birthday", 4),
-              createVNode("div", _hoisted_11, [
-                createVNode("div", _hoisted_12, [
-                  withDirectives(createVNode("input", {
-                    disabled: "",
-                    "onUpdate:modelValue": _cache[3] || (_cache[3] = ($event) => $setup.date = $event)
-                  }, null, 512), [
-                    [vModelText, $setup.date]
-                  ])
-                ]),
-                createVNode("div", _hoisted_13, [
-                  withDirectives(createVNode("input", {
-                    disabled: "",
-                    "onUpdate:modelValue": _cache[4] || (_cache[4] = ($event) => $setup.month = $event)
-                  }, null, 512), [
-                    [vModelText, $setup.month]
-                  ])
-                ]),
-                createVNode("div", _hoisted_14, [
-                  withDirectives(createVNode("input", {
-                    disabled: "",
-                    "onUpdate:modelValue": _cache[5] || (_cache[5] = ($event) => $setup.year = $event)
-                  }, null, 512), [
-                    [vModelText, $setup.year]
-                  ])
-                ])
-              ])
-            ]),
-            createVNode("div", _hoisted_15, [
-              createVNode("p", { style: $setup.headerColor }, "Email", 4),
-              withDirectives(createVNode("input", {
-                "onUpdate:modelValue": _cache[6] || (_cache[6] = ($event) => $setup.email = $event),
-                type: "email",
-                placeholder: "Enter Email Address",
-                class: "mulah-personal-info__input-email",
-                style: {
-                  ...$setup.mainBackground,
-                  ...$setup.inputStyle,
-                  ...$setup.placeholderColor
-                }
-              }, null, 4), [
-                [vModelText, $setup.email]
-              ]),
-              $setup.showWarning() ? (openBlock(), createBlock("div", _hoisted_16, [
-                _hoisted_17
-              ])) : createCommentVNode("", true)
-            ]),
-            createVNode("div", _hoisted_18, [
-              createVNode("div", _hoisted_19, [
-                createVNode("p", { style: $setup.headerColor }, [
-                  _hoisted_20,
-                  createVNode("span", {
-                    class: "mulah-personal-info__registered__date",
-                    style: { ...$setup.primaryTheme }
-                  }, toDisplayString($setup.registeredOn), 5)
-                ], 4)
-              ])
-            ])
-          ]),
-          createVNode("div", _hoisted_21, [
-            createVNode("button", {
-              onClick: _cache[7] || (_cache[7] = (...args) => $setup.update && $setup.update(...args)),
-              style: { ...$setup.primaryTheme, ...$setup.buttonText }
-            }, " Update ", 4)
+          $setup.showWarningName() ? (openBlock(), createBlock("div", _hoisted_5$1, [
+            _hoisted_6$1
+          ])) : createCommentVNode("", true)
+        ]),
+        createVNode("div", _hoisted_7$1, [
+          createVNode("p", { style: $setup.headerColor }, "Phone Number", 4),
+          withDirectives(createVNode("input", {
+            style: {
+              ...$setup.inputColor,
+              ...$setup.inputStyle,
+              ...$setup.placeholderColor
+            },
+            "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => $setup.phoneNumber = $event),
+            type: "text",
+            disabled: ""
+          }, null, 4), [
+            [vModelText, $setup.phoneNumber]
           ])
         ]),
-        createVNode("div", _hoisted_22, [
-          createVNode("h6", { style: $setup.headerColor }, [
-            _hoisted_23,
-            createVNode("a", {
-              class: "mulah-link-blue",
-              style: { ...$setup.linkColor }
-            }, "MulahRewards.com", 4),
-            _hoisted_24
-          ], 4)
+        createVNode("div", _hoisted_8$1, [
+          createVNode("p", { style: $setup.headerColor }, "Birthday", 4),
+          createVNode("div", _hoisted_9, [
+            createVNode("div", _hoisted_10, [
+              withDirectives(createVNode("input", {
+                style: {
+                  ...$setup.inputColor,
+                  ...$setup.inputStyle,
+                  ...$setup.placeholderColor
+                },
+                disabled: "",
+                "onUpdate:modelValue": _cache[3] || (_cache[3] = ($event) => $setup.date = $event)
+              }, null, 4), [
+                [vModelText, $setup.date]
+              ])
+            ]),
+            createVNode("div", _hoisted_11, [
+              withDirectives(createVNode("input", {
+                style: {
+                  ...$setup.inputColor,
+                  ...$setup.inputStyle,
+                  ...$setup.placeholderColor
+                },
+                disabled: "",
+                "onUpdate:modelValue": _cache[4] || (_cache[4] = ($event) => $setup.month = $event)
+              }, null, 4), [
+                [vModelText, $setup.month]
+              ])
+            ]),
+            createVNode("div", _hoisted_12, [
+              withDirectives(createVNode("input", {
+                style: {
+                  ...$setup.inputColor,
+                  ...$setup.inputStyle,
+                  ...$setup.placeholderColor
+                },
+                disabled: "",
+                "onUpdate:modelValue": _cache[5] || (_cache[5] = ($event) => $setup.year = $event)
+              }, null, 4), [
+                [vModelText, $setup.year]
+              ])
+            ])
+          ])
         ]),
-        $setup.error ? (openBlock(), createBlock(_component_ErrorModal, {
-          key: 0,
-          "close-modal": $setup.closeModal,
-          specification: "personal-info",
-          buttonStyle: $setup.buttonStyle,
-          subStyle: $setup.subStyle
-        }, null, 8, ["close-modal", "buttonStyle", "subStyle"])) : createCommentVNode("", true),
-        $setup.success ? (openBlock(), createBlock(_component_SuccessModal, {
-          key: 1,
-          "close-modal": $setup.continueModal,
-          specification: "personal-info"
-        }, null, 8, ["close-modal"])) : createCommentVNode("", true)
+        createVNode("div", _hoisted_13, [
+          createVNode("p", { style: $setup.headerColor }, "Email", 4),
+          withDirectives(createVNode("input", {
+            "onUpdate:modelValue": _cache[6] || (_cache[6] = ($event) => $setup.email = $event),
+            type: "email",
+            placeholder: "Enter Email Address",
+            class: "mulah-personal-info__input-email",
+            style: {
+              ...$setup.inputColor,
+              ...$setup.inputBackground,
+              ...$setup.inputStyle,
+              ...$setup.placeholderColor
+            }
+          }, null, 4), [
+            [vModelText, $setup.email]
+          ]),
+          $setup.showWarning() ? (openBlock(), createBlock("div", _hoisted_14, [
+            _hoisted_15
+          ])) : createCommentVNode("", true)
+        ]),
+        createVNode("div", _hoisted_16, [
+          createVNode("div", _hoisted_17, [
+            createVNode("p", { style: $setup.headerColor }, [
+              _hoisted_18,
+              createVNode("span", {
+                class: "mulah-personal-info__registered__date",
+                style: { ...$setup.primaryTheme }
+              }, toDisplayString($setup.registeredOn), 5)
+            ], 4)
+          ])
+        ])
+      ]),
+      createVNode("div", _hoisted_19, [
+        createVNode("button", {
+          onClick: _cache[7] || (_cache[7] = (...args) => $setup.update && $setup.update(...args)),
+          style: { ...$setup.primaryTheme, ...$setup.buttonText }
+        }, " Update ", 4)
       ])
-    ])
+    ]),
+    createVNode("div", _hoisted_20, [
+      _hoisted_21,
+      createVNode("h6", { style: $setup.headerColor }, [
+        _hoisted_22,
+        createVNode("a", {
+          class: "mulah-link-blue",
+          style: { ...$setup.linkColor }
+        }, "MulahRewards.com", 4)
+      ], 4)
+    ]),
+    $setup.error ? (openBlock(), createBlock(_component_ErrorModal, {
+      key: 0,
+      "close-modal": $setup.closeModal,
+      specification: "registration",
+      buttonStyle: $setup.buttonStyle,
+      subStyle: $setup.subStyle
+    }, null, 8, ["close-modal", "buttonStyle", "subStyle"])) : createCommentVNode("", true),
+    $setup.success ? (openBlock(), createBlock(_component_SuccessModal, {
+      key: 1,
+      "close-modal": $setup.continueModal,
+      specification: "personal-info"
+    }, null, 8, ["close-modal"])) : createCommentVNode("", true)
   ], 4);
 }
 var PersonalInfo = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$3]]);
