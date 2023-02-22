@@ -8425,11 +8425,11 @@ const _sfc_main$L = {
     const groupF = ref({});
     const svgFill = ref(null);
     groupF.value = {
-      background: `${props.subStyle} !important`,
-      "border-color": `${props.subStyle} !important`,
-      color: `${props.buttonStyle} !important`
+      background: `${props.modalSecondaryColor} !important`,
+      "border-color": `${props.modalSecondaryColor} !important`,
+      color: `${props.modalPrimaryColor} !important`
     };
-    svgFill.value = props.subStyle;
+    svgFill.value = props.modalSecondaryColor;
     return {
       groupF,
       svgFill
@@ -8438,8 +8438,8 @@ const _sfc_main$L = {
   props: {
     closeModal: Function,
     specification: String,
-    subStyle: String,
-    buttonStyle: String
+    modalSecondaryColor: String,
+    modalPrimaryColor: String
   },
   components: {
     Error: Error$1
@@ -8466,9 +8466,9 @@ const _hoisted_12$f = {
   key: 2,
   class: "mulah-modal__content-text"
 };
-const _hoisted_13$a = /* @__PURE__ */ createVNode("p", null, "Kindly check the", -1);
-const _hoisted_14$9 = /* @__PURE__ */ createVNode("p", null, "registration details again.", -1);
-const _hoisted_15$7 = {
+const _hoisted_13$b = /* @__PURE__ */ createVNode("p", null, "Kindly check the", -1);
+const _hoisted_14$b = /* @__PURE__ */ createVNode("p", null, "registration details again.", -1);
+const _hoisted_15$8 = {
   key: 3,
   class: "mulah-modal__content-text"
 };
@@ -8493,9 +8493,9 @@ function _sfc_render$L(_ctx, _cache, $props, $setup, $data, $options) {
               _hoisted_10$h,
               _hoisted_11$h
             ])) : $props.specification == "registration" ? (openBlock(), createBlock("div", _hoisted_12$f, [
-              _hoisted_13$a,
-              _hoisted_14$9
-            ])) : $props.specification == "personal-info" ? (openBlock(), createBlock("div", _hoisted_15$7, [
+              _hoisted_13$b,
+              _hoisted_14$b
+            ])) : $props.specification == "personal-info" ? (openBlock(), createBlock("div", _hoisted_15$8, [
               _hoisted_16$7,
               _hoisted_17$7
             ])) : createCommentVNode("", true),
@@ -10733,6 +10733,7 @@ var Home_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$J = {
   name: "Home",
   setup(props) {
+    const loadingStyles = ref(true);
     const phoneNumber = ref("");
     const loading = ref(false);
     const error = ref(false);
@@ -10745,10 +10746,10 @@ const _sfc_main$J = {
     });
     const textColor = ref(null);
     const buttonColor = ref(null);
-    const buttonStyle = ref(null);
+    const modalPrimaryColor = ref(null);
     const subBackground = ref(null);
     const subTextColor = ref(null);
-    const subStyle = ref(null);
+    const modalSecondaryColor = ref(null);
     const placeholderColor = ref(null);
     const linkColor = ref(null);
     const mainBackground = ref(null);
@@ -10758,7 +10759,7 @@ const _sfc_main$J = {
         const loginStyle = JSON.parse(loginQuery.data.value.brand.loginStyle);
         textColor.value = { color: `${loginStyle.text_color} !important` };
         buttonColor.value = { color: `${loginStyle.button_color} !important` };
-        buttonStyle.value = loginStyle.modal_color;
+        modalPrimaryColor.value = loginStyle.modal_color;
         subBackground.value = {
           background: `${loginStyle.sub_background} !important`,
           "border-color": `${loginStyle.sub_background} !important`
@@ -10766,7 +10767,7 @@ const _sfc_main$J = {
         subTextColor.value = {
           "--subText-color": loginStyle.sub_background
         };
-        subStyle.value = loginStyle.modal_background;
+        modalSecondaryColor.value = loginStyle.modal_background;
         placeholderColor.value = {
           "--placeholder-color": loginStyle.placeholder_color
         };
@@ -10779,6 +10780,7 @@ const _sfc_main$J = {
           loginStyle.main_background,
           "important"
         );
+        loadingStyles.value = false;
       }
     });
     const { executeMutation: checkpointsValidation } = useMutation(
@@ -10863,10 +10865,11 @@ const _sfc_main$J = {
       linkColor,
       mainBackground,
       inputPlaceholder,
-      buttonStyle,
-      subStyle,
+      modalPrimaryColor,
+      modalSecondaryColor,
       testing,
-      extension: extension2
+      extension: extension2,
+      loadingStyles
     };
   },
   inject: ["store"],
@@ -10879,28 +10882,38 @@ const _sfc_main$J = {
     ArrowDown
   }
 };
-const _hoisted_1$I = { class: "mulah-home__content" };
-const _hoisted_2$E = { class: "mulah-home__welcome" };
-const _hoisted_3$w = /* @__PURE__ */ createVNode("p", null, "Check Your Loyalty Points & Rewards", -1);
-const _hoisted_4$r = { class: "mulah-home__input-container" };
-const _hoisted_5$r = { class: "mulah-home__input" };
-const _hoisted_6$q = { class: "mulah-home__input__select" };
-const _hoisted_7$n = /* @__PURE__ */ createVNode("option", { value: "MY" }, "+60", -1);
-const _hoisted_8$l = /* @__PURE__ */ createVNode("option", { value: "ID" }, "+62", -1);
-const _hoisted_9$i = { class: "mulah-home__input mulah-home__input--button" };
-const _hoisted_10$g = /* @__PURE__ */ createVNode("hr", null, null, -1);
-const _hoisted_11$g = { class: "mulah-home__footer" };
-const _hoisted_12$e = /* @__PURE__ */ createTextVNode(" Powered by ");
+const _hoisted_1$I = {
+  key: 0,
+  class: "spinner-container"
+};
+const _hoisted_2$E = { class: "spinner-inner" };
+const _hoisted_3$w = { class: "mulah-home__content" };
+const _hoisted_4$r = { class: "mulah-home__welcome" };
+const _hoisted_5$r = /* @__PURE__ */ createVNode("p", null, "Check Your Loyalty Points & Rewards", -1);
+const _hoisted_6$q = { class: "mulah-home__input-container" };
+const _hoisted_7$n = { class: "mulah-home__input" };
+const _hoisted_8$l = { class: "mulah-home__input__select" };
+const _hoisted_9$i = /* @__PURE__ */ createVNode("option", { value: "MY" }, "+60", -1);
+const _hoisted_10$g = /* @__PURE__ */ createVNode("option", { value: "ID" }, "+62", -1);
+const _hoisted_11$g = { class: "mulah-home__input mulah-home__input--button" };
+const _hoisted_12$e = /* @__PURE__ */ createVNode("hr", null, null, -1);
+const _hoisted_13$a = { class: "mulah-home__footer" };
+const _hoisted_14$a = /* @__PURE__ */ createTextVNode(" Powered by ");
 function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
-  const _component_ArrowDown = resolveComponent("ArrowDown");
   const _component_Spinner = resolveComponent("Spinner");
+  const _component_ArrowDown = resolveComponent("ArrowDown");
   const _component_ErrorModal = resolveComponent("ErrorModal");
-  return openBlock(), createBlock("div", {
+  return $setup.loadingStyles ? (openBlock(), createBlock("div", _hoisted_1$I, [
+    createVNode("div", _hoisted_2$E, [
+      createVNode(_component_Spinner)
+    ])
+  ])) : (openBlock(), createBlock("div", {
+    key: 1,
     class: "mulah-home",
     style: $setup.mainBackground
   }, [
-    createVNode("div", _hoisted_1$I, [
-      createVNode("div", _hoisted_2$E, [
+    createVNode("div", _hoisted_3$w, [
+      createVNode("div", _hoisted_4$r, [
         createVNode("p", {
           class: "mulah-home__welcome-header",
           style: $setup.textColor
@@ -10909,11 +10922,11 @@ function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
           class: "mulah-home__welcome-header",
           style: $setup.textColor
         }, "Welcome !", 4),
-        _hoisted_3$w
+        _hoisted_5$r
       ]),
-      createVNode("div", _hoisted_4$r, [
-        createVNode("div", _hoisted_5$r, [
-          createVNode("div", _hoisted_6$q, [
+      createVNode("div", _hoisted_6$q, [
+        createVNode("div", _hoisted_7$n, [
+          createVNode("div", _hoisted_8$l, [
             createVNode("select", {
               style: [{ "height": "46px !important" }, { ...$setup.mainBackground, ...$setup.textColor, ...$setup.placeholderColor }],
               onChange: _cache[1] || (_cache[1] = (...args) => $setup.testing && $setup.testing(...args)),
@@ -10921,8 +10934,8 @@ function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
               id: "mulah-home__input__countryCode",
               class: "mulah-home__select"
             }, [
-              _hoisted_7$n,
-              _hoisted_8$l
+              _hoisted_9$i,
+              _hoisted_10$g
             ], 36),
             createVNode(_component_ArrowDown, {
               size: 18,
@@ -10948,7 +10961,7 @@ function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
             class: "fas fa-check-circle"
           }, null, 4))
         ]),
-        createVNode("div", _hoisted_9$i, [
+        createVNode("div", _hoisted_11$g, [
           $setup.loading ? (openBlock(), createBlock(_component_Spinner, { key: 0 })) : (openBlock(), createBlock("button", {
             key: 1,
             onClick: _cache[4] || (_cache[4] = (...args) => $setup.checkpoints && $setup.checkpoints(...args)),
@@ -10959,10 +10972,10 @@ function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
         ])
       ])
     ]),
-    _hoisted_10$g,
-    createVNode("div", _hoisted_11$g, [
+    _hoisted_12$e,
+    createVNode("div", _hoisted_13$a, [
       createVNode("h6", null, [
-        _hoisted_12$e,
+        _hoisted_14$a,
         createVNode("a", {
           class: "mulah-link-blue",
           style: $setup.linkColor
@@ -10973,15 +10986,16 @@ function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
       key: 0,
       "close-modal": $setup.closeModal,
       specification: "home",
-      buttonStyle: $setup.buttonStyle,
-      subStyle: $setup.subStyle
-    }, null, 8, ["close-modal", "buttonStyle", "subStyle"])) : createCommentVNode("", true)
-  ], 4);
+      modalPrimaryColor: $setup.modalPrimaryColor,
+      modalSecondaryColor: $setup.modalSecondaryColor
+    }, null, 8, ["close-modal", "modalPrimaryColor", "modalSecondaryColor"])) : createCommentVNode("", true)
+  ], 4));
 }
 var Home$1 = /* @__PURE__ */ _export_sfc(_sfc_main$J, [["render", _sfc_render$J]]);
 const _sfc_main$I = {
   name: "SuccessSvg",
   props: {
+    color: String,
     size: Number
   }
 };
@@ -10997,7 +11011,7 @@ function _sfc_render$I(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createBlock("svg", {
     width: $props.size,
     height: $props.size,
-    style: { fill: "#42B84A" },
+    style: { fill: $props.color },
     id: "Layer_1",
     "data-name": "Layer 1",
     xmlns: "http://www.w3.org/2000/svg",
@@ -11005,22 +11019,38 @@ function _sfc_render$I(_ctx, _cache, $props, $setup, $data, $options) {
   }, [
     _hoisted_1$H,
     _hoisted_2$D
-  ], 8, ["width", "height"]);
+  ], 12, ["width", "height"]);
 }
 var Success = /* @__PURE__ */ _export_sfc(_sfc_main$I, [["render", _sfc_render$I]]);
 var SuccessModal_vue_vue_type_style_index_0_scoped_true_lang = "";
 const _sfc_main$H = {
   name: "SuccessModal",
+  setup(props) {
+    const groupF = ref({});
+    const svgFill = ref(null);
+    groupF.value = {
+      background: `${props.modalSecondaryColor} !important`,
+      "border-color": `${props.modalSecondaryColor} !important`,
+      color: `${props.modalPrimaryColor} !important`
+    };
+    svgFill.value = props.modalSecondaryColor;
+    return {
+      groupF,
+      svgFill
+    };
+  },
   props: {
     closeModal: Function,
-    specification: String
+    specification: String,
+    modalSecondaryColor: String,
+    modalPrimaryColor: String
   },
   components: {
     Success
   }
 };
-const _withId$4 = /* @__PURE__ */ withScopeId("data-v-4124ab6a");
-pushScopeId("data-v-4124ab6a");
+const _withId$4 = /* @__PURE__ */ withScopeId("data-v-6f0f1508");
+pushScopeId("data-v-6f0f1508");
 const _hoisted_1$G = /* @__PURE__ */ createVNode("div", { class: "mulah-overlay" }, null, -1);
 const _hoisted_2$C = { class: "mulah-modal" };
 const _hoisted_3$v = { class: "mulah-modal__container" };
@@ -11050,7 +11080,10 @@ const _sfc_render$H = /* @__PURE__ */ _withId$4((_ctx, _cache, $props, $setup, $
       createVNode("div", _hoisted_3$v, [
         createVNode("div", _hoisted_4$q, [
           createVNode("div", _hoisted_5$q, [
-            createVNode(_component_Success, { size: 80 }),
+            createVNode(_component_Success, {
+              size: 80,
+              fill: $setup.svgFill
+            }, null, 8, ["fill"]),
             $props.specification == "registration" ? (openBlock(), createBlock("div", _hoisted_6$p, [
               _hoisted_7$m
             ])) : $props.specification == "personal-info" ? (openBlock(), createBlock("div", _hoisted_8$k, [
@@ -11059,20 +11092,22 @@ const _sfc_render$H = /* @__PURE__ */ _withId$4((_ctx, _cache, $props, $setup, $
               _hoisted_11$f
             ])) : createCommentVNode("", true),
             createVNode("button", {
+              style: $setup.groupF,
               class: "mulah-modal__content-button-success",
               onClick: _cache[1] || (_cache[1] = (...args) => $props.closeModal && $props.closeModal(...args))
-            }, " Back ")
+            }, " Back ", 4)
           ])
         ])
       ])
     ])
   ]);
 });
-var SuccessModal = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$H], ["__scopeId", "data-v-4124ab6a"]]);
+var SuccessModal = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$H], ["__scopeId", "data-v-6f0f1508"]]);
 var PhoneVerification_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$G = {
   name: "PhoneVerification",
   setup(props) {
+    const loadingStyles = ref(true);
     let timer = ref(30);
     let tries = ref(0);
     const code = ref(null);
@@ -11101,10 +11136,10 @@ const _sfc_main$G = {
     });
     const textColor = ref(null);
     const buttonColor = ref(null);
-    const buttonStyle = ref(null);
+    const modalPrimaryColor = ref(null);
     const subBackground = ref(null);
     const subTextColor = ref(null);
-    const subStyle = ref(null);
+    const modalSecondaryColor = ref(null);
     const placeholderColor = ref(null);
     const linkColor = ref(null);
     const mainBackground = ref(null);
@@ -11115,7 +11150,7 @@ const _sfc_main$G = {
         );
         textColor.value = { color: `${loginStyle.text_color} !important` };
         buttonColor.value = { color: `${loginStyle.button_color} !important` };
-        buttonStyle.value = loginStyle.modal_color;
+        modalPrimaryColor.value = loginStyle.modal_color;
         subBackground.value = {
           background: `${loginStyle.sub_background} !important`,
           "border-color": `${loginStyle.sub_background} !important`
@@ -11123,7 +11158,7 @@ const _sfc_main$G = {
         subTextColor.value = {
           "--subText-color": loginStyle.sub_background
         };
-        subStyle.value = loginStyle.modal_background;
+        modalSecondaryColor.value = loginStyle.modal_background;
         placeholderColor.value = {
           "--placeholder-color": loginStyle.placeholder_color
         };
@@ -11136,6 +11171,7 @@ const _sfc_main$G = {
           loginStyle.main_background,
           "important"
         );
+        loadingStyles.value = false;
       }
     });
     function startInterval() {
@@ -11247,9 +11283,10 @@ const _sfc_main$G = {
       placeholderColor,
       linkColor,
       mainBackground,
-      buttonStyle,
-      subStyle,
-      extension: extension2
+      modalPrimaryColor,
+      modalSecondaryColor,
+      extension: extension2,
+      loadingStyles
     };
   },
   inject: ["store"],
@@ -11258,43 +11295,55 @@ const _sfc_main$G = {
   },
   components: {
     ErrorModal,
-    SuccessModal
+    SuccessModal,
+    Spinner
   }
 };
-const _hoisted_1$F = { class: "mulah-phone__content" };
-const _hoisted_2$B = /* @__PURE__ */ createVNode("p", null, "Verify Your Mobile", -1);
-const _hoisted_3$u = { class: "mulah-phone__welcome" };
-const _hoisted_4$p = /* @__PURE__ */ createTextVNode(" Enter the OTP Code sent to ");
-const _hoisted_5$p = { class: "mulah-phone__input" };
-const _hoisted_6$o = { class: "mulah-phone__alert" };
-const _hoisted_7$l = /* @__PURE__ */ createTextVNode(" OTP code should be received in ");
-const _hoisted_8$j = { class: "mulah-phone__alert-span-first" };
-const _hoisted_9$g = /* @__PURE__ */ createTextVNode(" Didn't receive the OTP Code? ");
-const _hoisted_10$e = { class: "mulah-phone__button" };
-const _hoisted_11$e = { class: "mulah-phone__footer" };
-const _hoisted_12$d = /* @__PURE__ */ createTextVNode(" - Powered by ");
-const _hoisted_13$9 = /* @__PURE__ */ createTextVNode(" - ");
+const _hoisted_1$F = {
+  key: 0,
+  class: "spinner-container"
+};
+const _hoisted_2$B = { class: "spinner-inner" };
+const _hoisted_3$u = { class: "mulah-phone__content" };
+const _hoisted_4$p = /* @__PURE__ */ createVNode("p", null, "Verify Your Mobile", -1);
+const _hoisted_5$p = { class: "mulah-phone__welcome" };
+const _hoisted_6$o = /* @__PURE__ */ createTextVNode(" Enter the OTP Code sent to ");
+const _hoisted_7$l = { class: "mulah-phone__input" };
+const _hoisted_8$j = { class: "mulah-phone__alert" };
+const _hoisted_9$g = /* @__PURE__ */ createTextVNode(" OTP code should be received in ");
+const _hoisted_10$e = { class: "mulah-phone__alert-span-first" };
+const _hoisted_11$e = /* @__PURE__ */ createTextVNode(" Didn't receive the OTP Code? ");
+const _hoisted_12$d = { class: "mulah-phone__button" };
+const _hoisted_13$9 = { class: "mulah-phone__footer" };
+const _hoisted_14$9 = /* @__PURE__ */ createTextVNode(" - Powered by ");
+const _hoisted_15$7 = /* @__PURE__ */ createTextVNode(" - ");
 function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_Spinner = resolveComponent("Spinner");
   const _component_ErrorModal = resolveComponent("ErrorModal");
   const _component_SuccessModal = resolveComponent("SuccessModal");
-  return openBlock(), createBlock("div", {
+  return $setup.loadingStyles ? (openBlock(), createBlock("div", _hoisted_1$F, [
+    createVNode("div", _hoisted_2$B, [
+      createVNode(_component_Spinner)
+    ])
+  ])) : (openBlock(), createBlock("div", {
+    key: 1,
     class: "mulah-phone",
     style: $setup.mainBackground
   }, [
-    createVNode("div", _hoisted_1$F, [
+    createVNode("div", _hoisted_3$u, [
       createVNode("div", {
         class: "mulah-phone__header",
         style: $setup.textColor
       }, [
-        _hoisted_2$B,
-        createVNode("div", _hoisted_3$u, [
+        _hoisted_4$p,
+        createVNode("div", _hoisted_5$p, [
           createVNode("p", { style: $setup.textColor }, [
-            _hoisted_4$p,
+            _hoisted_6$o,
             createVNode("span", { style: $setup.subTextColor }, toDisplayString($setup.extension) + " " + toDisplayString($options.store.state.phoneNumber), 5)
           ], 4)
         ])
       ], 4),
-      createVNode("div", _hoisted_5$p, [
+      createVNode("div", _hoisted_7$l, [
         withDirectives(createVNode("input", {
           style: {
             ...$setup.textColor,
@@ -11308,20 +11357,20 @@ function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
           [vModelText, $setup.code]
         ])
       ]),
-      createVNode("div", _hoisted_6$o, [
+      createVNode("div", _hoisted_8$j, [
         $setup.timer != 0 ? (openBlock(), createBlock("p", {
           key: 0,
           style: $setup.textColor
         }, [
-          _hoisted_7$l,
-          createVNode("span", _hoisted_8$j, [
+          _hoisted_9$g,
+          createVNode("span", _hoisted_10$e, [
             createVNode("em", { style: $setup.subTextColor }, "00:" + toDisplayString($setup.timer >= 10 ? $setup.timer : $setup.timerValues[$setup.timer]), 5)
           ])
         ], 4)) : $setup.timer == 0 && $setup.tries < 2 ? (openBlock(), createBlock("p", {
           key: 1,
           style: $setup.textColor
         }, [
-          _hoisted_9$g,
+          _hoisted_11$e,
           createVNode("span", {
             style: $setup.subTextColor,
             onClick: _cache[2] || (_cache[2] = (...args) => $setup.resend && $setup.resend(...args))
@@ -11331,36 +11380,38 @@ function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
           style: $setup.textColor
         }, " Didn't receive the OTP Code? Please contact us at www.mulahrewards.com ", 4)) : createCommentVNode("", true)
       ]),
-      createVNode("div", _hoisted_10$e, [
+      createVNode("div", _hoisted_12$d, [
         createVNode("button", {
           style: { ...$setup.buttonColor, ...$setup.subBackground },
           onClick: _cache[3] || (_cache[3] = (...args) => $setup.validateCode && $setup.validateCode(...args))
         }, " Verify Now ", 4)
       ])
     ]),
-    createVNode("div", _hoisted_11$e, [
+    createVNode("div", _hoisted_13$9, [
       createVNode("h6", null, [
-        _hoisted_12$d,
+        _hoisted_14$9,
         createVNode("a", {
           class: "mulah-link-blue",
           style: $setup.linkColor
         }, "MulahRewards.com", 4),
-        _hoisted_13$9
+        _hoisted_15$7
       ])
     ]),
     $setup.error ? (openBlock(), createBlock(_component_ErrorModal, {
       key: 0,
       "close-modal": $setup.closeModal,
       specification: "verification",
-      buttonStyle: $setup.buttonStyle,
-      subStyle: $setup.subStyle
-    }, null, 8, ["close-modal", "buttonStyle", "subStyle"])) : createCommentVNode("", true),
+      modalPrimaryColor: $setup.modalPrimaryColor,
+      modalSecondaryColor: $setup.modalSecondaryColor
+    }, null, 8, ["close-modal", "modalPrimaryColor", "modalSecondaryColor"])) : createCommentVNode("", true),
     $setup.success ? (openBlock(), createBlock(_component_SuccessModal, {
       key: 1,
       "close-modal": $setup.continueModal,
-      specification: "verification"
-    }, null, 8, ["close-modal"])) : createCommentVNode("", true)
-  ], 4);
+      specification: "verification",
+      modalPrimaryColor: $setup.modalPrimaryColor,
+      modalSecondaryColor: $setup.modalSecondaryColor
+    }, null, 8, ["close-modal", "modalPrimaryColor", "modalSecondaryColor"])) : createCommentVNode("", true)
+  ], 4));
 }
 var PhoneVerification = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["render", _sfc_render$G]]);
 var x$1 = { inheritAttrs: false, name: "vue-input", props: { modelValue: { required: true, type: String }, placeholder: { required: true, type: String }, disabled: { required: true, type: Boolean }, tabindex: { required: true, type: Number }, autofocus: { required: true, type: Boolean } }, emits: ["update:modelValue", "input", "change", "focus", "blur", "escape"], setup(t6, n2) {
@@ -11502,6 +11553,7 @@ var Registration_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$F = {
   name: "Registration",
   setup(props) {
+    const loadingStyles = ref(true);
     const name = ref(null);
     const email = ref("");
     const date = ref(null);
@@ -11535,8 +11587,8 @@ const _sfc_main$F = {
     const inputBackgroundColor = ref(null);
     const buttonText = ref(null);
     const buttonTheme = ref(null);
-    const buttonStyle = ref(null);
-    const subStyle = ref(null);
+    const modalPrimaryColor = ref(null);
+    const modalSecondaryColor = ref(null);
     watch(result2.fetching, (fetchStatus) => {
       if (!fetchStatus) {
         const style = JSON.parse(result2.data.value.brand.registrationStyle);
@@ -11561,13 +11613,14 @@ const _sfc_main$F = {
         mainBackground.value = {
           background: `${style.main_background} !important`
         };
-        buttonStyle.value = style.button_font;
-        subStyle.value = style.primary_theme;
+        modalPrimaryColor.value = style.button_font;
+        modalSecondaryColor.value = style.primary_theme;
         document.body.style.setProperty(
           "background",
           style.main_background,
           "important"
         );
+        loadingStyles.value = false;
       }
     });
     const { executeMutation: registerCustomerInfo } = useMutation(
@@ -11696,15 +11749,16 @@ const _sfc_main$F = {
       placeholderColor,
       primaryTheme,
       secondaryTheme,
-      subStyle,
-      buttonStyle,
+      modalSecondaryColor,
+      modalPrimaryColor,
       linkColor,
       inputColor,
       buttonText,
       buttonTheme,
       showWarningName,
       showWarningBirthday,
-      fetching: result2.fetching
+      fetching: result2.fetching,
+      loadingStyles
     };
   },
   props: {
@@ -11713,57 +11767,69 @@ const _sfc_main$F = {
   components: {
     VueNextSelect: L$1,
     ErrorModal,
-    SuccessModal
+    SuccessModal,
+    Spinner
   }
 };
 const _hoisted_1$E = {
   key: 0,
+  class: "spinner-container"
+};
+const _hoisted_2$A = { class: "spinner-inner" };
+const _hoisted_3$t = {
+  key: 0,
   class: "mulah-registration"
 };
-const _hoisted_2$A = { class: "mulah-registration__content" };
-const _hoisted_3$t = { class: "mulah-registration__welcome" };
-const _hoisted_4$o = { class: "mulah-registration__input" };
-const _hoisted_5$o = { class: "mulah-registration__input__container" };
-const _hoisted_6$n = {
+const _hoisted_4$o = { class: "mulah-registration__content" };
+const _hoisted_5$o = { class: "mulah-registration__welcome" };
+const _hoisted_6$n = { class: "mulah-registration__input" };
+const _hoisted_7$k = { class: "mulah-registration__input__container" };
+const _hoisted_8$i = {
   key: 0,
   class: "mulah-registration__validation"
 };
-const _hoisted_7$k = /* @__PURE__ */ createVNode("p", null, "*Please insert a name.", -1);
-const _hoisted_8$i = { class: "mulah-registration__input__container" };
-const _hoisted_9$f = { class: "mulah-registration__input__bday" };
-const _hoisted_10$d = {
+const _hoisted_9$f = /* @__PURE__ */ createVNode("p", null, "*Please insert a name.", -1);
+const _hoisted_10$d = { class: "mulah-registration__input__container" };
+const _hoisted_11$d = { class: "mulah-registration__input__bday" };
+const _hoisted_12$c = {
   key: 0,
   class: "mulah-registration__validation"
 };
-const _hoisted_11$d = /* @__PURE__ */ createVNode("p", null, "*Please insert your birthday.", -1);
-const _hoisted_12$c = { class: "mulah-registration__input__container" };
-const _hoisted_13$8 = { key: 2 };
-const _hoisted_14$8 = {
+const _hoisted_13$8 = /* @__PURE__ */ createVNode("p", null, "*Please insert your birthday.", -1);
+const _hoisted_14$8 = { class: "mulah-registration__input__container" };
+const _hoisted_15$6 = { key: 2 };
+const _hoisted_16$6 = {
   key: 3,
   class: "mulah-registration__validation"
 };
-const _hoisted_15$6 = /* @__PURE__ */ createVNode("p", null, "*Please insert a valid email address.", -1);
-const _hoisted_16$6 = /* @__PURE__ */ createVNode("span", null, "No email address", -1);
-const _hoisted_17$6 = { class: "mulah-registration__button" };
-const _hoisted_18$5 = { class: "mulah-registration__footer" };
-const _hoisted_19$5 = /* @__PURE__ */ createVNode("hr", null, null, -1);
-const _hoisted_20$5 = /* @__PURE__ */ createTextVNode(" Powered by ");
+const _hoisted_17$6 = /* @__PURE__ */ createVNode("p", null, "*Please insert a valid email address.", -1);
+const _hoisted_18$5 = /* @__PURE__ */ createVNode("span", null, "No email address", -1);
+const _hoisted_19$5 = { class: "mulah-registration__button" };
+const _hoisted_20$5 = { class: "mulah-registration__footer" };
+const _hoisted_21$5 = /* @__PURE__ */ createVNode("hr", null, null, -1);
+const _hoisted_22$4 = /* @__PURE__ */ createTextVNode(" Powered by ");
 function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_Spinner = resolveComponent("Spinner");
   const _component_VueNextSelect = resolveComponent("VueNextSelect");
   const _component_ErrorModal = resolveComponent("ErrorModal");
   const _component_SuccessModal = resolveComponent("SuccessModal");
-  return openBlock(), createBlock("div", {
+  return $setup.loadingStyles ? (openBlock(), createBlock("div", _hoisted_1$E, [
+    createVNode("div", _hoisted_2$A, [
+      createVNode(_component_Spinner)
+    ])
+  ])) : (openBlock(), createBlock("div", {
+    key: 1,
     id: "mulah-app",
     style: $setup.mainBackground
   }, [
-    !$setup.fetching ? (openBlock(), createBlock("div", _hoisted_1$E, [
-      createVNode("div", _hoisted_2$A, [
-        createVNode("div", _hoisted_3$t, [
+    !$setup.fetching ? (openBlock(), createBlock("div", _hoisted_3$t, [
+      createVNode("div", _hoisted_4$o, [
+        createVNode("div", _hoisted_5$o, [
           createVNode("p", { style: $setup.headerColor }, "Registration", 4),
           createVNode("p", { style: $setup.headerColor }, "Please fill up your details.", 4)
         ]),
-        createVNode("div", _hoisted_4$o, [
-          createVNode("div", _hoisted_5$o, [
+        createVNode("div", _hoisted_6$n, [
+          createVNode("div", _hoisted_7$k, [
             createVNode("p", { style: $setup.headerColor }, "Name", 4),
             withDirectives(createVNode("input", {
               "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => $setup.name = $event),
@@ -11778,13 +11844,13 @@ function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
             }, null, 4), [
               [vModelText, $setup.name]
             ]),
-            $setup.showWarningName() ? (openBlock(), createBlock("div", _hoisted_6$n, [
-              _hoisted_7$k
+            $setup.showWarningName() ? (openBlock(), createBlock("div", _hoisted_8$i, [
+              _hoisted_9$f
             ])) : createCommentVNode("", true)
           ]),
-          createVNode("div", _hoisted_8$i, [
+          createVNode("div", _hoisted_10$d, [
             createVNode("p", { style: $setup.headerColor }, "Birthday", 4),
-            createVNode("div", _hoisted_9$f, [
+            createVNode("div", _hoisted_11$d, [
               createVNode("div", {
                 class: "mulah-day-container",
                 style: {
@@ -11851,11 +11917,11 @@ function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
                 }, null, 8, ["modelValue", "options"])
               ], 4)
             ]),
-            $setup.showWarningBirthday() ? (openBlock(), createBlock("div", _hoisted_10$d, [
-              _hoisted_11$d
+            $setup.showWarningBirthday() ? (openBlock(), createBlock("div", _hoisted_12$c, [
+              _hoisted_13$8
             ])) : createCommentVNode("", true)
           ]),
-          createVNode("div", _hoisted_12$c, [
+          createVNode("div", _hoisted_14$8, [
             createVNode("p", { style: $setup.headerColor }, "Email", 4),
             !$setup.skipEmail ? withDirectives((openBlock(), createBlock("input", {
               key: 0,
@@ -11882,9 +11948,9 @@ function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
             }, null, 12, ["disabled"])), [
               [vModelText, $setup.email]
             ]),
-            $setup.allowSkipEmail ? (openBlock(), createBlock("label", _hoisted_13$8)) : createCommentVNode("", true),
-            $setup.showWarning() ? (openBlock(), createBlock("div", _hoisted_14$8, [
-              _hoisted_15$6
+            $setup.allowSkipEmail ? (openBlock(), createBlock("label", _hoisted_15$6)) : createCommentVNode("", true),
+            $setup.showWarning() ? (openBlock(), createBlock("div", _hoisted_16$6, [
+              _hoisted_17$6
             ])) : createCommentVNode("", true),
             createVNode("label", {
               class: "mulah-pure-material-checkbox",
@@ -11896,21 +11962,21 @@ function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
               }, null, 512), [
                 [vModelCheckbox, $setup.skipEmail]
               ]),
-              _hoisted_16$6
+              _hoisted_18$5
             ], 4)
           ])
         ]),
-        createVNode("div", _hoisted_17$6, [
+        createVNode("div", _hoisted_19$5, [
           createVNode("button", {
             onClick: _cache[8] || (_cache[8] = (...args) => $setup.register && $setup.register(...args)),
             style: { ...$setup.primaryTheme, ...$setup.buttonText }
           }, " Continue ", 4)
         ])
       ]),
-      createVNode("div", _hoisted_18$5, [
-        _hoisted_19$5,
+      createVNode("div", _hoisted_20$5, [
+        _hoisted_21$5,
         createVNode("h6", null, [
-          _hoisted_20$5,
+          _hoisted_22$4,
           createVNode("a", {
             class: "mulah-link-blue",
             style: { ...$setup.linkColor }
@@ -11921,16 +11987,18 @@ function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
         key: 0,
         "close-modal": $setup.closeModal,
         specification: "registration",
-        buttonStyle: $setup.buttonStyle,
-        subStyle: $setup.subStyle
-      }, null, 8, ["close-modal", "buttonStyle", "subStyle"])) : createCommentVNode("", true),
+        modalPrimaryColor: $setup.modalPrimaryColor,
+        modalSecondaryColor: $setup.modalSecondaryColor
+      }, null, 8, ["close-modal", "modalPrimaryColor", "modalSecondaryColor"])) : createCommentVNode("", true),
       $setup.success ? (openBlock(), createBlock(_component_SuccessModal, {
         key: 1,
         "close-modal": $setup.continueModal,
-        specification: "registration"
-      }, null, 8, ["close-modal"])) : createCommentVNode("", true)
+        specification: "registration",
+        modalPrimaryColor: $setup.modalPrimaryColor,
+        modalSecondaryColor: $setup.modalSecondaryColor
+      }, null, 8, ["close-modal", "modalPrimaryColor", "modalSecondaryColor"])) : createCommentVNode("", true)
     ])) : createCommentVNode("", true)
-  ], 4);
+  ], 4));
 }
 var Registration = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$F]]);
 const _sfc_main$E = {
@@ -22181,8 +22249,8 @@ const _sfc_main$3 = {
     };
     const buttonText = { color: `${styling.button_font} !important` };
     const buttonTheme = { "--buttonFont": styling.button_font };
-    const buttonStyle = styling.button_font;
-    const subStyle = styling.primary_theme;
+    const modalPrimaryColor = styling.button_font;
+    const modalSecondaryColor = styling.primary_theme;
     document.body.style.setProperty(
       "background",
       styling.main_background,
@@ -22253,13 +22321,13 @@ const _sfc_main$3 = {
       placeholderColor,
       primaryTheme,
       secondaryTheme,
-      subStyle,
-      buttonStyle,
+      modalSecondaryColor,
+      modalPrimaryColor,
       linkColor,
       buttonText,
       buttonTheme,
-      buttonStyle,
-      subStyle,
+      modalPrimaryColor,
+      modalSecondaryColor,
       mainBackground,
       showWarningName
     };
@@ -22440,14 +22508,16 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
       key: 0,
       "close-modal": $setup.closeModal,
       specification: "registration",
-      buttonStyle: $setup.buttonStyle,
-      subStyle: $setup.subStyle
-    }, null, 8, ["close-modal", "buttonStyle", "subStyle"])) : createCommentVNode("", true),
+      modalPrimaryColor: $setup.modalPrimaryColor,
+      modalSecondaryColor: $setup.modalSecondaryColor
+    }, null, 8, ["close-modal", "modalPrimaryColor", "modalSecondaryColor"])) : createCommentVNode("", true),
     $setup.success ? (openBlock(), createBlock(_component_SuccessModal, {
       key: 1,
       "close-modal": $setup.continueModal,
-      specification: "personal-info"
-    }, null, 8, ["close-modal"])) : createCommentVNode("", true)
+      specification: "personal-info",
+      modalPrimaryColor: $setup.modalPrimaryColor,
+      modalSecondaryColor: $setup.modalSecondaryColor
+    }, null, 8, ["close-modal", "modalPrimaryColor", "modalSecondaryColor"])) : createCommentVNode("", true)
   ], 4);
 }
 var PersonalInfo = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$3]]);
