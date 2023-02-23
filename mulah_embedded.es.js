@@ -12927,7 +12927,7 @@ function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
       createVNode("div", _hoisted_10$a, [
         createVNode("button", {
           onClick: _cache[2] || (_cache[2] = ($event) => $props.changeTab("home")),
-          style: `background-color: ${$props.styling.back_color} !important; border-color: ${$props.styling.back_color} !important;margin-left: 0!important;width:100% !important;`
+          style: `color: ${$props.styling.back_font_color} !important; background-color: ${$props.styling.back_color} !important; border-color: ${$props.styling.back_color} !important;margin-left: 0!important;width:100% !important;`
         }, " Back ", 4)
       ])
     ]),
@@ -14830,12 +14830,21 @@ function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
       createVNode("div", _hoisted_13$5, [
         createVNode("button", {
           onClick: _cache[2] || (_cache[2] = ($event) => $props.changeTab("home")),
-          style: `background-color: ${$props.styling.back_color} !important; border-color: ${$props.styling.back_color} !important;margin-left: 0!important;`
+          style: `
+          color: ${$props.styling.back_font_color} !important; 
+          background-color: ${$props.styling.back_color} !important; 
+          border-color: ${$props.styling.back_color} !important;
+          margin-left: 0!important;
+          `
         }, " Back ", 4),
         createVNode("button", {
-          style: { "background-color": "#0bcf00 !important", "border-color": "#0bcf00 !important" },
+          style: `
+          color: ${$props.styling.check_font_color} !important; 
+          background-color: ${$props.styling.check_color} !important; 
+          border-color: ${$props.styling.check_color} !important;
+          `,
           onClick: _cache[3] || (_cache[3] = ($event) => $props.changeTab("onlineVouchers"))
-        }, " Check Vouchers ")
+        }, " Check Vouchers ", 4)
       ])
     ]),
     createVNode(_component_OverviewOnlineRedeem, {
