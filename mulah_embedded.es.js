@@ -8452,7 +8452,7 @@ const _hoisted_1$K = /* @__PURE__ */ createVNode("div", { class: "mulah-overlay"
 const _hoisted_2$H = { class: "mulah-modal" };
 const _hoisted_3$C = { class: "mulah-modal__container" };
 const _hoisted_4$x = { class: "mulah-modal__dialog" };
-const _hoisted_5$w = { class: "mulah-modal__content" };
+const _hoisted_5$x = { class: "mulah-modal__content" };
 const _hoisted_6$s = {
   key: 0,
   class: "mulah-modal__content-text"
@@ -8470,12 +8470,12 @@ const _hoisted_12$g = {
   class: "mulah-modal__content-text"
 };
 const _hoisted_13$b = /* @__PURE__ */ createVNode("p", null, "Kindly check the", -1);
-const _hoisted_14$a = /* @__PURE__ */ createVNode("p", null, "registration details again.", -1);
+const _hoisted_14$b = /* @__PURE__ */ createVNode("p", null, "registration details again.", -1);
 const _hoisted_15$8 = {
   key: 3,
   class: "mulah-modal__content-text"
 };
-const _hoisted_16$7 = /* @__PURE__ */ createVNode("p", null, "Kindly check your", -1);
+const _hoisted_16$8 = /* @__PURE__ */ createVNode("p", null, "Kindly check your", -1);
 const _hoisted_17$7 = /* @__PURE__ */ createVNode("p", null, "personal information again.", -1);
 function _sfc_render$L(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_Error = resolveComponent("Error");
@@ -8484,7 +8484,7 @@ function _sfc_render$L(_ctx, _cache, $props, $setup, $data, $options) {
     createVNode("div", _hoisted_2$H, [
       createVNode("div", _hoisted_3$C, [
         createVNode("div", _hoisted_4$x, [
-          createVNode("div", _hoisted_5$w, [
+          createVNode("div", _hoisted_5$x, [
             createVNode(_component_Error, {
               size: 80,
               fill: $setup.svgFill
@@ -8497,9 +8497,9 @@ function _sfc_render$L(_ctx, _cache, $props, $setup, $data, $options) {
               _hoisted_11$i
             ])) : $props.specification == "registration" ? (openBlock(), createBlock("div", _hoisted_12$g, [
               _hoisted_13$b,
-              _hoisted_14$a
+              _hoisted_14$b
             ])) : $props.specification == "personal-info" ? (openBlock(), createBlock("div", _hoisted_15$8, [
-              _hoisted_16$7,
+              _hoisted_16$8,
               _hoisted_17$7
             ])) : createCommentVNode("", true),
             createVNode("button", {
@@ -10750,12 +10750,12 @@ const _sfc_main$J = {
       }
     });
     const textColor = ref(null);
+    const textColorHex = ref(null);
     const secondaryTextColor = ref(null);
     const buttonColor = ref(null);
     const modalPrimaryColor = ref(null);
     const subBackground = ref(null);
     const inputBorder = ref(null);
-    const subTextColor = ref(null);
     const modalSecondaryColor = ref(null);
     const placeholderColor = ref(null);
     const linkColor = ref(null);
@@ -10765,6 +10765,7 @@ const _sfc_main$J = {
       if (!fetchStatus) {
         const loginStyle = JSON.parse(loginQuery.data.value.brand.loginStyle);
         textColor.value = { color: `${loginStyle.text_color} !important` };
+        textColorHex.value = loginStyle.text_color;
         secondaryTextColor.value = { color: `${loginStyle.secondary_text_color}!important` };
         buttonColor.value = { color: `${loginStyle.button_color} !important` };
         modalPrimaryColor.value = loginStyle.modal_color;
@@ -10773,10 +10774,7 @@ const _sfc_main$J = {
           "border-color": `${loginStyle.sub_background} !important`
         };
         inputBorder.value = {
-          "border-color": `${loginStyle.sub_background} !important`
-        };
-        subTextColor.value = {
-          "--subText-color": loginStyle.sub_background
+          "border-color": `${loginStyle.text_color} !important`
         };
         modalSecondaryColor.value = loginStyle.modal_background;
         placeholderColor.value = {
@@ -10786,11 +10784,9 @@ const _sfc_main$J = {
         mainBackground.value = {
           background: `${loginStyle.main_background} !important`
         };
-        document.body.style.setProperty(
-          "background",
-          loginStyle.main_background,
-          "important"
-        );
+        const div = document.getElementById("mulah-app");
+        div.style.cssText += `background-color: ${loginStyle.main_background} !important;`;
+        document.body.style.setProperty("background", loginStyle.main_background, "important");
         loadingStyles.value = false;
       }
     });
@@ -10869,8 +10865,8 @@ const _sfc_main$J = {
       keyPress,
       checkpoints,
       textColor,
+      textColorHex,
       secondaryTextColor,
-      subTextColor,
       buttonColor,
       subBackground,
       inputBorder,
@@ -10900,17 +10896,21 @@ const _hoisted_1$I = {
   class: "spinner-container"
 };
 const _hoisted_2$G = { class: "spinner-inner" };
-const _hoisted_3$B = { class: "mulah-home__content" };
-const _hoisted_4$w = { class: "mulah-home__welcome" };
-const _hoisted_5$v = { class: "mulah-home__input-container" };
-const _hoisted_6$r = { class: "mulah-home__input" };
-const _hoisted_7$o = { class: "mulah-home__input__select" };
-const _hoisted_8$m = /* @__PURE__ */ createVNode("option", { value: "MY" }, "+60", -1);
-const _hoisted_9$j = /* @__PURE__ */ createVNode("option", { value: "ID" }, "+62", -1);
-const _hoisted_10$h = { class: "mulah-home__input mulah-home__input--button" };
-const _hoisted_11$h = /* @__PURE__ */ createVNode("hr", null, null, -1);
-const _hoisted_12$f = { class: "mulah-home__footer" };
-const _hoisted_13$a = /* @__PURE__ */ createTextVNode(" Powered by ");
+const _hoisted_3$B = {
+  key: 1,
+  class: "mulah-home"
+};
+const _hoisted_4$w = { class: "mulah-home__content" };
+const _hoisted_5$w = { class: "mulah-home__welcome" };
+const _hoisted_6$r = { class: "mulah-home__input-container" };
+const _hoisted_7$o = { class: "mulah-home__input" };
+const _hoisted_8$m = { class: "mulah-home__input__select" };
+const _hoisted_9$j = /* @__PURE__ */ createVNode("option", { value: "MY" }, "+60", -1);
+const _hoisted_10$h = /* @__PURE__ */ createVNode("option", { value: "ID" }, "+62", -1);
+const _hoisted_11$h = { class: "mulah-home__input mulah-home__input--button" };
+const _hoisted_12$f = /* @__PURE__ */ createVNode("hr", null, null, -1);
+const _hoisted_13$a = { class: "mulah-home__footer" };
+const _hoisted_14$a = /* @__PURE__ */ createTextVNode(" Powered by ");
 function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_Spinner = resolveComponent("Spinner");
   const _component_ArrowDown = resolveComponent("ArrowDown");
@@ -10919,13 +10919,9 @@ function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
     createVNode("div", _hoisted_2$G, [
       createVNode(_component_Spinner)
     ])
-  ])) : (openBlock(), createBlock("div", {
-    key: 1,
-    class: "mulah-home",
-    style: $setup.mainBackground
-  }, [
-    createVNode("div", _hoisted_3$B, [
-      createVNode("div", _hoisted_4$w, [
+  ])) : (openBlock(), createBlock("div", _hoisted_3$B, [
+    createVNode("div", _hoisted_4$w, [
+      createVNode("div", _hoisted_5$w, [
         createVNode("p", {
           class: "mulah-home__welcome-header",
           style: $setup.textColor
@@ -10936,9 +10932,9 @@ function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
         }, "Welcome !", 4),
         createVNode("p", { style: $setup.secondaryTextColor }, "Check Your Loyalty Points & Rewards", 4)
       ]),
-      createVNode("div", _hoisted_5$v, [
-        createVNode("div", _hoisted_6$r, [
-          createVNode("div", _hoisted_7$o, [
+      createVNode("div", _hoisted_6$r, [
+        createVNode("div", _hoisted_7$o, [
+          createVNode("div", _hoisted_8$m, [
             createVNode("select", {
               style: [{ "height": "46px !important" }, { ...$setup.inputBorder, ...$setup.mainBackground, ...$setup.textColor, ...$setup.placeholderColor }],
               onChange: _cache[1] || (_cache[1] = (...args) => $setup.testing && $setup.testing(...args)),
@@ -10946,13 +10942,13 @@ function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
               id: "mulah-home__input__countryCode",
               class: "mulah-home__select"
             }, [
-              _hoisted_8$m,
-              _hoisted_9$j
+              _hoisted_9$j,
+              _hoisted_10$h
             ], 36),
             createVNode(_component_ArrowDown, {
               size: 18,
-              color: "#646464"
-            })
+              color: $setup.textColorHex
+            }, null, 8, ["color"])
           ]),
           withDirectives(createVNode("input", {
             type: "tel",
@@ -10973,7 +10969,7 @@ function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
             class: "fas fa-check-circle"
           }, null, 4))
         ]),
-        createVNode("div", _hoisted_10$h, [
+        createVNode("div", _hoisted_11$h, [
           $setup.loading ? (openBlock(), createBlock(_component_Spinner, { key: 0 })) : (openBlock(), createBlock("button", {
             key: 1,
             onClick: _cache[4] || (_cache[4] = (...args) => $setup.checkpoints && $setup.checkpoints(...args)),
@@ -10984,10 +10980,10 @@ function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
         ])
       ])
     ]),
-    _hoisted_11$h,
-    createVNode("div", _hoisted_12$f, [
+    _hoisted_12$f,
+    createVNode("div", _hoisted_13$a, [
       createVNode("h6", { style: $setup.secondaryTextColor }, [
-        _hoisted_13$a,
+        _hoisted_14$a,
         createVNode("a", {
           class: "mulah-link-blue",
           style: $setup.linkColor
@@ -11001,7 +10997,7 @@ function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
       modalPrimaryColor: $setup.modalPrimaryColor,
       modalSecondaryColor: $setup.modalSecondaryColor
     }, null, 8, ["close-modal", "modalPrimaryColor", "modalSecondaryColor"])) : createCommentVNode("", true)
-  ], 4));
+  ]));
 }
 var Home$1 = /* @__PURE__ */ _export_sfc(_sfc_main$J, [["render", _sfc_render$J]]);
 const _sfc_main$I = {
@@ -11069,7 +11065,7 @@ const _hoisted_1$G = /* @__PURE__ */ createVNode("div", { class: "mulah-overlay"
 const _hoisted_2$E = { class: "mulah-modal" };
 const _hoisted_3$A = { class: "mulah-modal__container" };
 const _hoisted_4$v = { class: "mulah-modal__dialog" };
-const _hoisted_5$u = { class: "mulah-modal__content" };
+const _hoisted_5$v = { class: "mulah-modal__content" };
 const _hoisted_6$q = {
   key: 0,
   class: "mulah-modal__content-text"
@@ -11093,7 +11089,7 @@ const _sfc_render$H = /* @__PURE__ */ _withId$4((_ctx, _cache, $props, $setup, $
     createVNode("div", _hoisted_2$E, [
       createVNode("div", _hoisted_3$A, [
         createVNode("div", _hoisted_4$v, [
-          createVNode("div", _hoisted_5$u, [
+          createVNode("div", _hoisted_5$v, [
             createVNode(_component_Success, {
               size: 80,
               fill: $setup.svgFill
@@ -11180,11 +11176,9 @@ const _sfc_main$G = {
         mainBackground.value = {
           background: `${loginStyle.main_background} !important`
         };
-        document.body.style.setProperty(
-          "background",
-          loginStyle.main_background,
-          "important"
-        );
+        const div = document.getElementById("mulah-app");
+        div.style.cssText += `background-color: ${loginStyle.main_background} !important;`;
+        document.body.style.setProperty("background", loginStyle.main_background, "important");
         loadingStyles.value = false;
       }
     });
@@ -11318,19 +11312,23 @@ const _hoisted_1$F = {
   class: "spinner-container"
 };
 const _hoisted_2$D = { class: "spinner-inner" };
-const _hoisted_3$z = { class: "mulah-phone__content" };
-const _hoisted_4$u = /* @__PURE__ */ createVNode("p", null, "Verify Your Mobile", -1);
-const _hoisted_5$t = { class: "mulah-phone__welcome" };
-const _hoisted_6$p = /* @__PURE__ */ createTextVNode(" Enter the OTP Code sent to ");
-const _hoisted_7$m = { class: "mulah-phone__input" };
-const _hoisted_8$k = { class: "mulah-phone__alert" };
-const _hoisted_9$h = /* @__PURE__ */ createTextVNode(" OTP code should be received in ");
-const _hoisted_10$f = { class: "mulah-phone__alert-span-first" };
-const _hoisted_11$f = /* @__PURE__ */ createTextVNode(" Didn't receive the OTP Code? ");
-const _hoisted_12$e = { class: "mulah-phone__button" };
-const _hoisted_13$9 = { class: "mulah-phone__footer" };
-const _hoisted_14$9 = /* @__PURE__ */ createTextVNode(" - Powered by ");
-const _hoisted_15$7 = /* @__PURE__ */ createTextVNode(" - ");
+const _hoisted_3$z = {
+  key: 1,
+  class: "mulah-phone"
+};
+const _hoisted_4$u = { class: "mulah-phone__content" };
+const _hoisted_5$u = /* @__PURE__ */ createVNode("p", null, "Verify Your Mobile", -1);
+const _hoisted_6$p = { class: "mulah-phone__welcome" };
+const _hoisted_7$m = /* @__PURE__ */ createTextVNode(" Enter the OTP Code sent to ");
+const _hoisted_8$k = { class: "mulah-phone__input" };
+const _hoisted_9$h = { class: "mulah-phone__alert" };
+const _hoisted_10$f = /* @__PURE__ */ createTextVNode(" OTP code should be received in ");
+const _hoisted_11$f = { class: "mulah-phone__alert-span-first" };
+const _hoisted_12$e = /* @__PURE__ */ createTextVNode(" Didn't receive the OTP Code? ");
+const _hoisted_13$9 = { class: "mulah-phone__button" };
+const _hoisted_14$9 = { class: "mulah-phone__footer" };
+const _hoisted_15$7 = /* @__PURE__ */ createTextVNode(" - Powered by ");
+const _hoisted_16$7 = /* @__PURE__ */ createTextVNode(" - ");
 function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_Spinner = resolveComponent("Spinner");
   const _component_ErrorModal = resolveComponent("ErrorModal");
@@ -11339,25 +11337,21 @@ function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
     createVNode("div", _hoisted_2$D, [
       createVNode(_component_Spinner)
     ])
-  ])) : (openBlock(), createBlock("div", {
-    key: 1,
-    class: "mulah-phone",
-    style: $setup.mainBackground
-  }, [
-    createVNode("div", _hoisted_3$z, [
+  ])) : (openBlock(), createBlock("div", _hoisted_3$z, [
+    createVNode("div", _hoisted_4$u, [
       createVNode("div", {
         class: "mulah-phone__header",
         style: $setup.textColor
       }, [
-        _hoisted_4$u,
-        createVNode("div", _hoisted_5$t, [
+        _hoisted_5$u,
+        createVNode("div", _hoisted_6$p, [
           createVNode("p", { style: $setup.textColor }, [
-            _hoisted_6$p,
+            _hoisted_7$m,
             createVNode("span", { style: $setup.subTextColor }, toDisplayString($setup.extension) + " " + toDisplayString($options.store.state.phoneNumber), 5)
           ], 4)
         ])
       ], 4),
-      createVNode("div", _hoisted_7$m, [
+      createVNode("div", _hoisted_8$k, [
         withDirectives(createVNode("input", {
           style: {
             ...$setup.textColor,
@@ -11371,20 +11365,20 @@ function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
           [vModelText, $setup.code]
         ])
       ]),
-      createVNode("div", _hoisted_8$k, [
+      createVNode("div", _hoisted_9$h, [
         $setup.timer != 0 ? (openBlock(), createBlock("p", {
           key: 0,
           style: $setup.textColor
         }, [
-          _hoisted_9$h,
-          createVNode("span", _hoisted_10$f, [
+          _hoisted_10$f,
+          createVNode("span", _hoisted_11$f, [
             createVNode("em", { style: $setup.subTextColor }, "00:" + toDisplayString($setup.timer >= 10 ? $setup.timer : $setup.timerValues[$setup.timer]), 5)
           ])
         ], 4)) : $setup.timer == 0 && $setup.tries < 2 ? (openBlock(), createBlock("p", {
           key: 1,
           style: $setup.textColor
         }, [
-          _hoisted_11$f,
+          _hoisted_12$e,
           createVNode("span", {
             style: $setup.subTextColor,
             onClick: _cache[2] || (_cache[2] = (...args) => $setup.resend && $setup.resend(...args))
@@ -11394,21 +11388,21 @@ function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
           style: $setup.textColor
         }, " Didn't receive the OTP Code? Please contact us at www.mulahrewards.com ", 4)) : createCommentVNode("", true)
       ]),
-      createVNode("div", _hoisted_12$e, [
+      createVNode("div", _hoisted_13$9, [
         createVNode("button", {
           style: { ...$setup.buttonColor, ...$setup.subBackground },
           onClick: _cache[3] || (_cache[3] = (...args) => $setup.validateCode && $setup.validateCode(...args))
         }, " Verify Now ", 4)
       ])
     ]),
-    createVNode("div", _hoisted_13$9, [
+    createVNode("div", _hoisted_14$9, [
       createVNode("h6", null, [
-        _hoisted_14$9,
+        _hoisted_15$7,
         createVNode("a", {
           class: "mulah-link-blue",
           style: $setup.linkColor
         }, "MulahRewards.com", 4),
-        _hoisted_15$7
+        _hoisted_16$7
       ])
     ]),
     $setup.error ? (openBlock(), createBlock(_component_ErrorModal, {
@@ -11425,7 +11419,7 @@ function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
       modalPrimaryColor: $setup.modalPrimaryColor,
       modalSecondaryColor: $setup.modalSecondaryColor
     }, null, 8, ["close-modal", "modalPrimaryColor", "modalSecondaryColor"])) : createCommentVNode("", true)
-  ], 4));
+  ]));
 }
 var PhoneVerification = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["render", _sfc_render$G]]);
 var x$1 = { inheritAttrs: false, name: "vue-input", props: { modelValue: { required: true, type: String }, placeholder: { required: true, type: String }, disabled: { required: true, type: Boolean }, tabindex: { required: true, type: Number }, autofocus: { required: true, type: Boolean } }, emits: ["update:modelValue", "input", "change", "focus", "blur", "escape"], setup(t6, n2) {
@@ -11589,7 +11583,6 @@ const _sfc_main$F = {
         brandId: store2.state.token
       }
     });
-    const mainBackground = ref(null);
     const headerColor = ref(null);
     const inputStyle = ref(null);
     const placeholderColor = ref(null);
@@ -11624,9 +11617,9 @@ const _sfc_main$F = {
         inputBackgroundColor.value = { "--inputBackgroundColor": `${style.input_background}` };
         buttonText.value = { color: `${style.button_font} !important` };
         buttonTheme.value = { "--buttonFont": style.button_font };
-        mainBackground.value = {
-          background: `${style.main_background} !important`
-        };
+        const div = document.getElementById("mulah-app");
+        div.style.cssText += `background-color: ${style.main_background} !important;`;
+        document.body.style.setProperty("background", styling.main_background, "important");
         modalPrimaryColor.value = style.button_font;
         modalSecondaryColor.value = style.primary_theme;
         document.body.style.setProperty(
@@ -11756,7 +11749,6 @@ const _sfc_main$F = {
       yearRange,
       register,
       headerColor,
-      mainBackground,
       inputStyle,
       inputBackground,
       inputBackgroundColor,
@@ -11790,38 +11782,39 @@ const _hoisted_1$E = {
   class: "spinner-container"
 };
 const _hoisted_2$C = { class: "spinner-inner" };
-const _hoisted_3$y = {
+const _hoisted_3$y = { key: 1 };
+const _hoisted_4$t = {
   key: 0,
   class: "mulah-registration"
 };
-const _hoisted_4$t = { class: "mulah-registration__content" };
-const _hoisted_5$s = { class: "mulah-registration__welcome" };
-const _hoisted_6$o = { class: "mulah-registration__input" };
-const _hoisted_7$l = { class: "mulah-registration__input__container" };
-const _hoisted_8$j = {
+const _hoisted_5$t = { class: "mulah-registration__content" };
+const _hoisted_6$o = { class: "mulah-registration__welcome" };
+const _hoisted_7$l = { class: "mulah-registration__input" };
+const _hoisted_8$j = { class: "mulah-registration__input__container" };
+const _hoisted_9$g = {
   key: 0,
   class: "mulah-registration__validation"
 };
-const _hoisted_9$g = /* @__PURE__ */ createVNode("p", null, "*Please insert a name.", -1);
-const _hoisted_10$e = { class: "mulah-registration__input__container" };
-const _hoisted_11$e = { class: "mulah-registration__input__bday" };
-const _hoisted_12$d = {
+const _hoisted_10$e = /* @__PURE__ */ createVNode("p", null, "*Please insert a name.", -1);
+const _hoisted_11$e = { class: "mulah-registration__input__container" };
+const _hoisted_12$d = { class: "mulah-registration__input__bday" };
+const _hoisted_13$8 = {
   key: 0,
   class: "mulah-registration__validation"
 };
-const _hoisted_13$8 = /* @__PURE__ */ createVNode("p", null, "*Please insert your birthday.", -1);
-const _hoisted_14$8 = { class: "mulah-registration__input__container" };
-const _hoisted_15$6 = { key: 2 };
-const _hoisted_16$6 = {
+const _hoisted_14$8 = /* @__PURE__ */ createVNode("p", null, "*Please insert your birthday.", -1);
+const _hoisted_15$6 = { class: "mulah-registration__input__container" };
+const _hoisted_16$6 = { key: 2 };
+const _hoisted_17$6 = {
   key: 3,
   class: "mulah-registration__validation"
 };
-const _hoisted_17$6 = /* @__PURE__ */ createVNode("p", null, "*Please insert a valid email address.", -1);
-const _hoisted_18$6 = /* @__PURE__ */ createVNode("span", null, "No email address", -1);
-const _hoisted_19$5 = { class: "mulah-registration__button" };
-const _hoisted_20$5 = { class: "mulah-registration__footer" };
-const _hoisted_21$5 = /* @__PURE__ */ createVNode("hr", null, null, -1);
-const _hoisted_22$4 = /* @__PURE__ */ createTextVNode(" Powered by ");
+const _hoisted_18$6 = /* @__PURE__ */ createVNode("p", null, "*Please insert a valid email address.", -1);
+const _hoisted_19$5 = /* @__PURE__ */ createVNode("span", null, "No email address", -1);
+const _hoisted_20$5 = { class: "mulah-registration__button" };
+const _hoisted_21$5 = { class: "mulah-registration__footer" };
+const _hoisted_22$4 = /* @__PURE__ */ createVNode("hr", null, null, -1);
+const _hoisted_23$4 = /* @__PURE__ */ createTextVNode(" Powered by ");
 function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_Spinner = resolveComponent("Spinner");
   const _component_VueNextSelect = resolveComponent("VueNextSelect");
@@ -11831,19 +11824,15 @@ function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
     createVNode("div", _hoisted_2$C, [
       createVNode(_component_Spinner)
     ])
-  ])) : (openBlock(), createBlock("div", {
-    key: 1,
-    id: "mulah-app",
-    style: $setup.mainBackground
-  }, [
-    !$setup.fetching ? (openBlock(), createBlock("div", _hoisted_3$y, [
-      createVNode("div", _hoisted_4$t, [
-        createVNode("div", _hoisted_5$s, [
+  ])) : (openBlock(), createBlock("div", _hoisted_3$y, [
+    !$setup.fetching ? (openBlock(), createBlock("div", _hoisted_4$t, [
+      createVNode("div", _hoisted_5$t, [
+        createVNode("div", _hoisted_6$o, [
           createVNode("p", { style: $setup.headerColor }, "Registration", 4),
           createVNode("p", { style: $setup.headerColor }, "Please fill up your details.", 4)
         ]),
-        createVNode("div", _hoisted_6$o, [
-          createVNode("div", _hoisted_7$l, [
+        createVNode("div", _hoisted_7$l, [
+          createVNode("div", _hoisted_8$j, [
             createVNode("p", { style: $setup.headerColor }, "Name", 4),
             withDirectives(createVNode("input", {
               "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => $setup.name = $event),
@@ -11858,13 +11847,13 @@ function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
             }, null, 4), [
               [vModelText, $setup.name]
             ]),
-            $setup.showWarningName() ? (openBlock(), createBlock("div", _hoisted_8$j, [
-              _hoisted_9$g
+            $setup.showWarningName() ? (openBlock(), createBlock("div", _hoisted_9$g, [
+              _hoisted_10$e
             ])) : createCommentVNode("", true)
           ]),
-          createVNode("div", _hoisted_10$e, [
+          createVNode("div", _hoisted_11$e, [
             createVNode("p", { style: $setup.headerColor }, "Birthday", 4),
-            createVNode("div", _hoisted_11$e, [
+            createVNode("div", _hoisted_12$d, [
               createVNode("div", {
                 class: "mulah-day-container",
                 style: {
@@ -11931,11 +11920,11 @@ function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
                 }, null, 8, ["modelValue", "options"])
               ], 4)
             ]),
-            $setup.showWarningBirthday() ? (openBlock(), createBlock("div", _hoisted_12$d, [
-              _hoisted_13$8
+            $setup.showWarningBirthday() ? (openBlock(), createBlock("div", _hoisted_13$8, [
+              _hoisted_14$8
             ])) : createCommentVNode("", true)
           ]),
-          createVNode("div", _hoisted_14$8, [
+          createVNode("div", _hoisted_15$6, [
             createVNode("p", { style: $setup.headerColor }, "Email", 4),
             !$setup.skipEmail ? withDirectives((openBlock(), createBlock("input", {
               key: 0,
@@ -11962,9 +11951,9 @@ function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
             }, null, 12, ["disabled"])), [
               [vModelText, $setup.email]
             ]),
-            $setup.allowSkipEmail ? (openBlock(), createBlock("label", _hoisted_15$6)) : createCommentVNode("", true),
-            $setup.showWarning() ? (openBlock(), createBlock("div", _hoisted_16$6, [
-              _hoisted_17$6
+            $setup.allowSkipEmail ? (openBlock(), createBlock("label", _hoisted_16$6)) : createCommentVNode("", true),
+            $setup.showWarning() ? (openBlock(), createBlock("div", _hoisted_17$6, [
+              _hoisted_18$6
             ])) : createCommentVNode("", true),
             createVNode("label", {
               class: "mulah-pure-material-checkbox",
@@ -11976,21 +11965,21 @@ function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
               }, null, 512), [
                 [vModelCheckbox, $setup.skipEmail]
               ]),
-              _hoisted_18$6
+              _hoisted_19$5
             ], 4)
           ])
         ]),
-        createVNode("div", _hoisted_19$5, [
+        createVNode("div", _hoisted_20$5, [
           createVNode("button", {
             onClick: _cache[8] || (_cache[8] = (...args) => $setup.register && $setup.register(...args)),
             style: { ...$setup.primaryTheme, ...$setup.buttonText }
           }, " Continue ", 4)
         ])
       ]),
-      createVNode("div", _hoisted_20$5, [
-        _hoisted_21$5,
+      createVNode("div", _hoisted_21$5, [
+        _hoisted_22$4,
         createVNode("h6", null, [
-          _hoisted_22$4,
+          _hoisted_23$4,
           createVNode("a", {
             class: "mulah-link-blue",
             style: { ...$setup.linkColor }
@@ -12012,7 +12001,7 @@ function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
         modalSecondaryColor: $setup.modalSecondaryColor
       }, null, 8, ["close-modal", "modalPrimaryColor", "modalSecondaryColor"])) : createCommentVNode("", true)
     ])) : createCommentVNode("", true)
-  ], 4));
+  ]));
 }
 var Registration = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$F]]);
 const _sfc_main$E = {
@@ -12035,7 +12024,7 @@ const _hoisted_4$s = /* @__PURE__ */ createVNode("path", {
   d: "M112.67,9.41l.31,1.27h4.34a.56.56,0,0,1,0,1.11h-4.06l.32,1.32h3a.55.55,0,0,1,.55.55.55.55,0,0,1-.55.55h-2.71l.42,1.67h1.4a.56.56,0,1,1,0,1.11h-1.13l.5,2h-12.2l-2.38-9.6Z",
   transform: "translate(-87.14 -4.05)"
 }, null, -1);
-const _hoisted_5$r = /* @__PURE__ */ createVNode("polygon", { points: "12.58 4.56 25.86 4.56 25.25 2.1 11.97 2.1 12.58 4.56" }, null, -1);
+const _hoisted_5$s = /* @__PURE__ */ createVNode("polygon", { points: "12.58 4.56 25.86 4.56 25.25 2.1 11.97 2.1 12.58 4.56" }, null, -1);
 const _hoisted_6$n = /* @__PURE__ */ createVNode("path", {
   d: "M92.84,15.82a6.45,6.45,0,0,0-1.37-.37L92,4.52a.48.48,0,0,1,.52-.47h4a.89.89,0,0,1,.83.66.5.5,0,0,1-.5.66H93.32L93,12l7.72,7.92H117a.89.89,0,0,1,.82.66.5.5,0,0,1-.49.67H100.73a.89.89,0,0,1-.61-.28l-7.18-7.36Z",
   transform: "translate(-87.14 -4.05)"
@@ -12056,7 +12045,7 @@ function _sfc_render$E(_ctx, _cache, $props, $setup, $data, $options) {
     _hoisted_2$B,
     _hoisted_3$x,
     _hoisted_4$s,
-    _hoisted_5$r,
+    _hoisted_5$s,
     _hoisted_6$n
   ], 4);
 }
@@ -12144,7 +12133,7 @@ const _hoisted_4$r = /* @__PURE__ */ createVNode("path", {
   d: "M595.57,441.53h8.49a16.36,16.36,0,0,0-12.36-14.2C594.05,430.26,595.36,435.8,595.57,441.53Z",
   transform: "translate(-571.52 -427.33)"
 }, null, -1);
-const _hoisted_5$q = /* @__PURE__ */ createVNode("path", {
+const _hoisted_5$r = /* @__PURE__ */ createVNode("path", {
   d: "M580,441.53c.21-5.73,1.52-11.27,3.87-14.2a16.36,16.36,0,0,0-12.36,14.2Z",
   transform: "translate(-571.52 -427.33)"
 }, null, -1);
@@ -12172,7 +12161,7 @@ function _sfc_render$B(_ctx, _cache, $props, $setup, $data, $options) {
     _hoisted_2$y,
     _hoisted_3$v,
     _hoisted_4$r,
-    _hoisted_5$q,
+    _hoisted_5$r,
     _hoisted_6$m,
     _hoisted_7$k
   ], 4);
@@ -12204,7 +12193,7 @@ const _hoisted_4$q = /* @__PURE__ */ createVNode("rect", {
   height: "10.42",
   transform: "translate(2905.19 559.25) rotate(180)"
 }, null, -1);
-const _hoisted_5$p = /* @__PURE__ */ createVNode("rect", {
+const _hoisted_5$q = /* @__PURE__ */ createVNode("rect", {
   x: "2745.63",
   y: "431.46",
   width: "130.63",
@@ -12227,7 +12216,7 @@ function _sfc_render$A(_ctx, _cache, $props, $setup, $data, $options) {
     _hoisted_2$x,
     _hoisted_3$u,
     _hoisted_4$q,
-    _hoisted_5$p
+    _hoisted_5$q
   ], 4);
 }
 var Tnc$1 = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$A]]);
@@ -12279,7 +12268,7 @@ const _hoisted_4$p = /* @__PURE__ */ createVNode("path", {
   d: "M2869.81,3364.05c.26.13.58.26.83.4-.2-.11-.45-.22-.68-.32Z",
   transform: "translate(-2832.98 -3312.95)"
 }, null, -1);
-const _hoisted_5$o = /* @__PURE__ */ createVNode("path", {
+const _hoisted_5$p = /* @__PURE__ */ createVNode("path", {
   d: "M2870.87,3364.58h0l0,0Z",
   transform: "translate(-2832.98 -3312.95)"
 }, null, -1);
@@ -12303,7 +12292,7 @@ function _sfc_render$y(_ctx, _cache, $props, $setup, $data, $options) {
     _hoisted_2$w,
     _hoisted_3$t,
     _hoisted_4$p,
-    _hoisted_5$o,
+    _hoisted_5$p,
     _hoisted_6$l
   ], 4);
 }
@@ -12325,7 +12314,7 @@ const _hoisted_3$s = /* @__PURE__ */ createVNode("path", {
   transform: "translate(-248.8 -417.89)"
 }, null, -1);
 const _hoisted_4$o = /* @__PURE__ */ createVNode("polygon", { points: "0 4.29 0 44.88 23.61 24.81 0 4.29" }, null, -1);
-const _hoisted_5$n = /* @__PURE__ */ createVNode("polygon", { points: "44.78 24.81 68.39 44.88 68.39 4.28 44.78 24.81" }, null, -1);
+const _hoisted_5$o = /* @__PURE__ */ createVNode("polygon", { points: "44.78 24.81 68.39 44.88 68.39 4.28 44.78 24.81" }, null, -1);
 function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createBlock("svg", {
     style: `
@@ -12341,7 +12330,7 @@ function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
     _hoisted_2$v,
     _hoisted_3$s,
     _hoisted_4$o,
-    _hoisted_5$n
+    _hoisted_5$o
   ], 4);
 }
 var SmsRewards$1 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$x]]);
@@ -12397,7 +12386,7 @@ const _hoisted_1$v = /* @__PURE__ */ createVNode("a", { href: "#" }, "Website", 
 const _hoisted_2$u = { class: "arrow_positions" };
 const _hoisted_3$r = /* @__PURE__ */ createVNode("hr", null, null, -1);
 const _hoisted_4$n = /* @__PURE__ */ createVNode("a", { href: "#" }, "Delivery", -1);
-const _hoisted_5$m = { class: "arrow_positions" };
+const _hoisted_5$n = { class: "arrow_positions" };
 const _hoisted_6$k = /* @__PURE__ */ createVNode("hr", null, null, -1);
 const _hoisted_7$j = /* @__PURE__ */ createVNode("p", null, "Membership Rewards", -1);
 const _hoisted_8$i = { class: "arrow_positions" };
@@ -12454,7 +12443,7 @@ const _sfc_render$w = /* @__PURE__ */ _withId$3((_ctx, _cache, $props, $setup, $
           color: $props.styling.icon_color
         }, null, 8, ["color"]),
         _hoisted_4$n,
-        createVNode("div", _hoisted_5$m, [
+        createVNode("div", _hoisted_5$n, [
           createVNode(_component_ArrowRight, {
             size: 15,
             color: $props.styling.icon_color
@@ -12573,7 +12562,7 @@ const _hoisted_4$m = /* @__PURE__ */ createVNode("path", {
   d: "M215.45,250.07h3.48a1,1,0,0,0,1-1.29l-2.17-9.4h-4.13l.75,9.72A1,1,0,0,0,215.45,250.07Z",
   transform: "translate(-191.36 -239.38)"
 }, null, -1);
-const _hoisted_5$l = /* @__PURE__ */ createVNode("path", {
+const _hoisted_5$m = /* @__PURE__ */ createVNode("path", {
   d: "M226.93,250.07h3.4a.88.88,0,0,0,.78-1.3L226,239.38H221.9l3.81,9.85A1.3,1.3,0,0,0,226.93,250.07Z",
   transform: "translate(-191.36 -239.38)"
 }, null, -1);
@@ -12624,7 +12613,7 @@ function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
     _hoisted_2$t,
     _hoisted_3$q,
     _hoisted_4$m,
-    _hoisted_5$l,
+    _hoisted_5$m,
     _hoisted_6$j,
     _hoisted_7$i,
     _hoisted_8$h,
@@ -12655,7 +12644,7 @@ const _hoisted_4$l = /* @__PURE__ */ createVNode("path", {
   d: "M248.65,246.93a2,2,0,1,0,2,2A2,2,0,0,0,248.65,246.93Zm0,2.59a.56.56,0,0,1-.56-.56.56.56,0,1,1,1.12,0A.56.56,0,0,1,248.65,249.52Z",
   transform: "translate(-217.82 -221.69)"
 }, null, -1);
-const _hoisted_5$k = /* @__PURE__ */ createVNode("path", {
+const _hoisted_5$l = /* @__PURE__ */ createVNode("path", {
   d: "M245.56,249.12h-1.82l1.14,5.35L227,259l-6.34-29.78,17.85-4.56,1.1,5.16h1.82L240,223.08a1.67,1.67,0,0,0-2-1.34l-18.92,4.62a1.79,1.79,0,0,0-1.25,2.13l6.94,32.56a1.66,1.66,0,0,0,2,1.34l18.91-4.63a1.78,1.78,0,0,0,1.25-2.13Z",
   transform: "translate(-217.82 -221.69)"
 }, null, -1);
@@ -12686,7 +12675,7 @@ function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
     _hoisted_2$s,
     _hoisted_3$p,
     _hoisted_4$l,
-    _hoisted_5$k,
+    _hoisted_5$l,
     _hoisted_6$i,
     _hoisted_7$h,
     _hoisted_8$g
@@ -12718,7 +12707,7 @@ const _hoisted_4$k = /* @__PURE__ */ createVNode("rect", {
   rx: "0.51",
   ry: "0.51"
 }, null, -1);
-const _hoisted_5$j = /* @__PURE__ */ createVNode("rect", {
+const _hoisted_5$k = /* @__PURE__ */ createVNode("rect", {
   x: "5.83",
   y: "14.98",
   width: "3.82",
@@ -12751,7 +12740,7 @@ function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
     _hoisted_2$r,
     _hoisted_3$o,
     _hoisted_4$k,
-    _hoisted_5$j,
+    _hoisted_5$k,
     _hoisted_6$h,
     _hoisted_7$g
   ], 4);
@@ -12784,7 +12773,7 @@ const _hoisted_1$r = /* @__PURE__ */ createVNode("a", null, "Outlet Redemption",
 const _hoisted_2$q = { class: "arrow_positions" };
 const _hoisted_3$n = /* @__PURE__ */ createVNode("hr", null, null, -1);
 const _hoisted_4$j = /* @__PURE__ */ createVNode("a", null, "Online Redemption", -1);
-const _hoisted_5$i = { class: "arrow_positions" };
+const _hoisted_5$j = { class: "arrow_positions" };
 const _hoisted_6$g = /* @__PURE__ */ createVNode("hr", null, null, -1);
 const _hoisted_7$f = /* @__PURE__ */ createVNode("a", null, "Redemption History", -1);
 const _hoisted_8$f = { class: "arrow_positions" };
@@ -12824,7 +12813,7 @@ function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
         height: 35
       }, null, 8, ["color"]),
       _hoisted_4$j,
-      createVNode("div", _hoisted_5$i, [
+      createVNode("div", _hoisted_5$j, [
         createVNode(_component_ArrowRight, {
           size: 15,
           color: $props.styling.icon_color
@@ -12901,7 +12890,7 @@ const _hoisted_1$p = { style: { "margin-top": "15px !important" } };
 const _hoisted_2$p = { class: "mulah-overview__card__container" };
 const _hoisted_3$m = { class: "mulah-overview__card__body--small" };
 const _hoisted_4$i = { class: "mulah-overview__card__promotion--title" };
-const _hoisted_5$h = { style: { "width": "250px !important" } };
+const _hoisted_5$i = { style: { "width": "250px !important" } };
 const _hoisted_6$f = { class: "mulah-overview__card__promotion--points" };
 const _hoisted_7$e = { style: { "margin-top": "15px !important", "margin-bottom": "10px !important" } };
 const _hoisted_8$e = /* @__PURE__ */ createVNode("em", null, "Tap Here for Terms and Conditions", -1);
@@ -12926,7 +12915,7 @@ function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
                   color: `${$props.styling.icon_color} !important`
                 }, null, 8, ["color"])
               ]),
-              createVNode("div", _hoisted_5$h, [
+              createVNode("div", _hoisted_5$i, [
                 createVNode("p", {
                   style: `color: ${$props.styling.promotion_color} !important`
                 }, toDisplayString(promotion.title), 5)
@@ -14580,7 +14569,7 @@ const _hoisted_4$h = /* @__PURE__ */ createVNode("path", {
   d: "M213.23,203.45a7.14,7.14,0,0,0-1.87-1.53,3.77,3.77,0,0,0-2-.57,1.92,1.92,0,0,0-.82.25,2.77,2.77,0,0,0-.37.28,2.86,2.86,0,0,0-.29.33,1,1,0,0,0-.14.26.74.74,0,0,0,0,.21,1.44,1.44,0,0,0,.44.66,7,7,0,0,0,2,1.23,12.61,12.61,0,0,0,2.39.78,10.54,10.54,0,0,0,1.25.22l.32,0,.26,0a.13.13,0,0,0,.08,0,0,0,0,0,0,0-.05h0A5.13,5.13,0,0,0,213.23,203.45Z",
   transform: "translate(-188.17 -192.45)"
 }, null, -1);
-const _hoisted_5$g = /* @__PURE__ */ createVNode("rect", {
+const _hoisted_5$h = /* @__PURE__ */ createVNode("rect", {
   class: "cls-1",
   x: "44.63",
   y: "12.2",
@@ -14615,7 +14604,7 @@ function _sfc_render$o(_ctx, _cache, $props, $setup, $data, $options) {
     _hoisted_2$n,
     _hoisted_3$l,
     _hoisted_4$h,
-    _hoisted_5$g,
+    _hoisted_5$h,
     _hoisted_6$e,
     _hoisted_7$d,
     _hoisted_8$d
@@ -14678,7 +14667,7 @@ const _hoisted_1$m = { key: 0 };
 const _hoisted_2$m = /* @__PURE__ */ createVNode("div", { class: "overlay" }, null, -1);
 const _hoisted_3$k = { class: "qr-modal" };
 const _hoisted_4$g = { class: "modal__container" };
-const _hoisted_5$f = { class: "modal__dialog" };
+const _hoisted_5$g = { class: "modal__dialog" };
 const _hoisted_6$d = { class: "modal__content" };
 const _hoisted_7$c = { class: "img-container" };
 const _hoisted_8$c = { class: "msg-container" };
@@ -14702,7 +14691,7 @@ const _sfc_render$n = /* @__PURE__ */ _withId$2((_ctx, _cache, $props, $setup, $
     _hoisted_2$m,
     createVNode("div", _hoisted_3$k, [
       createVNode("div", _hoisted_4$g, [
-        createVNode("div", _hoisted_5$f, [
+        createVNode("div", _hoisted_5$g, [
           createVNode("div", _hoisted_6$d, [
             createVNode("div", _hoisted_7$c, [
               createVNode(_component_OnlineRedeem, {
@@ -14790,7 +14779,7 @@ const _hoisted_4$f = {
   class: "mulah-overview__card__body--small",
   style: { "z-index": "1", "position": "relative" }
 };
-const _hoisted_5$e = {
+const _hoisted_5$f = {
   class: "mulah-overview__card__promotion--title",
   style: { "margin-left": "5px !important" }
 };
@@ -14818,7 +14807,7 @@ function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
         createVNode("div", _hoisted_3$j, [
           createVNode(_component_Coupon, { preserveAspectRatio: "none" }),
           createVNode("div", _hoisted_4$f, [
-            createVNode("div", _hoisted_5$e, [
+            createVNode("div", _hoisted_5$f, [
               createVNode("div", null, [
                 createVNode(_component_Gift, {
                   size: 20,
@@ -17700,7 +17689,7 @@ const _hoisted_1$g = /* @__PURE__ */ createVNode("div", { class: "overlay" }, nu
 const _hoisted_2$g = { class: "exit-modal" };
 const _hoisted_3$f = { class: "exit-modal-container" };
 const _hoisted_4$e = { class: "qr-modal" };
-const _hoisted_5$d = { class: "modal__container" };
+const _hoisted_5$e = { class: "modal__container" };
 const _hoisted_6$b = { class: "modal__dialog" };
 const _hoisted_7$a = { class: "modal__content" };
 const _hoisted_8$a = { class: "brand-name" };
@@ -17728,7 +17717,7 @@ const _sfc_render$h = /* @__PURE__ */ _withId$1((_ctx, _cache, $props, $setup, $
       ])
     ]),
     createVNode("div", _hoisted_4$e, [
-      createVNode("div", _hoisted_5$d, [
+      createVNode("div", _hoisted_5$e, [
         createVNode("div", _hoisted_6$b, [
           createVNode("div", _hoisted_7$a, [
             createVNode("div", null, [
@@ -17794,7 +17783,7 @@ const _hoisted_4$d = /* @__PURE__ */ createVNode("polygon", {
   class: "cls-1",
   points: "79.21 79.5 67.57 79.5 67.57 82.43 82.14 82.43 82.14 67.87 79.21 67.87 79.21 79.5"
 }, null, -1);
-const _hoisted_5$c = /* @__PURE__ */ createVNode("path", {
+const _hoisted_5$d = /* @__PURE__ */ createVNode("path", {
   d: "M262.65,239.79h-77.8a1.93,1.93,0,0,1-1.94-1.93h0a1.94,1.94,0,0,1,1.94-1.94h77.8a1.94,1.94,0,0,1,1.94,1.94h0A1.93,1.93,0,0,1,262.65,239.79Z",
   transform: "translate(-182.43 -196.39)"
 }, null, -1);
@@ -17821,7 +17810,7 @@ function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
       height: "65.69",
       style: { opacity: 0.3, fill: $props.color }
     }, null, 4),
-    _hoisted_5$c
+    _hoisted_5$d
   ], 4);
 }
 var Scanner = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$g]]);
@@ -17877,7 +17866,7 @@ const _hoisted_4$c = /* @__PURE__ */ createVNode("path", {
   d: "M2828.72,2451.32a17.23,17.23,0,0,0-4-7,25.14,25.14,0,0,0-6.31-5.08,12.72,12.72,0,0,0-6.77-1.88,6.15,6.15,0,0,0-2.75.84,6.91,6.91,0,0,0-1.24.93,7.32,7.32,0,0,0-1,1.07,2.9,2.9,0,0,0-.46.89,1.59,1.59,0,0,0,0,.69,4.7,4.7,0,0,0,1.46,2.19,23.32,23.32,0,0,0,6.63,4.09,44.17,44.17,0,0,0,8,2.6c1.4.32,2.81.56,4.24.74l1.07.13.86.08a.37.37,0,0,0,.27-.09c.06-.06,0-.11,0-.17Z",
   transform: "translate(-2672.38 -2346.86)"
 }, null, -1);
-const _hoisted_5$b = /* @__PURE__ */ createVNode("path", {
+const _hoisted_5$c = /* @__PURE__ */ createVNode("path", {
   d: "M2906.08,2515c0-3.12,0-6.19,0-9.2,0-12.05-.05-23.21-.07-33.35s-.06-19.27-.08-27.26c0-4,0-7.69-.08-11.11a18.7,18.7,0,0,0-2.55-8.87,15.55,15.55,0,0,0-9.22-7.31,12.12,12.12,0,0,0-3-.47c-.66,0-1,0-1,0h0s-.45,0-1.31-.06l-3.87-.07-14.87-.12-54.68-.2-37.76-.08h-5.13a15.63,15.63,0,0,0-5.29.92,16.46,16.46,0,0,0-8.5,7.46,19.08,19.08,0,0,0-2.11,5.8,34.13,34.13,0,0,0-.35,6.28q0,6.22,0,12.6c0,17,0,34.9,0,53.43q0,7,0,14a24.28,24.28,0,0,0,.71,7.21,18.44,18.44,0,0,0,3.22,6.43,15.48,15.48,0,0,0,11.8,6.2l13.13,0v22l.94-.79,25.07-21.21c29.1-.07,56.28.09,80.9-.21,6.37-.75,11.72-6.05,13.42-12.44a20.66,20.66,0,0,0,.69-4.87C2906.11,2518.09,2906.08,2516.53,2906.08,2515Zm-110.59-57.48h32.11v13.06h-32.11Zm32.37,61.37h-28.73v-45.08h28.73Zm2.52-66a2.65,2.65,0,0,1-1.58,1l-.29,0-.15,0h-2c-1.5,0-3-.06-4.51-.17a50.66,50.66,0,0,1-9.06-1.43,30.9,30.9,0,0,1-4.5-1.51,19.26,19.26,0,0,1-4.37-2.52,11.48,11.48,0,0,1-2-2,8.85,8.85,0,0,1-1.54-2.91,7.2,7.2,0,0,1-.14-3.66,8.39,8.39,0,0,1,1.37-3.07,12.55,12.55,0,0,1,2-2.18,12,12,0,0,1,2.32-1.65,11.41,11.41,0,0,1,5.66-1.42,14,14,0,0,1,5.31,1.19,19.4,19.4,0,0,1,4.3,2.58,28.6,28.6,0,0,1,6.32,7.07,26.44,26.44,0,0,1,2.2,4.14,16.15,16.15,0,0,1,1.27,4.57v0A2.49,2.49,0,0,1,2830.38,2452.83Zm2.92,0a2.49,2.49,0,0,1-.52-1.87v0a16.15,16.15,0,0,1,1.27-4.57,26.44,26.44,0,0,1,2.2-4.14,28.6,28.6,0,0,1,6.32-7.07,19.4,19.4,0,0,1,4.3-2.58,14,14,0,0,1,5.31-1.19,11.48,11.48,0,0,1,5.67,1.42,12.26,12.26,0,0,1,2.31,1.65,12.55,12.55,0,0,1,2,2.18,8.55,8.55,0,0,1,1.37,3.07,7.2,7.2,0,0,1-.14,3.66,8.85,8.85,0,0,1-1.54,2.91,11.48,11.48,0,0,1-2,2,19.26,19.26,0,0,1-4.37,2.52,30.9,30.9,0,0,1-4.5,1.51,50.66,50.66,0,0,1-9.06,1.43c-1.51.11-3,.16-4.51.17h-2l-.15,0-.29,0A2.65,2.65,0,0,1,2833.3,2452.83Zm29.85,66h-28.74v-45.08h28.74Zm3.63-48.31h-32.11v-13.06h32.11Z",
   transform: "translate(-2672.38 -2346.86)"
 }, null, -1);
@@ -17897,7 +17886,7 @@ function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {
     _hoisted_2$d,
     _hoisted_3$c,
     _hoisted_4$c,
-    _hoisted_5$b
+    _hoisted_5$c
   ], 4);
 }
 var SmsRemind = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$e]]);
@@ -17937,7 +17926,7 @@ const _hoisted_1$c = /* @__PURE__ */ createVNode("div", { class: "overlay" }, nu
 const _hoisted_2$c = { class: "exit-modal" };
 const _hoisted_3$b = { class: "exit-modal-container" };
 const _hoisted_4$b = { class: "qr-modal" };
-const _hoisted_5$a = { class: "modal__container" };
+const _hoisted_5$b = { class: "modal__container" };
 const _hoisted_6$a = { class: "modal__dialog" };
 const _hoisted_7$9 = { class: "modal__content" };
 const _hoisted_8$9 = { class: "img-container" };
@@ -17964,7 +17953,7 @@ const _sfc_render$d = /* @__PURE__ */ _withId((_ctx, _cache, $props, $setup, $da
       ])
     ]),
     createVNode("div", _hoisted_4$b, [
-      createVNode("div", _hoisted_5$a, [
+      createVNode("div", _hoisted_5$b, [
         createVNode("div", _hoisted_6$a, [
           createVNode("div", _hoisted_7$9, [
             createVNode("div", _hoisted_8$9, [
@@ -18018,7 +18007,7 @@ const _hoisted_4$a = /* @__PURE__ */ createVNode("path", {
   d: "M2033.14,519.1a6.65,6.65,0,0,1-6.65,6.65h0a6.66,6.66,0,0,1-6.66-6.65v-9.85a6.66,6.66,0,0,1,6.66-6.65h0a6.65,6.65,0,0,1,6.65,6.65Z",
   transform: "translate(-1959.8 -502.6)"
 }, null, -1);
-const _hoisted_5$9 = /* @__PURE__ */ createVNode("rect", {
+const _hoisted_5$a = /* @__PURE__ */ createVNode("rect", {
   class: "cls-1",
   x: "12.14",
   y: "44.32",
@@ -18090,7 +18079,7 @@ function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
     _hoisted_2$b,
     _hoisted_3$a,
     _hoisted_4$a,
-    _hoisted_5$9,
+    _hoisted_5$a,
     _hoisted_6$9,
     _hoisted_7$8,
     _hoisted_8$8,
@@ -18179,7 +18168,7 @@ const _hoisted_4$9 = {
   key: 0,
   class: "mulah-sr__empty"
 };
-const _hoisted_5$8 = /* @__PURE__ */ createVNode("p", null, "- No Active Sms -", -1);
+const _hoisted_5$9 = /* @__PURE__ */ createVNode("p", null, "- No Active Sms -", -1);
 const _hoisted_6$8 = { class: "promotion-container" };
 const _hoisted_7$7 = { class: "gift-container" };
 const _hoisted_8$7 = { class: "title-container" };
@@ -18209,7 +18198,7 @@ const _hoisted_22$3 = {
   class: "expiry",
   style: { "{\n                  color": "'#aaaaaa' !important" }
 };
-const _hoisted_23$2 = { class: "code-container" };
+const _hoisted_23$3 = { class: "code-container" };
 const _hoisted_24$1 = {
   key: 0,
   class: "code",
@@ -18241,7 +18230,7 @@ function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
     ]),
     $setup.active ? (openBlock(), createBlock("div", _hoisted_3$9, [
       $setup.offers.length == 0 ? (openBlock(), createBlock("div", _hoisted_4$9, [
-        _hoisted_5$8
+        _hoisted_5$9
       ])) : (openBlock(true), createBlock(Fragment, { key: 1 }, renderList($setup.offers, (offer, index) => {
         return openBlock(), createBlock("div", {
           class: "mulah-sr__card",
@@ -18302,7 +18291,7 @@ function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
               createVNode(_component_Calendar, { color: "#aaaaaa" }),
               createVNode("p", _hoisted_22$3, " Expiry " + toDisplayString($setup.formatDate(offer.expiryDate)), 1)
             ]),
-            createVNode("div", _hoisted_23$2, [
+            createVNode("div", _hoisted_23$3, [
               offer.status == "Expired" ? (openBlock(), createBlock("p", _hoisted_24$1, toDisplayString(offer.status), 1)) : (openBlock(), createBlock("p", _hoisted_25, " Used on " + toDisplayString($setup.formatDate(offer.usedAt)), 1))
             ])
           ])
@@ -21125,7 +21114,7 @@ const _hoisted_1$9 = /* @__PURE__ */ createVNode("h1", { class: "mulah-sr__title
 const _hoisted_2$9 = { class: "mulah-sr__container" };
 const _hoisted_3$8 = { class: "log-container" };
 const _hoisted_4$8 = { class: "log-box" };
-const _hoisted_5$7 = { class: "log-box-text" };
+const _hoisted_5$8 = { class: "log-box-text" };
 const _hoisted_6$7 = { class: "log-date" };
 const _hoisted_7$6 = { class: "mulah-sr__button__container" };
 const _hoisted_8$6 = {
@@ -21146,7 +21135,7 @@ function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
         (openBlock(true), createBlock(Fragment, null, renderList($setup.messages, (data, index) => {
           return openBlock(), createBlock("div", { key: index }, [
             createVNode("div", _hoisted_4$8, [
-              createVNode("p", _hoisted_5$7, toDisplayString(data.message), 1)
+              createVNode("p", _hoisted_5$8, toDisplayString(data.message), 1)
             ]),
             createVNode("p", _hoisted_6$7, toDisplayString(data.datetime), 1)
           ]);
@@ -21189,7 +21178,7 @@ const _hoisted_4$7 = /* @__PURE__ */ createVNode("path", {
   d: "M340.84,374.28l-.36-.42c-.45-.5-.93-1.06-1.31-1.5a16.22,16.22,0,0,1-1.67-2.14v10h9C344.36,378,342.27,375.91,340.84,374.28Z",
   transform: "translate(-298.04 -300.55)"
 }, null, -1);
-const _hoisted_5$6 = /* @__PURE__ */ createVNode("path", {
+const _hoisted_5$7 = /* @__PURE__ */ createVNode("path", {
   d: "M381.18,359.64a10.24,10.24,0,0,0-19.46-2.26.78.78,0,0,1-1.45,0,10.24,10.24,0,1,0-16.79,11.16c.46.56,1.17,1.34,1.69,1.94,2.8,3.19,8.84,9,12.71,12.49a4.56,4.56,0,0,0,2.85,1.18h.54a4.56,4.56,0,0,0,2.84-1.18c3.87-3.48,9.92-9.3,12.71-12.49.52-.6,1.23-1.38,1.69-1.94A10.23,10.23,0,0,0,381.18,359.64Z",
   transform: "translate(-298.04 -300.55)"
 }, null, -1);
@@ -21221,7 +21210,7 @@ function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
     _hoisted_2$8,
     _hoisted_3$7,
     _hoisted_4$7,
-    _hoisted_5$6,
+    _hoisted_5$7,
     _hoisted_6$6,
     _hoisted_7$5,
     _hoisted_8$5
@@ -21251,7 +21240,7 @@ const _hoisted_1$7 = /* @__PURE__ */ createVNode("a", null, "Points Reward", -1)
 const _hoisted_2$7 = { class: "arrow_positions" };
 const _hoisted_3$6 = /* @__PURE__ */ createVNode("hr", null, null, -1);
 const _hoisted_4$6 = /* @__PURE__ */ createVNode("a", null, "SMS Rewards", -1);
-const _hoisted_5$5 = { class: "arrow_positions" };
+const _hoisted_5$6 = { class: "arrow_positions" };
 const _hoisted_6$5 = /* @__PURE__ */ createVNode("hr", null, null, -1);
 function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_PointRewards = resolveComponent("PointRewards");
@@ -21283,7 +21272,7 @@ function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
         color: $props.styling.icon_color
       }, null, 8, ["color"]),
       _hoisted_4$6,
-      createVNode("div", _hoisted_5$5, [
+      createVNode("div", _hoisted_5$6, [
         createVNode(_component_ArrowRight, {
           size: 15,
           color: $props.styling.icon_color
@@ -21412,7 +21401,7 @@ const _hoisted_4$5 = {
   class: "promotion-container",
   style: { "z-index": "1", "position": "relative", "margin-left": "10px !important" }
 };
-const _hoisted_5$4 = { class: "gift-container" };
+const _hoisted_5$5 = { class: "gift-container" };
 const _hoisted_6$4 = { class: "title-container" };
 const _hoisted_7$4 = { class: "offer-title" };
 const _hoisted_8$4 = { class: "calendar-container" };
@@ -21456,7 +21445,7 @@ const _hoisted_20$2 = {
 };
 const _hoisted_21$2 = { style: { "margin-top": "15px !important", "margin-bottom": "10px !important" } };
 const _hoisted_22$2 = /* @__PURE__ */ createVNode("em", null, "Tap Here for Terms and Conditions", -1);
-const _hoisted_23$1 = { class: "mulah-vr__button__container" };
+const _hoisted_23$2 = { class: "mulah-vr__button__container" };
 function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_Coupon = resolveComponent("Coupon");
   const _component_Gift = resolveComponent("Gift");
@@ -21485,7 +21474,7 @@ function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
         }, [
           createVNode(_component_Coupon),
           createVNode("div", _hoisted_4$5, [
-            createVNode("div", _hoisted_5$4, [
+            createVNode("div", _hoisted_5$5, [
               createVNode(_component_Gift, {
                 size: 21,
                 color: $setup.primaryTheme.color
@@ -21550,7 +21539,7 @@ function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
         _hoisted_22$2
       ])
     ]),
-    createVNode("div", _hoisted_23$1, [
+    createVNode("div", _hoisted_23$2, [
       createVNode("button", {
         style: {
           background: $setup.primaryTheme.color,
@@ -21577,7 +21566,6 @@ const _sfc_main$6 = {
       activeTab.value = "home";
     }
     const phoneNumber = getDbNumber(store2.state.phoneNumber);
-    document.body.style.setProperty("background", "#f5f5f5", "important");
     const { executeMutation: createWebsiteVisit } = useMutation(CREATE_WEBSITE_VISIT);
     const { executeMutation: createProspectMutation } = useMutation(
       CREATE_EMBEDDED_PROSPECT
@@ -21624,6 +21612,10 @@ const _sfc_main$6 = {
     });
     watch(result2.fetching, (fetchStatus) => {
       if (!fetchStatus) {
+        const overviewStyle2 = JSON.parse(result2.data.value.brand.overviewStyle);
+        const div = document.getElementById("mulah-app");
+        div.style.cssText += `background-color: ${overviewStyle2.main_background} !important;`;
+        document.body.style.setProperty("background", overviewStyle2.main_background, "important");
         store2.addPersonalInfoStyle(
           JSON.parse(result2.data.value.brand.personalInfoStyle)
         );
@@ -21834,7 +21826,7 @@ const _hoisted_3$4 = {
   class: "spinner-container"
 };
 const _hoisted_4$4 = { class: "spinner-inner" };
-const _hoisted_5$3 = {
+const _hoisted_5$4 = {
   key: 2,
   class: "mulah-overview"
 };
@@ -21887,7 +21879,7 @@ function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
     createVNode("div", _hoisted_4$4, [
       createVNode(_component_Spinner)
     ])
-  ])) : (openBlock(), createBlock("div", _hoisted_5$3, [
+  ])) : (openBlock(), createBlock("div", _hoisted_5$4, [
     createVNode("div", _hoisted_6$3, [
       $setup.validOffer.length != 0 && !$setup.reminder ? (openBlock(), createBlock(_component_SmsReminder, {
         key: 0,
@@ -21923,7 +21915,7 @@ function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
           createVNode("div", _hoisted_9$3, [
             createVNode("div", {
               class: "mulah-overview__card mulah-overview__card--main",
-              style: `background: ${$setup.overviewStyle.main_background} !important;`
+              style: `background: ${$setup.overviewStyle.card_background} !important;`
             }, [
               createVNode("div", _hoisted_10$3, [
                 createVNode("div", _hoisted_11$3, [
@@ -22070,7 +22062,7 @@ const _hoisted_3$3 = {
   class: "mulah-history"
 };
 const _hoisted_4$3 = { class: "mulah-history__content-container" };
-const _hoisted_5$2 = { class: "mulah-history__content" };
+const _hoisted_5$3 = { class: "mulah-history__content" };
 const _hoisted_6$2 = /* @__PURE__ */ createVNode("p", { class: "mulah-history__content-title" }, "Points Overview", -1);
 const _hoisted_7$2 = { class: "mulah-history__content--grid" };
 const _hoisted_8$2 = /* @__PURE__ */ createVNode("p", { class: "mulah-history__content-table-collect" }, "Collected", -1);
@@ -22104,7 +22096,7 @@ const _hoisted_22$1 = {
   key: 1,
   class: "mulah-history__expiry-status"
 };
-const _hoisted_23 = {
+const _hoisted_23$1 = {
   key: 2,
   class: "mulah-history__expiry-status"
 };
@@ -22131,7 +22123,7 @@ function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8, ["src"])
     ], 4),
     createVNode("div", _hoisted_4$3, [
-      createVNode("div", _hoisted_5$2, [
+      createVNode("div", _hoisted_5$3, [
         _hoisted_6$2,
         createVNode("div", _hoisted_7$2, [
           _hoisted_8$2,
@@ -22166,7 +22158,7 @@ function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
               createVNode("td", null, [
                 createVNode("div", null, [
                   createVNode("p", null, toDisplayString(x3.specification.charAt(0).toUpperCase() + x3.specification.slice(1)), 1),
-                  x3.expiryDays == 1 ? (openBlock(), createBlock("p", _hoisted_21$1, " Expires in " + toDisplayString(x3.expiryDays) + " Day ", 1)) : x3.expiryDays > 0 ? (openBlock(), createBlock("p", _hoisted_22$1, " Expires in " + toDisplayString(x3.expiryDays) + " Days ", 1)) : x3.expiryDays != null && x3.expiryDays <= 0 ? (openBlock(), createBlock("p", _hoisted_23, " Expired ")) : createCommentVNode("", true)
+                  x3.expiryDays == 1 ? (openBlock(), createBlock("p", _hoisted_21$1, " Expires in " + toDisplayString(x3.expiryDays) + " Day ", 1)) : x3.expiryDays > 0 ? (openBlock(), createBlock("p", _hoisted_22$1, " Expires in " + toDisplayString(x3.expiryDays) + " Days ", 1)) : x3.expiryDays != null && x3.expiryDays <= 0 ? (openBlock(), createBlock("p", _hoisted_23$1, " Expired ")) : createCommentVNode("", true)
                 ])
               ])
             ]);
@@ -22229,7 +22221,7 @@ const _hoisted_3$2 = {
   class: "mulah-history-more"
 };
 const _hoisted_4$2 = /* @__PURE__ */ createVNode("p", { class: "mulah-history__more-title" }, "Points History", -1);
-const _hoisted_5$1 = /* @__PURE__ */ createVNode("div", { class: "mulah-history__more-headers" }, [
+const _hoisted_5$2 = /* @__PURE__ */ createVNode("div", { class: "mulah-history__more-headers" }, [
   /* @__PURE__ */ createVNode("p", null, "Date"),
   /* @__PURE__ */ createVNode("p", null, "Points"),
   /* @__PURE__ */ createVNode("p", null, "Action")
@@ -22263,7 +22255,7 @@ function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
     ])
   ])) : (openBlock(), createBlock("div", _hoisted_3$2, [
     _hoisted_4$2,
-    _hoisted_5$1,
+    _hoisted_5$2,
     (openBlock(true), createBlock(Fragment, null, renderList($setup.data.customerHistory.collectionsAndDeductions, (x3) => {
       return openBlock(), createBlock("div", {
         class: "mulah-history__more-content",
@@ -22298,7 +22290,7 @@ const _sfc_main$3 = {
   setup(props) {
     const store2 = inject("store");
     const customer = store2.state.customerInfo;
-    const styling = store2.state.personalInfoStyle;
+    const styling2 = store2.state.personalInfoStyle;
     const registeredOn = formatDateStr(
       convertToLocal(customer.createdAt),
       "dd/MM/yyyy"
@@ -22313,30 +22305,25 @@ const _sfc_main$3 = {
     const error = ref(false);
     const success = ref(false);
     const loading = ref(false);
-    const mainBackground = {
-      background: `${styling.main_background} !important`
-    };
-    const headerColor = { color: `${styling.header_color} !important` };
-    const inputStyle = { "--color": `${styling.secondary_theme}` };
+    const headerColor = { color: `${styling2.header_color} !important` };
+    const inputStyle = { "--color": `${styling2.secondary_theme}` };
     const placeholderColor = {
-      "--placeholder-color": `${styling.placeholder_color}`
+      "--placeholder-color": `${styling2.placeholder_color}`
     };
-    const primaryTheme = { "--themeColor": `${styling.primary_theme}` };
-    const secondaryTheme = { "--subTheme": `${styling.secondary_theme}` };
-    const linkColor = { color: `${styling.link_color} !important` };
-    const inputColor = { color: `${styling.input_color} !important` };
+    const primaryTheme = { "--themeColor": `${styling2.primary_theme}` };
+    const secondaryTheme = { "--subTheme": `${styling2.secondary_theme}` };
+    const linkColor = { color: `${styling2.link_color} !important` };
+    const inputColor = { color: `${styling2.input_color} !important` };
     const inputBackground = {
-      background: `${styling.input_background} !important`
+      background: `${styling2.input_background} !important`
     };
-    const buttonText = { color: `${styling.button_font} !important` };
-    const buttonTheme = { "--buttonFont": styling.button_font };
-    const modalPrimaryColor = styling.button_font;
-    const modalSecondaryColor = styling.primary_theme;
-    document.body.style.setProperty(
-      "background",
-      styling.main_background,
-      "important"
-    );
+    const buttonText = { color: `${styling2.button_font} !important` };
+    const buttonTheme = { "--buttonFont": styling2.button_font };
+    const modalPrimaryColor = styling2.button_font;
+    const modalSecondaryColor = styling2.primary_theme;
+    const div = document.getElementById("mulah-app");
+    div.style.cssText += `background-color: ${styling2.main_background} !important;`;
+    document.body.style.setProperty("background", styling2.main_background, "important");
     const validEmail = computed(() => {
       return email.value ? email.value.match(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/) != null : true;
     });
@@ -22409,7 +22396,6 @@ const _sfc_main$3 = {
       buttonTheme,
       modalPrimaryColor,
       modalSecondaryColor,
-      mainBackground,
       showWarningName
     };
   },
@@ -22418,47 +22404,45 @@ const _sfc_main$3 = {
     SuccessModal
   }
 };
-const _hoisted_1$2 = { class: "mulah-personal-info-content" };
-const _hoisted_2$2 = { class: "mulah-personal-info__header" };
-const _hoisted_3$1 = { class: "mulah-personal-info__input" };
-const _hoisted_4$1 = { class: "mulah-personal-info__input__container" };
-const _hoisted_5 = {
+const _hoisted_1$2 = { class: "mulah-personal-info" };
+const _hoisted_2$2 = { class: "mulah-personal-info-content" };
+const _hoisted_3$1 = { class: "mulah-personal-info__header" };
+const _hoisted_4$1 = { class: "mulah-personal-info__input" };
+const _hoisted_5$1 = { class: "mulah-personal-info__input__container" };
+const _hoisted_6 = {
   key: 0,
   class: "mulah-personal-info__validation"
 };
-const _hoisted_6 = /* @__PURE__ */ createVNode("p", null, "*Please insert a name.", -1);
-const _hoisted_7 = { class: "mulah-personal-info__input__container" };
+const _hoisted_7 = /* @__PURE__ */ createVNode("p", null, "*Please insert a name.", -1);
 const _hoisted_8 = { class: "mulah-personal-info__input__container" };
-const _hoisted_9 = { class: "mulah-personal-info__input__bday" };
-const _hoisted_10 = { class: "mulah-personal-info-day-container" };
-const _hoisted_11 = { class: "mulah-personal-info-month-container" };
-const _hoisted_12 = { class: "mulah-personal-info-year-container" };
-const _hoisted_13 = { class: "mulah-personal-info__input__container" };
-const _hoisted_14 = {
+const _hoisted_9 = { class: "mulah-personal-info__input__container" };
+const _hoisted_10 = { class: "mulah-personal-info__input__bday" };
+const _hoisted_11 = { class: "mulah-personal-info-day-container" };
+const _hoisted_12 = { class: "mulah-personal-info-month-container" };
+const _hoisted_13 = { class: "mulah-personal-info-year-container" };
+const _hoisted_14 = { class: "mulah-personal-info__input__container" };
+const _hoisted_15 = {
   key: 0,
   class: "mulah-personal-info__validation"
 };
-const _hoisted_15 = /* @__PURE__ */ createVNode("p", null, "*Please insert a valid email address.", -1);
-const _hoisted_16 = { class: "mulah-personal-info__input__container" };
-const _hoisted_17 = { class: "mulah-personal-info__registered" };
-const _hoisted_18 = /* @__PURE__ */ createTextVNode(" * Registered on ");
-const _hoisted_19 = { class: "mulah-personal-info__button" };
-const _hoisted_20 = { class: "mulah-personal-info__footer" };
-const _hoisted_21 = /* @__PURE__ */ createVNode("hr", null, null, -1);
-const _hoisted_22 = /* @__PURE__ */ createTextVNode(" Powered by ");
+const _hoisted_16 = /* @__PURE__ */ createVNode("p", null, "*Please insert a valid email address.", -1);
+const _hoisted_17 = { class: "mulah-personal-info__input__container" };
+const _hoisted_18 = { class: "mulah-personal-info__registered" };
+const _hoisted_19 = /* @__PURE__ */ createTextVNode(" * Registered on ");
+const _hoisted_20 = { class: "mulah-personal-info__button" };
+const _hoisted_21 = { class: "mulah-personal-info__footer" };
+const _hoisted_22 = /* @__PURE__ */ createVNode("hr", null, null, -1);
+const _hoisted_23 = /* @__PURE__ */ createTextVNode(" Powered by ");
 function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_ErrorModal = resolveComponent("ErrorModal");
   const _component_SuccessModal = resolveComponent("SuccessModal");
-  return openBlock(), createBlock("div", {
-    class: "mulah-personal-info",
-    style: $setup.mainBackground
-  }, [
-    createVNode("div", _hoisted_1$2, [
-      createVNode("div", _hoisted_2$2, [
+  return openBlock(), createBlock("div", _hoisted_1$2, [
+    createVNode("div", _hoisted_2$2, [
+      createVNode("div", _hoisted_3$1, [
         createVNode("p", { style: $setup.headerColor }, "Customer Info", 4)
       ]),
-      createVNode("div", _hoisted_3$1, [
-        createVNode("div", _hoisted_4$1, [
+      createVNode("div", _hoisted_4$1, [
+        createVNode("div", _hoisted_5$1, [
           createVNode("p", { style: $setup.headerColor }, "Name", 4),
           withDirectives(createVNode("input", {
             "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => $setup.name = $event),
@@ -22473,11 +22457,11 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
           }, null, 4), [
             [vModelText, $setup.name]
           ]),
-          $setup.showWarningName() ? (openBlock(), createBlock("div", _hoisted_5, [
-            _hoisted_6
+          $setup.showWarningName() ? (openBlock(), createBlock("div", _hoisted_6, [
+            _hoisted_7
           ])) : createCommentVNode("", true)
         ]),
-        createVNode("div", _hoisted_7, [
+        createVNode("div", _hoisted_8, [
           createVNode("p", { style: $setup.headerColor }, "Phone Number", 4),
           withDirectives(createVNode("input", {
             style: {
@@ -22492,10 +22476,10 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
             [vModelText, $setup.phoneNumber]
           ])
         ]),
-        createVNode("div", _hoisted_8, [
+        createVNode("div", _hoisted_9, [
           createVNode("p", { style: $setup.headerColor }, "Birthday", 4),
-          createVNode("div", _hoisted_9, [
-            createVNode("div", _hoisted_10, [
+          createVNode("div", _hoisted_10, [
+            createVNode("div", _hoisted_11, [
               withDirectives(createVNode("input", {
                 style: {
                   ...$setup.inputColor,
@@ -22508,7 +22492,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                 [vModelText, $setup.date]
               ])
             ]),
-            createVNode("div", _hoisted_11, [
+            createVNode("div", _hoisted_12, [
               withDirectives(createVNode("input", {
                 style: {
                   ...$setup.inputColor,
@@ -22521,7 +22505,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                 [vModelText, $setup.month]
               ])
             ]),
-            createVNode("div", _hoisted_12, [
+            createVNode("div", _hoisted_13, [
               withDirectives(createVNode("input", {
                 style: {
                   ...$setup.inputColor,
@@ -22536,7 +22520,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
             ])
           ])
         ]),
-        createVNode("div", _hoisted_13, [
+        createVNode("div", _hoisted_14, [
           createVNode("p", { style: $setup.headerColor }, "Email", 4),
           withDirectives(createVNode("input", {
             "onUpdate:modelValue": _cache[6] || (_cache[6] = ($event) => $setup.email = $event),
@@ -22552,14 +22536,14 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
           }, null, 4), [
             [vModelText, $setup.email]
           ]),
-          $setup.showWarning() ? (openBlock(), createBlock("div", _hoisted_14, [
-            _hoisted_15
+          $setup.showWarning() ? (openBlock(), createBlock("div", _hoisted_15, [
+            _hoisted_16
           ])) : createCommentVNode("", true)
         ]),
-        createVNode("div", _hoisted_16, [
-          createVNode("div", _hoisted_17, [
+        createVNode("div", _hoisted_17, [
+          createVNode("div", _hoisted_18, [
             createVNode("p", { style: $setup.headerColor }, [
-              _hoisted_18,
+              _hoisted_19,
               createVNode("span", {
                 class: "mulah-personal-info__registered__date",
                 style: { ...$setup.primaryTheme }
@@ -22568,17 +22552,17 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
           ])
         ])
       ]),
-      createVNode("div", _hoisted_19, [
+      createVNode("div", _hoisted_20, [
         createVNode("button", {
           onClick: _cache[7] || (_cache[7] = (...args) => $setup.update && $setup.update(...args)),
           style: { ...$setup.primaryTheme, ...$setup.buttonText }
         }, " Update ", 4)
       ])
     ]),
-    createVNode("div", _hoisted_20, [
-      _hoisted_21,
+    createVNode("div", _hoisted_21, [
+      _hoisted_22,
       createVNode("h6", { style: $setup.headerColor }, [
-        _hoisted_22,
+        _hoisted_23,
         createVNode("a", {
           class: "mulah-link-blue",
           style: { ...$setup.linkColor }
@@ -22599,7 +22583,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
       modalPrimaryColor: $setup.modalPrimaryColor,
       modalSecondaryColor: $setup.modalSecondaryColor
     }, null, 8, ["close-modal", "modalPrimaryColor", "modalSecondaryColor"])) : createCommentVNode("", true)
-  ], 4);
+  ]);
 }
 var PersonalInfo = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$3]]);
 var Tnc_vue_vue_type_style_index_0_lang = "";
@@ -22609,7 +22593,6 @@ const _sfc_main$2 = {
     changePath: Function
   },
   setup() {
-    const mainBackground = ref(null);
     const headerColor = ref(null);
     const textColor = ref(null);
     const buttonStyle = ref(null);
@@ -22621,20 +22604,21 @@ const _sfc_main$2 = {
     });
     watch(result2.fetching, (fetchStatus) => {
       if (!fetchStatus) {
-        const styling = JSON.parse(result2.data.value.brand.tncStyle);
-        mainBackground.value = { "background": `${styling.main_background} !important` };
-        headerColor.value = { "--header-color": `${styling.header_color}` };
-        textColor.value = { "--text-color": `${styling.text_color}` };
+        const styling2 = JSON.parse(result2.data.value.brand.tncStyle);
+        const div = document.getElementById("mulah-app");
+        div.style.cssText += `background-color: ${styling2.main_background} !important;`;
+        document.body.style.setProperty("background", styling2.main_background, "important");
+        headerColor.value = { "--header-color": `${styling2.header_color}` };
+        textColor.value = { "--text-color": `${styling2.text_color}` };
         buttonStyle.value = {
-          "color": `${styling.button_font_color} !important`,
-          "background": `${styling.button_background_color} !important`
+          "color": `${styling2.button_font_color} !important`,
+          "background": `${styling2.button_background_color} !important`
         };
       }
     });
     return {
       data: result2.data,
       fetching: result2.fetching,
-      mainBackground,
       headerColor,
       textColor,
       buttonStyle
@@ -22647,9 +22631,13 @@ const _sfc_main$2 = {
   }
 };
 const _hoisted_1$1 = { key: 0 };
-const _hoisted_2$1 = { class: "mulah-tnc__content" };
-const _hoisted_3 = { class: "mulah-tnc__button__container" };
-const _hoisted_4 = /* @__PURE__ */ createVNode("div", { class: "mulah-tnc__footer" }, [
+const _hoisted_2$1 = {
+  key: 1,
+  class: "mulah-tnc"
+};
+const _hoisted_3 = { class: "mulah-tnc__content" };
+const _hoisted_4 = { class: "mulah-tnc__button__container" };
+const _hoisted_5 = /* @__PURE__ */ createVNode("div", { class: "mulah-tnc__footer" }, [
   /* @__PURE__ */ createVNode("hr"),
   /* @__PURE__ */ createVNode("h6", null, [
     /* @__PURE__ */ createTextVNode("Powered by "),
@@ -22657,12 +22645,8 @@ const _hoisted_4 = /* @__PURE__ */ createVNode("div", { class: "mulah-tnc__foote
   ])
 ], -1);
 function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
-  return $setup.fetching ? (openBlock(), createBlock("p", _hoisted_1$1, "Loading..")) : (openBlock(), createBlock("div", {
-    key: 1,
-    class: "mulah-tnc",
-    style: $setup.mainBackground
-  }, [
-    createVNode("div", _hoisted_2$1, [
+  return $setup.fetching ? (openBlock(), createBlock("p", _hoisted_1$1, "Loading..")) : (openBlock(), createBlock("div", _hoisted_2$1, [
+    createVNode("div", _hoisted_3, [
       createVNode("div", {
         class: "mulah-tnc__details",
         innerHTML: $setup.data.brand.termsAndConditions,
@@ -22671,15 +22655,15 @@ function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
           ...$setup.textColor
         }
       }, null, 12, ["innerHTML"]),
-      createVNode("div", _hoisted_3, [
+      createVNode("div", _hoisted_4, [
         createVNode("button", {
           onClick: _cache[1] || (_cache[1] = (...args) => $options.toHistory && $options.toHistory(...args)),
           style: $setup.buttonStyle
         }, "Back", 4)
       ]),
-      _hoisted_4
+      _hoisted_5
     ])
-  ], 4));
+  ]));
 }
 var Tnc = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2]]);
 const DB_NAME = "phoneNumberDb";
