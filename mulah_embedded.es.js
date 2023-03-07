@@ -11619,7 +11619,7 @@ const _sfc_main$F = {
         buttonTheme.value = { "--buttonFont": style.button_font };
         const div = document.getElementById("mulah-app");
         div.style.cssText += `background-color: ${style.main_background} !important;`;
-        document.body.style.setProperty("background", styling.main_background, "important");
+        document.body.style.setProperty("background", style.main_background, "important");
         modalPrimaryColor.value = style.button_font;
         modalSecondaryColor.value = style.primary_theme;
         document.body.style.setProperty(
@@ -22290,7 +22290,7 @@ const _sfc_main$3 = {
   setup(props) {
     const store2 = inject("store");
     const customer = store2.state.customerInfo;
-    const styling2 = store2.state.personalInfoStyle;
+    const styling = store2.state.personalInfoStyle;
     const registeredOn = formatDateStr(
       convertToLocal(customer.createdAt),
       "dd/MM/yyyy"
@@ -22305,25 +22305,25 @@ const _sfc_main$3 = {
     const error = ref(false);
     const success = ref(false);
     const loading = ref(false);
-    const headerColor = { color: `${styling2.header_color} !important` };
-    const inputStyle = { "--color": `${styling2.secondary_theme}` };
+    const headerColor = { color: `${styling.header_color} !important` };
+    const inputStyle = { "--color": `${styling.secondary_theme}` };
     const placeholderColor = {
-      "--placeholder-color": `${styling2.placeholder_color}`
+      "--placeholder-color": `${styling.placeholder_color}`
     };
-    const primaryTheme = { "--themeColor": `${styling2.primary_theme}` };
-    const secondaryTheme = { "--subTheme": `${styling2.secondary_theme}` };
-    const linkColor = { color: `${styling2.link_color} !important` };
-    const inputColor = { color: `${styling2.input_color} !important` };
+    const primaryTheme = { "--themeColor": `${styling.primary_theme}` };
+    const secondaryTheme = { "--subTheme": `${styling.secondary_theme}` };
+    const linkColor = { color: `${styling.link_color} !important` };
+    const inputColor = { color: `${styling.input_color} !important` };
     const inputBackground = {
-      background: `${styling2.input_background} !important`
+      background: `${styling.input_background} !important`
     };
-    const buttonText = { color: `${styling2.button_font} !important` };
-    const buttonTheme = { "--buttonFont": styling2.button_font };
-    const modalPrimaryColor = styling2.button_font;
-    const modalSecondaryColor = styling2.primary_theme;
+    const buttonText = { color: `${styling.button_font} !important` };
+    const buttonTheme = { "--buttonFont": styling.button_font };
+    const modalPrimaryColor = styling.button_font;
+    const modalSecondaryColor = styling.primary_theme;
     const div = document.getElementById("mulah-app");
-    div.style.cssText += `background-color: ${styling2.main_background} !important;`;
-    document.body.style.setProperty("background", styling2.main_background, "important");
+    div.style.cssText += `background-color: ${styling.main_background} !important;`;
+    document.body.style.setProperty("background", styling.main_background, "important");
     const validEmail = computed(() => {
       return email.value ? email.value.match(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/) != null : true;
     });
@@ -22604,15 +22604,15 @@ const _sfc_main$2 = {
     });
     watch(result2.fetching, (fetchStatus) => {
       if (!fetchStatus) {
-        const styling2 = JSON.parse(result2.data.value.brand.tncStyle);
+        const styling = JSON.parse(result2.data.value.brand.tncStyle);
         const div = document.getElementById("mulah-app");
-        div.style.cssText += `background-color: ${styling2.main_background} !important;`;
-        document.body.style.setProperty("background", styling2.main_background, "important");
-        headerColor.value = { "--header-color": `${styling2.header_color}` };
-        textColor.value = { "--text-color": `${styling2.text_color}` };
+        div.style.cssText += `background-color: ${styling.main_background} !important;`;
+        document.body.style.setProperty("background", styling.main_background, "important");
+        headerColor.value = { "--header-color": `${styling.header_color}` };
+        textColor.value = { "--text-color": `${styling.text_color}` };
         buttonStyle.value = {
-          "color": `${styling2.button_font_color} !important`,
-          "background": `${styling2.button_background_color} !important`
+          "color": `${styling.button_font_color} !important`,
+          "background": `${styling.button_background_color} !important`
         };
       }
     });
