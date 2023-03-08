@@ -12544,7 +12544,8 @@ const _sfc_render$w = /* @__PURE__ */ _withId$3((_ctx, _cache, $props, $setup, $
 var OverviewMain = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$w], ["__scopeId", "data-v-477e0fa0"]]);
 const _sfc_main$v = {
   props: {
-    size: Number,
+    width: Number,
+    height: Number,
     color: String
   },
   name: "OutletRedemptionSvg"
@@ -12602,8 +12603,8 @@ function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createBlock("svg", {
     style: `
       fill: ${$props.color} !important;
-      width: ${$props.size}px !important;
-      height: ${$props.size}px !important;
+      width: ${$props.width}px !important;
+      height: ${$props.height}px !important;
     `,
     id: "OBJECTS",
     xmlns: "http://www.w3.org/2000/svg",
@@ -12626,7 +12627,8 @@ function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
 var OutletRedemption = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$v]]);
 const _sfc_main$u = {
   props: {
-    size: Number,
+    width: Number,
+    height: Number,
     color: String
   },
   name: "OnlineRedemptionSvg"
@@ -12664,8 +12666,8 @@ function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createBlock("svg", {
     style: `
       fill: ${$props.color} !important;
-      width: ${$props.size}px !important;
-      height: ${$props.size}px !important;
+      width: ${$props.width}px !important;
+      height: ${$props.height}px !important;
     `,
     id: "OBJECTS",
     xmlns: "http://www.w3.org/2000/svg",
@@ -12684,7 +12686,8 @@ function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
 var OnlineRedemption = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$u]]);
 const _sfc_main$t = {
   props: {
-    size: Number,
+    width: Number,
+    height: Number,
     color: String
   },
   name: "HistoryRedemptionSvg"
@@ -12729,8 +12732,8 @@ function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createBlock("svg", {
     style: `
       fill: ${$props.color} !important;
-      width: ${$props.size}px !important;
-      height: ${$props.size}px !important;
+      width: ${$props.width}px !important;
+      height: ${$props.height}px !important;
     `,
     id: "OBJECTS",
     xmlns: "http://www.w3.org/2000/svg",
@@ -12790,7 +12793,7 @@ function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
     }, [
       createVNode(_component_OutletRedemption, {
         color: $props.styling.icon_color,
-        weight: 40,
+        width: 32,
         height: 28
       }, null, 8, ["color"]),
       _hoisted_1$r,
@@ -12802,32 +12805,33 @@ function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
       ])
     ]),
     _hoisted_3$n,
-    $props.withOnline ? (openBlock(), createBlock("div", {
-      key: 0,
-      class: "mulah-overview__content__navigation",
-      onClick: _cache[2] || (_cache[2] = ($event) => $props.changeTab("online"))
-    }, [
-      createVNode(_component_OnlineRedemption, {
-        color: $props.styling.icon_color,
-        weight: 40,
-        height: 35
-      }, null, 8, ["color"]),
-      _hoisted_4$j,
-      createVNode("div", _hoisted_5$j, [
-        createVNode(_component_ArrowRight, {
-          size: 15,
-          color: $props.styling.icon_color
-        }, null, 8, ["color"])
-      ])
-    ])) : createCommentVNode("", true),
-    _hoisted_6$g,
+    $props.withOnline ? (openBlock(), createBlock(Fragment, { key: 0 }, [
+      createVNode("div", {
+        class: "mulah-overview__content__navigation",
+        onClick: _cache[2] || (_cache[2] = ($event) => $props.changeTab("online"))
+      }, [
+        createVNode(_component_OnlineRedemption, {
+          color: $props.styling.icon_color,
+          width: 32,
+          height: 35
+        }, null, 8, ["color"]),
+        _hoisted_4$j,
+        createVNode("div", _hoisted_5$j, [
+          createVNode(_component_ArrowRight, {
+            size: 15,
+            color: $props.styling.icon_color
+          }, null, 8, ["color"])
+        ])
+      ]),
+      _hoisted_6$g
+    ], 64)) : createCommentVNode("", true),
     createVNode("div", {
       class: "mulah-overview__content__navigation",
       onClick: _cache[3] || (_cache[3] = ($event) => $props.changePath("brand-history"))
     }, [
       createVNode(_component_HistoryRedemption, {
         color: $props.styling.icon_color,
-        weight: 40,
+        width: 32,
         height: 32
       }, null, 8, ["color"]),
       _hoisted_7$f,
@@ -12912,7 +12916,7 @@ function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
               createVNode("div", null, [
                 createVNode(_component_Gift, {
                   size: 20,
-                  color: `${$props.styling.icon_color} !important`
+                  color: $props.styling.icon_color
                 }, null, 8, ["color"])
               ]),
               createVNode("div", _hoisted_5$i, [
@@ -12924,7 +12928,7 @@ function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
             createVNode("div", _hoisted_6$f, [
               createVNode(_component_Star, {
                 size: 15,
-                color: `${$props.styling.star_color} !important`
+                color: $props.styling.star_color
               }, null, 8, ["color"]),
               createVNode("p", null, [
                 createVNode("em", {
@@ -14811,7 +14815,7 @@ function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
               createVNode("div", null, [
                 createVNode(_component_Gift, {
                   size: 20,
-                  color: `${$props.styling.icon_color} !important`
+                  color: $props.styling.icon_color
                 }, null, 8, ["color"])
               ]),
               createVNode("div", null, [
@@ -14823,7 +14827,7 @@ function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
             createVNode("div", _hoisted_6$c, [
               createVNode(_component_Star, {
                 size: 15,
-                color: `${$props.styling.star_color} !important`
+                color: $props.styling.star_color
               }, null, 8, ["color"]),
               createVNode("p", _hoisted_7$b, [
                 createVNode("em", {
@@ -21711,7 +21715,11 @@ const _sfc_main$6 = {
       return result2.data.value.brand.headerColor;
     });
     const overviewStyle = computed(() => {
-      return JSON.parse(result2.data.value.brand.overviewStyle);
+      let style = JSON.parse(result2.data.value.brand.overviewStyle);
+      document.body.style.setProperty("background", style.main_background, "important");
+      const div = document.getElementById("mulah-app");
+      div.style.setProperty("background-color", style.main_background, "important");
+      return style;
     });
     const barcodeStyle = computed(() => {
       return JSON.parse(result2.data.value.brand.barcodeStyle);
@@ -22006,7 +22014,7 @@ function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
         }, null, 8, ["customer", "styling", "brandName", "close"])) : createCommentVNode("", true)
       ]),
       createVNode("div", _hoisted_16$2, [
-        $setup.activeTab != "home" && $setup.activeTab != "redeem" ? (openBlock(), createBlock("hr", _hoisted_17$2)) : createCommentVNode("", true),
+        $setup.activeTab != "home" && $setup.activeTab != "redeem" && $setup.activeTab != "rewards" ? (openBlock(), createBlock("hr", _hoisted_17$2)) : createCommentVNode("", true),
         _hoisted_18$2
       ]),
       createVNode(_component_FbPixel, {
