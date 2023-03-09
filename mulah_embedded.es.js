@@ -8207,6 +8207,7 @@ const HISTORY = `
       googleTagId
       overviewStyle
       rewardStyle
+      onlineRewardStyle
       barcodeStyle
       personalInfoStyle
       smsStyle
@@ -8470,7 +8471,7 @@ const _hoisted_12$g = {
   class: "mulah-modal__content-text"
 };
 const _hoisted_13$b = /* @__PURE__ */ createVNode("p", null, "Kindly check the", -1);
-const _hoisted_14$b = /* @__PURE__ */ createVNode("p", null, "registration details again.", -1);
+const _hoisted_14$a = /* @__PURE__ */ createVNode("p", null, "registration details again.", -1);
 const _hoisted_15$8 = {
   key: 3,
   class: "mulah-modal__content-text"
@@ -8497,7 +8498,7 @@ function _sfc_render$L(_ctx, _cache, $props, $setup, $data, $options) {
               _hoisted_11$i
             ])) : $props.specification == "registration" ? (openBlock(), createBlock("div", _hoisted_12$g, [
               _hoisted_13$b,
-              _hoisted_14$b
+              _hoisted_14$a
             ])) : $props.specification == "personal-info" ? (openBlock(), createBlock("div", _hoisted_15$8, [
               _hoisted_16$8,
               _hoisted_17$7
@@ -10910,7 +10911,7 @@ const _hoisted_10$h = /* @__PURE__ */ createVNode("option", { value: "ID" }, "+6
 const _hoisted_11$h = { class: "mulah-home__input mulah-home__input--button" };
 const _hoisted_12$f = /* @__PURE__ */ createVNode("hr", null, null, -1);
 const _hoisted_13$a = { class: "mulah-home__footer" };
-const _hoisted_14$a = /* @__PURE__ */ createTextVNode(" Powered by ");
+const _hoisted_14$9 = /* @__PURE__ */ createTextVNode(" Powered by ");
 function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_Spinner = resolveComponent("Spinner");
   const _component_ArrowDown = resolveComponent("ArrowDown");
@@ -10983,7 +10984,7 @@ function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
     _hoisted_12$f,
     createVNode("div", _hoisted_13$a, [
       createVNode("h6", { style: $setup.secondaryTextColor }, [
-        _hoisted_14$a,
+        _hoisted_14$9,
         createVNode("a", {
           class: "mulah-link-blue",
           style: $setup.linkColor
@@ -11326,7 +11327,7 @@ const _hoisted_10$f = /* @__PURE__ */ createTextVNode(" OTP code should be recei
 const _hoisted_11$f = { class: "mulah-phone__alert-span-first" };
 const _hoisted_12$e = /* @__PURE__ */ createTextVNode(" Didn't receive the OTP Code? ");
 const _hoisted_13$9 = { class: "mulah-phone__button" };
-const _hoisted_14$9 = { class: "mulah-phone__footer" };
+const _hoisted_14$8 = { class: "mulah-phone__footer" };
 const _hoisted_15$7 = /* @__PURE__ */ createTextVNode(" - Powered by ");
 const _hoisted_16$7 = /* @__PURE__ */ createTextVNode(" - ");
 function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
@@ -11395,7 +11396,7 @@ function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
         }, " Verify Now ", 4)
       ])
     ]),
-    createVNode("div", _hoisted_14$9, [
+    createVNode("div", _hoisted_14$8, [
       createVNode("h6", null, [
         _hoisted_15$7,
         createVNode("a", {
@@ -11620,8 +11621,8 @@ const _sfc_main$F = {
         const div = document.getElementById("mulah-app");
         div.style.cssText += `background-color: ${style.main_background} !important;`;
         document.body.style.setProperty("background", style.main_background, "important");
-        modalPrimaryColor.value = style.button_font;
-        modalSecondaryColor.value = style.primary_theme;
+        modalPrimaryColor.value = style.modal_color;
+        modalSecondaryColor.value = style.modal_background;
         document.body.style.setProperty(
           "background",
           style.main_background,
@@ -11802,7 +11803,7 @@ const _hoisted_13$8 = {
   key: 0,
   class: "mulah-registration__validation"
 };
-const _hoisted_14$8 = /* @__PURE__ */ createVNode("p", null, "*Please insert your birthday.", -1);
+const _hoisted_14$7 = /* @__PURE__ */ createVNode("p", null, "*Please insert your birthday.", -1);
 const _hoisted_15$6 = { class: "mulah-registration__input__container" };
 const _hoisted_16$6 = { key: 2 };
 const _hoisted_17$6 = {
@@ -11921,7 +11922,7 @@ function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
               ], 4)
             ]),
             $setup.showWarningBirthday() ? (openBlock(), createBlock("div", _hoisted_13$8, [
-              _hoisted_14$8
+              _hoisted_14$7
             ])) : createCommentVNode("", true)
           ]),
           createVNode("div", _hoisted_15$6, [
@@ -12395,7 +12396,7 @@ const _hoisted_10$d = /* @__PURE__ */ createVNode("p", null, "SMS Received", -1)
 const _hoisted_11$d = { class: "arrow_positions" };
 const _hoisted_12$c = /* @__PURE__ */ createVNode("hr", null, null, -1);
 const _hoisted_13$7 = /* @__PURE__ */ createVNode("p", null, "Personal Info", -1);
-const _hoisted_14$7 = { class: "arrow_positions" };
+const _hoisted_14$6 = { class: "arrow_positions" };
 const _hoisted_15$5 = /* @__PURE__ */ createVNode("hr", null, null, -1);
 const _hoisted_16$5 = /* @__PURE__ */ createVNode("a", { href: "#" }, "Promotion", -1);
 const _hoisted_17$5 = { class: "arrow_positions" };
@@ -12495,7 +12496,7 @@ const _sfc_render$w = /* @__PURE__ */ _withId$3((_ctx, _cache, $props, $setup, $
         color: $props.styling.icon_color
       }, null, 8, ["color"]),
       _hoisted_13$7,
-      createVNode("div", _hoisted_14$7, [
+      createVNode("div", _hoisted_14$6, [
         createVNode(_component_ArrowRight, {
           size: 15,
           color: $props.styling.icon_color
@@ -12995,7 +12996,7 @@ function _sfc_render$p(_ctx, _cache, $props, $setup, $data, $options) {
       fill: ${$props.color} !important;
       width: 100% !important;
       height: 100% !important;
-    `, { "fill": "white", "position": "absolute", "z-index": "0", "left": "0", "top": "0" }]
+    `, { "position": "absolute", "z-index": "0", "left": "0", "top": "0" }]
   }, [
     _hoisted_1$o,
     _hoisted_2$o
@@ -14665,8 +14666,8 @@ const _sfc_main$n = {
     Spinner
   }
 };
-const _withId$2 = /* @__PURE__ */ withScopeId("data-v-1e99edd6");
-pushScopeId("data-v-1e99edd6");
+const _withId$2 = /* @__PURE__ */ withScopeId("data-v-5cf061ff");
+pushScopeId("data-v-5cf061ff");
 const _hoisted_1$m = { key: 0 };
 const _hoisted_2$m = /* @__PURE__ */ createVNode("div", { class: "overlay" }, null, -1);
 const _hoisted_3$k = { class: "qr-modal" };
@@ -14683,7 +14684,7 @@ const _hoisted_13$6 = {
   key: 0,
   style: { "display": "flex", "margin-top": "15px !important", "margin-bottom": "15px !important" }
 };
-const _hoisted_14$6 = {
+const _hoisted_14$5 = {
   key: 1,
   style: { "margin-bottom": "15px !important" }
 };
@@ -14700,7 +14701,7 @@ const _sfc_render$n = /* @__PURE__ */ _withId$2((_ctx, _cache, $props, $setup, $
             createVNode("div", _hoisted_7$c, [
               createVNode(_component_OnlineRedeem, {
                 size: 140,
-                color: $props.styling.back_color
+                color: $props.styling.modal_icon_color
               }, null, 8, ["color"])
             ]),
             createVNode("div", _hoisted_8$c, [
@@ -14708,7 +14709,7 @@ const _sfc_render$n = /* @__PURE__ */ _withId$2((_ctx, _cache, $props, $setup, $
                 createVNode("p", _hoisted_10$a, [
                   _hoisted_11$a,
                   createVNode("em", {
-                    style: `color: ${$props.styling.back_color}`
+                    style: `color: ${$props.styling.modal_icon_color}`
                   }, toDisplayString($setup.expiryDate), 5)
                 ])
               ]),
@@ -14716,14 +14717,23 @@ const _sfc_render$n = /* @__PURE__ */ _withId$2((_ctx, _cache, $props, $setup, $
             ]),
             !$setup.loading ? (openBlock(), createBlock("div", _hoisted_13$6, [
               createVNode("button", {
-                style: [{ "margin-right": "2.5px !important" }, `background-color: ${$props.styling.back_color} !important;border-color: ${$props.styling.back_color} !important;`],
+                style: [{ "margin-right": "2.5px !important" }, `
+                  background-color: ${$props.styling.modal_cancel_color} !important;
+                  border-color: ${$props.styling.modal_cancel_color} !important;
+                  color: ${$props.styling.modal_cancel_font_color} !important;
+                `],
                 onClick: _cache[1] || (_cache[1] = ($event) => $props.toggleModal(false, _ctx.nil))
               }, " Cancel ", 4),
               createVNode("button", {
-                style: { "margin-left": "2.5px !important", "background-color": "#0bcf00 !important", "border-color": "#0bcf00 !important" },
+                style: `
+                margin-left: 2.5px !important;
+                background-color: ${$props.styling.modal_confirm_color} !important;
+                border-color: ${$props.styling.modal_confirm_color} !important;
+                color: ${$props.styling.modal_confirm_font_color} !important;
+              `,
                 onClick: _cache[2] || (_cache[2] = (...args) => $setup.redeemOnlineVoucher && $setup.redeemOnlineVoucher(...args))
-              }, " Confirm ")
-            ])) : (openBlock(), createBlock("div", _hoisted_14$6, [
+              }, " Confirm ", 4)
+            ])) : (openBlock(), createBlock("div", _hoisted_14$5, [
               createVNode(_component_Spinner)
             ]))
           ])
@@ -14732,7 +14742,7 @@ const _sfc_render$n = /* @__PURE__ */ _withId$2((_ctx, _cache, $props, $setup, $
     ])
   ])) : createCommentVNode("", true);
 });
-var OverviewOnlineRedeem = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$n], ["__scopeId", "data-v-1e99edd6"]]);
+var OverviewOnlineRedeem = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$n], ["__scopeId", "data-v-5cf061ff"]]);
 const _sfc_main$m = {
   name: "OverviewOnline",
   setup(props) {
@@ -14790,16 +14800,11 @@ const _hoisted_5$f = {
 const _hoisted_6$c = { class: "mulah-overview__card__promotion--points" };
 const _hoisted_7$b = { style: { "width": "revert !important", "margin-left": "5px !important" } };
 const _hoisted_8$b = { style: { "text-align": "right !important", "margin-top": "5px !important" } };
-const _hoisted_9$a = {
-  key: 1,
-  style: { "background-color": "#aaaaaa !important", "border-color": "#aaaaaa !important", "width": "45% !important" },
-  disabled: ""
-};
-const _hoisted_10$9 = { style: { "margin-top": "15px !important", "margin-bottom": "10px !important" } };
-const _hoisted_11$9 = /* @__PURE__ */ createVNode("em", null, "Tap Here for Terms and Conditions", -1);
-const _hoisted_12$9 = { class: "mulah-overview__button-container" };
-const _hoisted_13$5 = { style: { "width": "100% !important", "display": "flex !important", "align-items": "center !important", "justify-content": "center !important" } };
-const _hoisted_14$5 = /* @__PURE__ */ createVNode("div", { class: "footerLine" }, null, -1);
+const _hoisted_9$a = { style: { "margin-top": "15px !important", "margin-bottom": "10px !important" } };
+const _hoisted_10$9 = /* @__PURE__ */ createVNode("em", null, "Tap Here for Terms and Conditions", -1);
+const _hoisted_11$9 = { class: "mulah-overview__button-container" };
+const _hoisted_12$9 = { style: { "width": "100% !important", "display": "flex !important", "align-items": "center !important", "justify-content": "center !important" } };
+const _hoisted_13$5 = /* @__PURE__ */ createVNode("div", { class: "footerLine" }, null, -1);
 function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_Coupon = resolveComponent("Coupon");
   const _component_Gift = resolveComponent("Gift");
@@ -14809,7 +14814,10 @@ function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
     (openBlock(true), createBlock(Fragment, null, renderList($props.onlinePromotions, (promotion, index) => {
       return openBlock(), createBlock("div", _hoisted_2$l, [
         createVNode("div", _hoisted_3$j, [
-          createVNode(_component_Coupon, { preserveAspectRatio: "none" }),
+          createVNode(_component_Coupon, {
+            color: $props.styling.card_background,
+            preserveAspectRatio: "none"
+          }, null, 8, ["color"]),
           createVNode("div", _hoisted_4$f, [
             createVNode("div", _hoisted_5$f, [
               createVNode("div", null, [
@@ -14841,24 +14849,38 @@ function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
             createVNode("div", _hoisted_8$b, [
               $setup.redeemable($setup.totalAvailablePoints, promotion.cost) ? (openBlock(), createBlock("button", {
                 key: 0,
-                style: { "background-color": "#0bcf00 !important", "border-color": "#0bcf00 !important", "width": "45% !important" },
+                style: `
+                background-color: ${$props.styling.redeem_color} !important;
+                border-color: ${$props.styling.redeem_color} !important;
+                color: ${$props.styling.redeem_font_color} !important;
+                width: 45% !important;
+              `,
                 onClick: ($event) => $setup.toggleModal(true, promotion)
-              }, " Redeem ", 8, ["onClick"])) : (openBlock(), createBlock("button", _hoisted_9$a, " Redeem "))
+              }, " Redeem ", 12, ["onClick"])) : (openBlock(), createBlock("button", {
+                key: 1,
+                style: `
+              background-color: ${$props.styling.disabled_redeem_color} !important;
+              border-color: ${$props.styling.disabled_redeem_color} !important;
+              color: ${$props.styling.redeem_font_color} !important;
+              width: 45% !important;
+            `,
+                disabled: ""
+              }, " Redeem ", 4))
             ])
           ])
         ])
       ]);
     }), 256)),
-    createVNode("div", _hoisted_10$9, [
+    createVNode("div", _hoisted_9$a, [
       createVNode("p", {
         onClick: _cache[1] || (_cache[1] = ($event) => $props.changePath("tnc")),
-        style: { "color": "grey !important", "font-size": "0.9em !important" }
+        style: `color: ${$props.styling.tnc_color} !important; font-size: 0.9em !important`
       }, [
-        _hoisted_11$9
-      ])
+        _hoisted_10$9
+      ], 4)
     ]),
-    createVNode("div", _hoisted_12$9, [
-      createVNode("div", _hoisted_13$5, [
+    createVNode("div", _hoisted_11$9, [
+      createVNode("div", _hoisted_12$9, [
         createVNode("button", {
           onClick: _cache[2] || (_cache[2] = ($event) => $props.changeTab("home")),
           style: `
@@ -14887,7 +14909,7 @@ function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
       styling: $props.styling,
       deductPoints: $props.deductPoints
     }, null, 8, ["show", "toggle-modal", "selected-promotion", "customer", "change-tab", "styling", "deductPoints"]),
-    _hoisted_14$5
+    _hoisted_13$5
   ]);
 }
 var OverviewOnline = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$m]]);
@@ -21727,6 +21749,9 @@ const _sfc_main$6 = {
     const rewardStyle = computed(() => {
       return JSON.parse(result2.data.value.brand.rewardStyle);
     });
+    const onlineRewardStyle = computed(() => {
+      return JSON.parse(result2.data.value.brand.onlineRewardStyle);
+    });
     const smsStyle = computed(() => {
       return JSON.parse(result2.data.value.brand.smsStyle);
     });
@@ -21784,6 +21809,7 @@ const _sfc_main$6 = {
       borderStyle,
       overviewStyle,
       rewardStyle,
+      onlineRewardStyle,
       customer,
       barcodeStyle,
       smsStyle,
@@ -21996,7 +22022,7 @@ function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
             }, null, 8, ["brand", "change-path", "changeTab", "styling"])) : $setup.activeTab == "online" ? (openBlock(), createBlock(_component_OverviewOnline, {
               key: 4,
               onlinePromotions: $setup.data.brand.onlinePromotions,
-              styling: $setup.rewardStyle,
+              styling: $setup.onlineRewardStyle,
               "change-path": $props.changePath,
               changeTab: $setup.changeTab,
               data: $setup.availPoints,
@@ -22327,8 +22353,8 @@ const _sfc_main$3 = {
     };
     const buttonText = { color: `${styling.button_font} !important` };
     const buttonTheme = { "--buttonFont": styling.button_font };
-    const modalPrimaryColor = styling.button_font;
-    const modalSecondaryColor = styling.primary_theme;
+    const modalPrimaryColor = styling.modal_color;
+    const modalSecondaryColor = styling.modal_background;
     const div = document.getElementById("mulah-app");
     div.style.cssText += `background-color: ${styling.main_background} !important;`;
     document.body.style.setProperty("background", styling.main_background, "important");
