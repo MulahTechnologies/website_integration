@@ -10974,10 +10974,8 @@ function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
           $setup.loading ? (openBlock(), createBlock(_component_Spinner, { key: 0 })) : (openBlock(), createBlock("button", {
             key: 1,
             onClick: _cache[4] || (_cache[4] = (...args) => $setup.checkpoints && $setup.checkpoints(...args)),
-            style: $setup.subBackground
-          }, [
-            createVNode("div", { style: $setup.buttonColor }, "Check Loyalty Points", 4)
-          ], 4))
+            style: { ...$setup.subBackground, ...$setup.buttonColor }
+          }, " Check Loyalty Points ", 4))
         ])
       ])
     ]),
