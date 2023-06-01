@@ -8470,8 +8470,8 @@ const _hoisted_12$g = {
   key: 2,
   class: "mulah-modal__content-text"
 };
-const _hoisted_13$b = /* @__PURE__ */ createVNode("p", null, "Kindly check the", -1);
-const _hoisted_14$a = /* @__PURE__ */ createVNode("p", null, "registration details again.", -1);
+const _hoisted_13$a = /* @__PURE__ */ createVNode("p", null, "Kindly check the", -1);
+const _hoisted_14$9 = /* @__PURE__ */ createVNode("p", null, "registration details again.", -1);
 const _hoisted_15$8 = {
   key: 3,
   class: "mulah-modal__content-text"
@@ -8497,8 +8497,8 @@ function _sfc_render$L(_ctx, _cache, $props, $setup, $data, $options) {
               _hoisted_10$i,
               _hoisted_11$i
             ])) : $props.specification == "registration" ? (openBlock(), createBlock("div", _hoisted_12$g, [
-              _hoisted_13$b,
-              _hoisted_14$a
+              _hoisted_13$a,
+              _hoisted_14$9
             ])) : $props.specification == "personal-info" ? (openBlock(), createBlock("div", _hoisted_15$8, [
               _hoisted_16$8,
               _hoisted_17$7
@@ -10740,6 +10740,7 @@ const _sfc_main$J = {
   name: "Home",
   setup(props) {
     const loadingStyles = ref(true);
+    const loadingCountry = ref(true);
     const phoneNumber = ref("");
     const loading = ref(false);
     const error = ref(false);
@@ -10749,6 +10750,13 @@ const _sfc_main$J = {
       variables: {
         id: store2.state.token
       }
+    });
+    onMounted(async () => {
+      const res = await fetch("https://api.country.is/").then((x3) => x3.json());
+      if (["MY", "ID"].includes(res.country)) {
+        store2.addCountryCode(res.country);
+      }
+      loadingCountry.value = false;
     });
     const textColor = ref(null);
     const textColorHex = ref(null);
@@ -10762,6 +10770,7 @@ const _sfc_main$J = {
     const linkColor = ref(null);
     const mainBackground = ref(null);
     const extension2 = ref(getCountryCode(store2.state.countryCode));
+    const countryCode = computed(() => store2.state.countryCode);
     watch(loginQuery.fetching, (fetchStatus) => {
       if (!fetchStatus) {
         const loginStyle = JSON.parse(loginQuery.data.value.brand.loginStyle);
@@ -10857,11 +10866,13 @@ const _sfc_main$J = {
       store2.addCountryCode(cc);
     }
     return {
+      countryCode,
       phoneNumber,
       checkpointsValidation,
       closeModal,
       error,
       loading,
+      loadingCountry,
       validPhoneNumber,
       keyPress,
       checkpoints,
@@ -10906,17 +10917,15 @@ const _hoisted_5$w = { class: "mulah-home__welcome" };
 const _hoisted_6$r = { class: "mulah-home__input-container" };
 const _hoisted_7$o = { class: "mulah-home__input" };
 const _hoisted_8$m = { class: "mulah-home__input__select" };
-const _hoisted_9$j = /* @__PURE__ */ createVNode("option", { value: "MY" }, "+60", -1);
-const _hoisted_10$h = /* @__PURE__ */ createVNode("option", { value: "ID" }, "+62", -1);
-const _hoisted_11$h = { class: "mulah-home__input mulah-home__input--button" };
-const _hoisted_12$f = /* @__PURE__ */ createVNode("hr", null, null, -1);
-const _hoisted_13$a = { class: "mulah-home__footer" };
-const _hoisted_14$9 = /* @__PURE__ */ createTextVNode(" Powered by ");
+const _hoisted_9$j = { class: "mulah-home__input mulah-home__input--button" };
+const _hoisted_10$h = /* @__PURE__ */ createVNode("hr", null, null, -1);
+const _hoisted_11$h = { class: "mulah-home__footer" };
+const _hoisted_12$f = /* @__PURE__ */ createTextVNode(" Powered by ");
 function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_Spinner = resolveComponent("Spinner");
   const _component_ArrowDown = resolveComponent("ArrowDown");
   const _component_ErrorModal = resolveComponent("ErrorModal");
-  return $setup.loadingStyles ? (openBlock(), createBlock("div", _hoisted_1$I, [
+  return $setup.loadingStyles || $setup.loadingCountry ? (openBlock(), createBlock("div", _hoisted_1$I, [
     createVNode("div", _hoisted_2$G, [
       createVNode(_component_Spinner)
     ])
@@ -10943,8 +10952,14 @@ function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
               id: "mulah-home__input__countryCode",
               class: "mulah-home__select"
             }, [
-              _hoisted_9$j,
-              _hoisted_10$h
+              createVNode("option", {
+                selected: $setup.countryCode == "MY",
+                value: "MY"
+              }, "+60", 8, ["selected"]),
+              createVNode("option", {
+                selected: $setup.countryCode == "ID",
+                value: "ID"
+              }, "+62", 8, ["selected"])
             ], 36),
             createVNode(_component_ArrowDown, {
               size: 18,
@@ -10970,7 +10985,7 @@ function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
             class: "fas fa-check-circle"
           }, null, 4))
         ]),
-        createVNode("div", _hoisted_11$h, [
+        createVNode("div", _hoisted_9$j, [
           $setup.loading ? (openBlock(), createBlock(_component_Spinner, { key: 0 })) : (openBlock(), createBlock("button", {
             key: 1,
             onClick: _cache[4] || (_cache[4] = (...args) => $setup.checkpoints && $setup.checkpoints(...args)),
@@ -10979,10 +10994,10 @@ function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
         ])
       ])
     ]),
-    _hoisted_12$f,
-    createVNode("div", _hoisted_13$a, [
+    _hoisted_10$h,
+    createVNode("div", _hoisted_11$h, [
       createVNode("h6", { style: $setup.secondaryTextColor }, [
-        _hoisted_14$9,
+        _hoisted_12$f,
         createVNode("a", {
           class: "mulah-link-blue",
           style: $setup.linkColor
