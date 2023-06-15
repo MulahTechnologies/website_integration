@@ -11132,7 +11132,7 @@ const _sfc_main$G = {
   name: "PhoneVerification",
   setup(props) {
     const loadingStyles = ref(true);
-    let timer = ref(30);
+    let timer = ref(10);
     let tries = ref(0);
     const code = ref(null);
     const error = ref(false);
@@ -11254,7 +11254,7 @@ const _sfc_main$G = {
       });
     }
     function resend() {
-      timer.value = 30;
+      timer.value = 10;
       interval = startInterval();
       resendCode();
     }
