@@ -11828,7 +11828,7 @@ const _hoisted_19$5 = /* @__PURE__ */ createVNode("span", null, "No email addres
 const _hoisted_20$5 = { class: "mulah-registration__button" };
 const _hoisted_21$5 = { class: "mulah-registration__footer" };
 const _hoisted_22$4 = /* @__PURE__ */ createVNode("hr", null, null, -1);
-const _hoisted_23$4 = /* @__PURE__ */ createTextVNode(" Powered by ");
+const _hoisted_23$3 = /* @__PURE__ */ createTextVNode(" Powered by ");
 function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_Spinner = resolveComponent("Spinner");
   const _component_VueNextSelect = resolveComponent("VueNextSelect");
@@ -11993,7 +11993,7 @@ function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
       createVNode("div", _hoisted_21$5, [
         _hoisted_22$4,
         createVNode("h6", null, [
-          _hoisted_23$4,
+          _hoisted_23$3,
           createVNode("a", {
             class: "mulah-link-blue",
             style: { ...$setup.linkColor }
@@ -18237,8 +18237,8 @@ const _hoisted_22$3 = {
   class: "expiry",
   style: { "{\n                  color": "'#aaaaaa' !important" }
 };
-const _hoisted_23$3 = { class: "code-container" };
-const _hoisted_24$1 = {
+const _hoisted_23$2 = { class: "code-container" };
+const _hoisted_24 = {
   key: 0,
   class: "code",
   style: { "font-weight": "bolder !important", "color": "#000000 !important", "text-align": "right !important" }
@@ -18330,8 +18330,8 @@ function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
               createVNode(_component_Calendar, { color: "#aaaaaa" }),
               createVNode("p", _hoisted_22$3, " Expiry " + toDisplayString($setup.formatDate(offer.expiryDate)), 1)
             ]),
-            createVNode("div", _hoisted_23$3, [
-              offer.status == "Expired" ? (openBlock(), createBlock("p", _hoisted_24$1, toDisplayString(offer.status), 1)) : (openBlock(), createBlock("p", _hoisted_25, " Used on " + toDisplayString($setup.formatDate(offer.usedAt)), 1))
+            createVNode("div", _hoisted_23$2, [
+              offer.status == "Expired" ? (openBlock(), createBlock("p", _hoisted_24, toDisplayString(offer.status), 1)) : (openBlock(), createBlock("p", _hoisted_25, " Used on " + toDisplayString($setup.formatDate(offer.usedAt)), 1))
             ])
           ])
         ], 4);
@@ -21485,7 +21485,7 @@ const _hoisted_20$2 = {
 };
 const _hoisted_21$2 = { style: { "margin-top": "15px !important", "margin-bottom": "10px !important" } };
 const _hoisted_22$2 = /* @__PURE__ */ createVNode("em", null, "Tap Here for Terms and Conditions", -1);
-const _hoisted_23$2 = { class: "mulah-vr__button__container" };
+const _hoisted_23$1 = { class: "mulah-vr__button__container" };
 function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_Coupon = resolveComponent("Coupon");
   const _component_Gift = resolveComponent("Gift");
@@ -21581,7 +21581,7 @@ function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
         _hoisted_22$2
       ])
     ]),
-    createVNode("div", _hoisted_23$2, [
+    createVNode("div", _hoisted_23$1, [
       createVNode("button", {
         style: {
           background: $setup.primaryTheme.color,
@@ -22116,16 +22116,14 @@ const _hoisted_5$3 = { class: "mulah-history__content" };
 const _hoisted_6$2 = /* @__PURE__ */ createVNode("p", { class: "mulah-history__content-title" }, "Points Overview", -1);
 const _hoisted_7$2 = { class: "mulah-history__content--grid" };
 const _hoisted_8$2 = /* @__PURE__ */ createVNode("p", { class: "mulah-history__content-table-collect" }, "Collected", -1);
-const _hoisted_9$2 = /* @__PURE__ */ createVNode("p", { class: "mulah-history__content-table-expire" }, "Expired", -1);
-const _hoisted_10$2 = /* @__PURE__ */ createVNode("p", { class: "mulah-history__content-table-redeem" }, "Redeemed", -1);
-const _hoisted_11$2 = { class: "mulah-history__content-table-collect-main mulah-history__content-table-collect" };
-const _hoisted_12$2 = { class: "mulah-history__content-table-expire mulah-history__content-table-expire-main" };
-const _hoisted_13$1 = { class: "mulah-history__content-table-redeem mulah-history__content-table-redeem-main" };
-const _hoisted_14$1 = { class: "mulah-history__content-container" };
-const _hoisted_15$1 = { class: "mulah-history__content" };
-const _hoisted_16$1 = /* @__PURE__ */ createVNode("p", { class: "mulah-history__collection" }, "Recent Activity", -1);
-const _hoisted_17$1 = { class: "mulah-history__collection-table" };
-const _hoisted_18$1 = /* @__PURE__ */ createVNode("tr", { class: "mulah-history__collection-table-title" }, [
+const _hoisted_9$2 = /* @__PURE__ */ createVNode("p", { class: "mulah-history__content-table-redeem" }, "Redeemed", -1);
+const _hoisted_10$2 = { class: "mulah-history__content-table-collect-main mulah-history__content-table-collect" };
+const _hoisted_11$2 = { class: "mulah-history__content-table-redeem mulah-history__content-table-redeem-main" };
+const _hoisted_12$2 = { class: "mulah-history__content-container" };
+const _hoisted_13$1 = { class: "mulah-history__content" };
+const _hoisted_14$1 = /* @__PURE__ */ createVNode("p", { class: "mulah-history__collection" }, "Recent Activity", -1);
+const _hoisted_15$1 = { class: "mulah-history__collection-table" };
+const _hoisted_16$1 = /* @__PURE__ */ createVNode("tr", { class: "mulah-history__collection-table-title" }, [
   /* @__PURE__ */ createVNode("td", null, [
     /* @__PURE__ */ createVNode("p", null, "Date")
   ]),
@@ -22136,21 +22134,21 @@ const _hoisted_18$1 = /* @__PURE__ */ createVNode("tr", { class: "mulah-history_
     /* @__PURE__ */ createVNode("p", null, "Action")
   ])
 ], -1);
-const _hoisted_19$1 = { class: "mulah-history__collection-table-date" };
-const _hoisted_20$1 = { class: "mulah-history__collection-table-date--italic" };
-const _hoisted_21$1 = {
+const _hoisted_17$1 = { class: "mulah-history__collection-table-date" };
+const _hoisted_18$1 = { class: "mulah-history__collection-table-date--italic" };
+const _hoisted_19$1 = {
   key: 0,
   class: "mulah-history__expiry-status"
 };
-const _hoisted_22$1 = {
+const _hoisted_20$1 = {
   key: 1,
   class: "mulah-history__expiry-status"
 };
-const _hoisted_23$1 = {
+const _hoisted_21$1 = {
   key: 2,
   class: "mulah-history__expiry-status"
 };
-const _hoisted_24 = /* @__PURE__ */ createVNode("div", null, [
+const _hoisted_22$1 = /* @__PURE__ */ createVNode("div", null, [
   /* @__PURE__ */ createVNode("h6", { class: "mulah-history__footer" }, [
     /* @__PURE__ */ createTextVNode(" Powered by "),
     /* @__PURE__ */ createVNode("a", { class: "mulah-link-blue" }, "MulahRewards.com")
@@ -22178,18 +22176,16 @@ function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
         createVNode("div", _hoisted_7$2, [
           _hoisted_8$2,
           _hoisted_9$2,
-          _hoisted_10$2,
-          createVNode("p", _hoisted_11$2, toDisplayString($setup.data.customerHistory.brandCollectedPoints), 1),
-          createVNode("p", _hoisted_12$2, toDisplayString($setup.data.customerHistory.expiredPoints), 1),
-          createVNode("p", _hoisted_13$1, toDisplayString($setup.data.customerHistory.redemptionCosts), 1)
+          createVNode("p", _hoisted_10$2, toDisplayString($setup.data.customerHistory.brandCollectedPoints), 1),
+          createVNode("p", _hoisted_11$2, toDisplayString($setup.data.customerHistory.redemptionCosts), 1)
         ])
       ])
     ]),
-    createVNode("div", _hoisted_14$1, [
-      createVNode("div", _hoisted_15$1, [
-        _hoisted_16$1,
-        createVNode("table", _hoisted_17$1, [
-          _hoisted_18$1,
+    createVNode("div", _hoisted_12$2, [
+      createVNode("div", _hoisted_13$1, [
+        _hoisted_14$1,
+        createVNode("table", _hoisted_15$1, [
+          _hoisted_16$1,
           (openBlock(true), createBlock(Fragment, null, renderList($setup.data.customerHistory.collectionsAndDeductions.slice(
             0,
             3
@@ -22199,8 +22195,8 @@ function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
               class: "mulah-history__collection-table-content"
             }, [
               createVNode("td", null, [
-                createVNode("p", _hoisted_19$1, toDisplayString($setup.formatDate(x3.createdAt)), 1),
-                createVNode("p", _hoisted_20$1, toDisplayString($setup.formatTime(x3.createdAt)), 1)
+                createVNode("p", _hoisted_17$1, toDisplayString($setup.formatDate(x3.createdAt)), 1),
+                createVNode("p", _hoisted_18$1, toDisplayString($setup.formatTime(x3.createdAt)), 1)
               ]),
               createVNode("td", null, [
                 createVNode("p", null, toDisplayString(x3.amount), 1)
@@ -22208,7 +22204,7 @@ function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
               createVNode("td", null, [
                 createVNode("div", null, [
                   createVNode("p", null, toDisplayString(x3.specification.charAt(0).toUpperCase() + x3.specification.slice(1)), 1),
-                  x3.expiryDays == 1 ? (openBlock(), createBlock("p", _hoisted_21$1, " Expires in " + toDisplayString(x3.expiryDays) + " Day ", 1)) : x3.expiryDays > 0 ? (openBlock(), createBlock("p", _hoisted_22$1, " Expires in " + toDisplayString(x3.expiryDays) + " Days ", 1)) : x3.expiryDays != null && x3.expiryDays <= 0 ? (openBlock(), createBlock("p", _hoisted_23$1, " Expired ")) : createCommentVNode("", true)
+                  x3.expiryDays == 1 ? (openBlock(), createBlock("p", _hoisted_19$1, " Expires in " + toDisplayString(x3.expiryDays) + " Day ", 1)) : x3.expiryDays > 0 ? (openBlock(), createBlock("p", _hoisted_20$1, " Expires in " + toDisplayString(x3.expiryDays) + " Days ", 1)) : x3.expiryDays != null && x3.expiryDays <= 0 ? (openBlock(), createBlock("p", _hoisted_21$1, " Expired ")) : createCommentVNode("", true)
                 ])
               ])
             ]);
@@ -22224,7 +22220,7 @@ function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
       class: "mulah-history-back-button",
       onClick: _cache[2] || (_cache[2] = ($event) => $props.changePath("history", true))
     }, " Back "),
-    _hoisted_24
+    _hoisted_22$1
   ]));
 }
 var BrandHistory = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$5]]);
