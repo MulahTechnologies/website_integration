@@ -8140,6 +8140,7 @@ const CUSTOMER_OFFERS = `
       expiryDate
       used
       updatedAt
+      status
       usedOn
       promotion {
         title
@@ -21657,7 +21658,11 @@ const _sfc_main$6 = {
         const overviewStyle2 = JSON.parse(result2.data.value.brand.overviewStyle);
         const div = document.getElementById("mulah-app");
         div.style.cssText += `background-color: ${overviewStyle2.main_background} !important;`;
-        document.body.style.setProperty("background", overviewStyle2.main_background, "important");
+        document.body.style.setProperty(
+          "background",
+          overviewStyle2.main_background,
+          "important"
+        );
         store2.addPersonalInfoStyle(
           JSON.parse(result2.data.value.brand.personalInfoStyle)
         );
@@ -21691,7 +21696,9 @@ const _sfc_main$6 = {
       const expiryDate = new Date(item.expiryDate);
       currentDate.setHours(0, 0, 0, 0);
       expiryDate.setHours(0, 0, 0, 0);
-      if (item.used) {
+      if (item.status == "auto_redeemed" || item.status == "Expired") {
+        return "Expired";
+      } else if (item.used) {
         return "Redeemed";
       } else if (currentDate > expiryDate) {
         return "Expired";
@@ -21754,9 +21761,17 @@ const _sfc_main$6 = {
     });
     const overviewStyle = computed(() => {
       let style = JSON.parse(result2.data.value.brand.overviewStyle);
-      document.body.style.setProperty("background", style.main_background, "important");
+      document.body.style.setProperty(
+        "background",
+        style.main_background,
+        "important"
+      );
       const div = document.getElementById("mulah-app");
-      div.style.setProperty("background-color", style.main_background, "important");
+      div.style.setProperty(
+        "background-color",
+        style.main_background,
+        "important"
+      );
       return style;
     });
     const barcodeStyle = computed(() => {
