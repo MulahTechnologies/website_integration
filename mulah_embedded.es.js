@@ -8167,7 +8167,7 @@ const CUSTOMER = `
       createdAt
       phoneNumber
       extension
-      withInfo
+      isRegistered
       membership {
         id
         title
@@ -11592,6 +11592,17 @@ const _sfc_main$F = {
         email.value = "";
       }
     });
+    if (store2.state.customerInfo.name && store2.state.customerInfo.name != "Customer") {
+      name.value = store2.state.customerInfo.name;
+    }
+    if (store2.state.customerInfo.birthdate) {
+      date.value = new Date(store2.state.customerInfo.birthdate).getDate();
+      month.value = monthRange()[new Date(store2.state.customerInfo.birthdate).getMonth()];
+      year.value = new Date(store2.state.customerInfo.birthdate).getFullYear();
+    }
+    if (store2.state.customerInfo.email && store2.state.customerInfo.email != "") {
+      email.value = store2.state.customerInfo.email;
+    }
     const result2 = useQuery({
       query: REGISTRATION_STYLE,
       variables: {
@@ -11629,12 +11640,18 @@ const _sfc_main$F = {
         inputBackground.value = {
           background: `${style.input_background} !important`
         };
-        inputBackgroundColor.value = { "--inputBackgroundColor": `${style.input_background}` };
+        inputBackgroundColor.value = {
+          "--inputBackgroundColor": `${style.input_background}`
+        };
         buttonText.value = { color: `${style.button_font} !important` };
         buttonTheme.value = { "--buttonFont": style.button_font };
         const div = document.getElementById("mulah-app");
         div.style.cssText += `background-color: ${style.main_background} !important;`;
-        document.body.style.setProperty("background", style.main_background, "important");
+        document.body.style.setProperty(
+          "background",
+          style.main_background,
+          "important"
+        );
         modalPrimaryColor.value = style.modal_color;
         modalSecondaryColor.value = style.modal_background;
         document.body.style.setProperty(
@@ -21677,11 +21694,11 @@ const _sfc_main$6 = {
     const customer = ref(null);
     watch(customerResult.fetching, (fetchStatus) => {
       if (!fetchStatus) {
-        if (!customerResult.data.value.customer.withInfo) {
+        store2.addCustomerInfo(customerResult.data.value.customer);
+        if (!customerResult.data.value.customer.isRegistered) {
           props.changePath("registration");
         } else {
           customer.value = customerResult.data.value.customer;
-          store2.addCustomerInfo(customerResult.data.value.customer);
         }
       }
     });
